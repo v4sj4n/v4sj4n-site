@@ -36,26 +36,26 @@ export const Projects = () => {
           <Block className='col-span-12 grid grid-cols-12 gap-4 place-items-center bg-zinc-700/50'>
             <div className='col-span-12 md:col-span-4 w-full flex flex-col items-center justify-center'>
               <h1 className='text-4xl md:text-3xl uppercase text-center font-light my-6'>
-                {name}
+                {name}.
               </h1>
             </div>
-            <div className='col-span-12 md:col-span-8 mx-2 my-4'>
+            <div className='col-span-12 md:col-span-8 md:mx-2 my-4'>
               <p className='text-justify'> {description} </p>
             </div>
             <div className='col-span-12 flex justify-between  items-center w-full  space-x-4 md:space-x-2'>
-                <a
-                  className='text-center border border-zinc-100 hover:bg-zinc-100 transition-color duration-200 w-1/2 hover:text-zinc-800 px-3 py-1.5 rounded-md flex items-center justify-center gap-2'
-                  href={live}
-                >
-                  See Live <FiArrowUpRight />
-                </a>
-                <a
-                  className=' text-center border border-zinc-100 transition-color duration-200 hover:bg-zinc-100 hover:text-zinc-800 px-3 py-1.5 rounded-md w-1/2 flex items-center justify-center gap-2'
-                  href={code}
-                >
-                  See Code <FiCode />
-                </a>
-              </div>
+              <a
+                className='text-center border-2 border-zinc-100 hover:bg-zinc-100 transition-color duration-200 w-1/2 hover:text-zinc-800 px-3 py-1.5 rounded-md flex items-center justify-center gap-2'
+                href={live}
+              >
+                See Live <FiArrowUpRight />
+              </a>
+              <a
+                className='text-center border-2 border-zinc-100 hover:bg-zinc-100 transition-color duration-200 w-1/2 hover:text-zinc-800 px-3 py-1.5 rounded-md flex items-center justify-center gap-2'
+                href={code}
+              >
+                See Code <FiCode />
+              </a>
+            </div>
           </Block>
         )
       })}
