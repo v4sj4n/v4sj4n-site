@@ -1,8 +1,10 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Next.js + HeroUI",
-  description: "Make beautiful websites regardless of your design experience.",
+  name: "Vasjan Çupri - Developer Page",
+  description:
+    "I create intelligent, user-friendly web solutions that help small businesses automate, scale, and focus on what matters most.",
+
   navItems: [
     {
       label: "Projects",
@@ -24,10 +26,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    github: "https://github.com/heroui-inc/heroui",
-    twitter: "https://twitter.com/hero_ui",
-    docs: "https://heroui.com",
-    discord: "https://discord.gg/9b6yyZKmH4",
-    sponsor: "https://patreon.com/jrgarciadev",
+    github: "https://github.com/v4sj4n",
+    twitter: "https://x.com/v4sj4n",
+    linkedin: "https://linkedin.com/in/v4sj4n",
   },
 };
