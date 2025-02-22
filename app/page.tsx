@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-36">
       <div className="inline-block max-w-xl text-center justify-center">
-        <span className={title({ color: "cyan" })}>Vasjan Çupri</span>
+        <span className={title({ color: "blue" })}>Vasjan Çupri</span>
         <div className={subtitle({ class: "mt-4" })}>
           I create intelligent, user-friendly web solutions that help small
           businesses automate, scale, and focus on what matters most.
@@ -18,7 +18,6 @@ export default function Home() {
 
       <div className="flex gap-3">
         <Link
-          isExternal
           className={buttonStyles({
             color: "primary",
             radius: "full",

@@ -5,7 +5,10 @@
       "name": "next-app-template",
       "dependencies": {
         "@heroui/button": "2.2.13",
+        "@heroui/card": "^2.2.13",
+        "@heroui/chip": "^2.2.10",
         "@heroui/code": "2.2.10",
+        "@heroui/divider": "^2.2.9",
         "@heroui/input": "2.4.13",
         "@heroui/kbd": "2.2.10",
         "@heroui/link": "2.2.11",
@@ -81,6 +84,10 @@
     "@heroui/aria-utils": ["@heroui/aria-utils@2.2.11", "", { "dependencies": { "@heroui/react-rsc-utils": "2.1.5", "@heroui/shared-utils": "2.1.6", "@heroui/system": "2.4.10", "@react-aria/utils": "3.27.0", "@react-stately/collections": "3.12.1", "@react-stately/overlays": "3.6.13", "@react-types/overlays": "3.8.12", "@react-types/shared": "3.27.0" }, "peerDependencies": { "react": ">=18 || >=19.0.0-rc.0", "react-dom": ">=18 || >=19.0.0-rc.0" } }, "sha512-zWyZpTDcDfQv8OvLSTqTS2pxNMtXMxIFvxbIN0c2e/p+3Ol1YTj+J//6Wph0AYjb9OVVNatw63y2s8tlEzXvoA=="],
 
     "@heroui/button": ["@heroui/button@2.2.13", "", { "dependencies": { "@heroui/react-utils": "2.1.7", "@heroui/ripple": "2.2.11", "@heroui/shared-utils": "2.1.6", "@heroui/spinner": "2.2.10", "@heroui/use-aria-button": "2.2.8", "@react-aria/button": "3.11.1", "@react-aria/focus": "3.19.1", "@react-aria/interactions": "3.23.0", "@react-aria/utils": "3.27.0", "@react-types/button": "3.10.2", "@react-types/shared": "3.27.0" }, "peerDependencies": { "@heroui/system": ">=2.4.7", "@heroui/theme": ">=2.4.6", "framer-motion": ">=11.5.6 || >=12.0.0-alpha.1", "react": ">=18 || >=19.0.0-rc.0", "react-dom": ">=18 || >=19.0.0-rc.0" } }, "sha512-WNIvus3+IPziDCilzuLgdVy5Hxqn1IRPSFDw+VOXuyoNoIs/WpVfr7PMITZIeoGGKjy+s5M0WUPDvyV/zVBNlw=="],
+
+    "@heroui/card": ["@heroui/card@2.2.13", "", { "dependencies": { "@heroui/react-utils": "2.1.7", "@heroui/ripple": "2.2.11", "@heroui/shared-utils": "2.1.6", "@heroui/use-aria-button": "2.2.8", "@react-aria/button": "3.11.1", "@react-aria/focus": "3.19.1", "@react-aria/interactions": "3.23.0", "@react-aria/utils": "3.27.0", "@react-types/shared": "3.27.0" }, "peerDependencies": { "@heroui/system": ">=2.4.7", "@heroui/theme": ">=2.4.6", "framer-motion": ">=11.5.6 || >=12.0.0-alpha.1", "react": ">=18 || >=19.0.0-rc.0", "react-dom": ">=18 || >=19.0.0-rc.0" } }, "sha512-n4RBPRI5bZByffR3u9DThfsjGSE9U2a67jixkTG9FxPgvgASXjXmnUK8w8IPTEBHng4TN85z2FZjEDeJbD2O+Q=="],
+
+    "@heroui/chip": ["@heroui/chip@2.2.10", "", { "dependencies": { "@heroui/react-utils": "2.1.7", "@heroui/shared-icons": "2.1.5", "@heroui/shared-utils": "2.1.6", "@react-aria/focus": "3.19.1", "@react-aria/interactions": "3.23.0", "@react-aria/utils": "3.27.0", "@react-types/checkbox": "3.9.1" }, "peerDependencies": { "@heroui/system": ">=2.4.7", "@heroui/theme": ">=2.4.6", "react": ">=18 || >=19.0.0-rc.0", "react-dom": ">=18 || >=19.0.0-rc.0" } }, "sha512-gQL5gM0V6krXKZrFaC85dXOJmFNvPn6JQK1ZBi6mQZjYY+HoHqTVre3toZnTJBGT2CQnxfVFAa4Ltfvr4WZ+dQ=="],
 
     "@heroui/code": ["@heroui/code@2.2.10", "", { "dependencies": { "@heroui/react-utils": "2.1.7", "@heroui/shared-utils": "2.1.6", "@heroui/system-rsc": "2.3.9" }, "peerDependencies": { "@heroui/theme": ">=2.4.6", "react": ">=18 || >=19.0.0-rc.0", "react-dom": ">=18 || >=19.0.0-rc.0" } }, "sha512-A/rxzcMR6Vo8VTTATHkf3/PI9mZLjBCJAT/pwNWHVuuDdMjW6iAFSiGFFw8FAfSF95n0ABtbjXVloJ3jkIPsVw=="],
 
@@ -1051,6 +1058,8 @@
     "@heroui/aria-utils/@react-types/shared": ["@react-types/shared@3.27.0", "", { "peerDependencies": { "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1" } }, "sha512-gvznmLhi6JPEf0bsq7SwRYTHAKKq/wcmKqFez9sRdbED+SPMUmK5omfZ6w3EwUFQHbYUa4zPBYedQ7Knv70RMw=="],
 
     "@heroui/button/@react-types/shared": ["@react-types/shared@3.27.0", "", { "peerDependencies": { "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1" } }, "sha512-gvznmLhi6JPEf0bsq7SwRYTHAKKq/wcmKqFez9sRdbED+SPMUmK5omfZ6w3EwUFQHbYUa4zPBYedQ7Knv70RMw=="],
+
+    "@heroui/card/@react-types/shared": ["@react-types/shared@3.27.0", "", { "peerDependencies": { "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1" } }, "sha512-gvznmLhi6JPEf0bsq7SwRYTHAKKq/wcmKqFez9sRdbED+SPMUmK5omfZ6w3EwUFQHbYUa4zPBYedQ7Knv70RMw=="],
 
     "@heroui/divider/@react-types/shared": ["@react-types/shared@3.27.0", "", { "peerDependencies": { "react": "^16.8.0 || ^17.0.0-rc.1 || ^18.0.0 || ^19.0.0-rc.1" } }, "sha512-gvznmLhi6JPEf0bsq7SwRYTHAKKq/wcmKqFez9sRdbED+SPMUmK5omfZ6w3EwUFQHbYUa4zPBYedQ7Knv70RMw=="],
 
