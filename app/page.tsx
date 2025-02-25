@@ -2,24 +2,21 @@ import { siteConfig } from "@/config/site";
 import {
   GithubLogo,
   LinkedinLogo,
-  TwitterLogo,
+  XLogo,
 } from "@phosphor-icons/react/dist/ssr";
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { ProjectCard } from "./components/ProjectCard";
 
-const VasjanPortfolio = () => {
-  // Social icon mapping
+export default function Page() {
   const socialIcons: { [key: string]: React.ReactNode } = {
     github: <GithubLogo weight="fill" className="mr-2" size={18} />,
-    x: <TwitterLogo weight="fill" className="mr-2" size={18} />,
+    x: <XLogo weight="fill" className="mr-2" size={18} />,
     linkedin: <LinkedinLogo weight="fill" className="mr-2" size={18} />,
   };
 
   return (
-    <div className="font-sans bg-zinc-950 text-zinc-100 min-h-screen relative">
-
-
+    <div className=" bg-zinc-950 text-zinc-100 min-h-screen relative">
       <Navbar />
       <main className="px-4 md:px-8 py-16 max-w-7xl mx-auto relative z-10">
         {/* Hero Section */}
@@ -128,10 +125,7 @@ const VasjanPortfolio = () => {
         </section>
       </main>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
-};
-
-export default VasjanPortfolio;
+}

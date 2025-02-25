@@ -1,8 +1,10 @@
 import {
   GithubLogo,
   LinkedinLogo,
-  TwitterLogo,
-  Envelope, Code, Browsers
+  Envelope,
+  Code,
+  Browsers,
+  XLogo,
 } from "@phosphor-icons/react/dist/ssr";
 
 export const siteConfig = {
@@ -66,6 +68,6 @@ export const siteConfig = {
 
 export const socialIcons: { [key: string]: React.ReactNode } = {
   github: <GithubLogo weight="fill" className="mr-2" size={18} />,
-  x: <TwitterLogo weight="fill" className="mr-2" size={18} />,
+  x: <XLogo weight="fill" className="mr-2" size={18} />,
   linkedin: <LinkedinLogo weight="fill" className="mr-2" size={18} />,
 };
