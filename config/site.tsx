@@ -29,9 +29,9 @@ export const siteConfig = {
     },
   ],
   links: {
+    linkedin: "https://linkedin.com/in/v4sj4n",
     github: "https://github.com/v4sj4n",
     x: "https://x.com/v4sj4n",
-    linkedin: "https://linkedin.com/in/v4sj4n",
   },
   email: "work@vasjan.com",
   projects: [

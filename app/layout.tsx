@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/cover.png",
+        url: "https://vasjan.com/cover.png",
         width: 200,
         height: 200,
         alt: "Vasjan Çupri - Developer Page",

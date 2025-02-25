@@ -1,8 +1,4 @@
-import {
-  Code,
-  GithubLogo,
-  ArrowRight,
-} from "@phosphor-icons/react/dist/ssr";
+import { Code, GithubLogo, ArrowRight } from "@phosphor-icons/react/dist/ssr";
 
 type Project = {
   title: string;
@@ -15,7 +11,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
   return (
     <div
       key={project.title}
-      className="group bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/50 hover:border-red-600 transition-all duration-500 h-full flex flex-col rounded-sm hover:shadow-[0_5px_30px_-15px_rgba(220,38,38,0.3)]"
+      className="group bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/50 hover:border-red-600 transition-all duration-500 h-full flex flex-col rounded-md hover:shadow-[0_5px_30px_-15px_rgba(220,38,38,0.3)]"
     >
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-semibold mb-3 group-hover:text-red-500 transition-colors duration-300">
@@ -30,7 +26,7 @@ export const ProjectCard = ({ project }: { project: Project }) => {
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="bg-zinc-800/70 text-zinc-300 px-2 py-1 text-xs rounded-sm backdrop-blur-sm transition-colors duration-300 group-hover:bg-zinc-800 flex items-center"
+                className="bg-zinc-800/70 text-zinc-300 px-2 py-1 text-xs rounded-md backdrop-blur-sm transition-colors duration-300 group-hover:bg-zinc-800 flex items-center"
               >
                 <Code weight="bold" size={12} className="mr-1" />
                 {tech}

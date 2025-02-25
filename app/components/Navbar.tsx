@@ -5,7 +5,6 @@ export const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Handle scroll effect for navbar
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
@@ -25,7 +24,6 @@ export const Navbar = () => {
           vasjan<span className="text-red-600">.</span>
         </h1>
 
-        {/* Desktop navigation */}
         <ul className="hidden md:flex gap-1">
           {siteConfig.navItems.map((item) => (
             <li key={item.href}>
@@ -41,7 +39,6 @@ export const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile menu button */}
         <button
           className="md:hidden p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-opacity-50"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -65,7 +62,6 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile navigation menu with smooth transition */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           menuOpen ? "max-h-60 opacity-100 mt-4" : "max-h-0 opacity-0"
@@ -76,7 +72,7 @@ export const Navbar = () => {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="px-4 py-3 text-sm font-medium transition-colors hover:bg-zinc-800/50 rounded-sm mx-1 flex items-center"
+                className="px-4 py-3 text-sm font-medium transition-colors hover:bg-zinc-800/50 rounded-md mx-1 flex items-center"
                 onClick={() => setMenuOpen(false)}
               >
                 <span className="mr-3">{item.icon}</span>

@@ -18,8 +18,7 @@ export default function Page() {
   return (
     <div className=" bg-zinc-950 text-zinc-100 min-h-screen relative">
       <Navbar />
-      <main className="px-4 md:px-8 py-16 max-w-7xl mx-auto relative z-10">
-        {/* Hero Section */}
+      <main className="px-6 md:px-12 py-16 max-w-7xl mx-auto relative z-10">
         <section className="mb-24 relative">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -32,17 +31,17 @@ export default function Page() {
             <p className="text-xl mb-10 text-zinc-300 leading-relaxed max-w-2xl">
               {siteConfig.description}
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-2 md:gap-4">
               <a
                 href="#projects"
-                className="group bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-sm transition-all duration-300 relative overflow-hidden flex items-center"
+                className="group bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 relative overflow-hidden flex items-center"
               >
                 <span className="relative z-10">View Projects</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
               </a>
               <a
                 href="#contact"
-                className="group bg-transparent text-white font-medium py-3 px-6 border border-zinc-700 hover:border-red-600 rounded-sm transition-all duration-300 relative overflow-hidden flex items-center"
+                className="group bg-transparent text-white font-medium py-3 px-6 border border-zinc-700 hover:border-red-600 rounded-md transition-all duration-300 relative overflow-hidden flex items-center"
               >
                 <span className="relative z-10">Get in Touch</span>
                 <span className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
@@ -59,12 +58,11 @@ export default function Page() {
                 href={url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-zinc-900/80 backdrop-blur-sm hover:bg-zinc-800/80 px-5 py-2 rounded-sm text-sm font-medium transition-all duration-300 border border-zinc-800/50 hover:border-red-600 hover:shadow-[0_0_15px_rgba(220,38,38,0.15)] flex items-center"
+                className="group flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 px-6 py-3 rounded-md transition-all duration-300 border border-zinc-800 hover:border-red-600"
               >
                 {socialIcons[platform]}
-                <span className="relative">
+                <span className="font-medium">
                   {platform.charAt(0).toUpperCase() + platform.slice(1)}
-                  <span className="absolute inset-x-0 bottom-0 h-px w-0 bg-red-500 transition-all duration-300 group-hover:w-full"></span>
                 </span>
               </a>
             ))}
@@ -103,7 +101,7 @@ export default function Page() {
         </section>
 
         <section id="contact" className="mb-16 scroll-mt-24">
-          <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/50 p-8 md:p-12 text-center max-w-4xl mx-auto rounded-sm relative overflow-hidden group hover:border-red-600/50 transition-all duration-500">
+          <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/50 p-8 md:p-12 text-center max-w-4xl mx-auto rounded-md relative overflow-hidden group hover:border-red-600/50 transition-all duration-500">
             <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <div className="relative z-10">
               <h2 className="text-3xl font-bold mb-4">
@@ -115,7 +113,7 @@ export default function Page() {
               </p>
               <a
                 href={`mailto:${siteConfig.email}`}
-                className="group bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-8 rounded-sm transition-all duration-300 inline-flex items-center relative overflow-hidden"
+                className="group bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-8 rounded-md transition-all duration-300 inline-flex items-center relative overflow-hidden"
               >
                 <span className="relative z-10">Contact Me</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
