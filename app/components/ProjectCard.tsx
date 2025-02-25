@@ -1,7 +1,5 @@
 import {
   Code,
-  MapPin,
-  Envelope,
   GithubLogo,
   ArrowRight,
 } from "@phosphor-icons/react/dist/ssr";
