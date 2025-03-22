@@ -15,7 +15,7 @@ export const Navbar = () => {
   }, []);
   return (
     <nav
-      className={`backdrop-blur-md bg-zinc-900/90 border-b border-zinc-800/50 px-4 md:px-6 py-4 sticky top-0 z-50 transition-all duration-300 ${
+      className={`backdrop-blur-md bg-zinc-900/20 border-b border-zinc-800/40 px-4 md:px-6 py-4 sticky top-0 z-50 transition-all duration-300 ${
         scrolled ? "shadow-[0_5px_20px_-3px_rgba(0,0,0,0.3)]" : ""
       }`}
     >

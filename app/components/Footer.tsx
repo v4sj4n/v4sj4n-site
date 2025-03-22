@@ -13,25 +13,25 @@ export const Footer = () => {
             <h2 className="text-2xl font-bold mb-4">
               vasjan<span className="text-red-600">.</span>
             </h2>
-            <p className="text-zinc-400 mb-4 leading-relaxed flex items-start">
+            <p className="text-zinc-400 mb-4 flex items-start">
               <Code
                 weight="fill"
                 className="mt-1 mr-2 flex-shrink-0"
                 size={18}
               />
-              <span>
+              <span className="font-light">
                 Full-stack developer specializing in creating powerful web
                 solutions that drive business growth.
               </span>
             </p>
-            <p className="text-zinc-500 flex items-center">
+            <p className="text-zinc-400 font-light flex items-start">
               <MapPin weight="fill" className="mr-2" size={18} />
               Based in Albania, working worldwide.
             </p>
           </div>
 
           <div>
-            <h3 className="text-lg font-medium mb-4 text-zinc-200">
+            <h3 className="text-lg font-bold mb-4 text-zinc-200">
               Navigation
             </h3>
             <ul className="space-y-2">
@@ -39,7 +39,7 @@ export const Footer = () => {
                 <li key={item.href}>
                   <a
                     href={item.href}
-                    className="text-zinc-400 hover:text-red-500 transition-colors flex items-center"
+                    className="text-zinc-400 font-light hover:text-red-500 transition-colors flex items-center"
                   >
                     <span className="mr-2">{item.icon}</span>
                     {item.label}
@@ -50,8 +50,8 @@ export const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-medium mb-4 text-zinc-200">Connect</h3>
-            <ul className="space-y-2">
+            <h3 className="text-lg font-bold mb-4 text-zinc-200">Connect</h3>
+            <ul className="space-y-2 font-light">
               {Object.entries(siteConfig.links).map(([platform, url]) => (
                 <li key={platform}>
                   <a

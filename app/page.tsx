@@ -7,6 +7,7 @@ import {
 import { Navbar } from "./components/Navbar";
 import { Footer } from "./components/Footer";
 import { ProjectCard } from "./components/ProjectCard";
+import AnimatedSection from "./components/TextSlide";
 
 export default function Page() {
   const socialIcons: { [key: string]: React.ReactNode } = {
@@ -19,37 +20,7 @@ export default function Page() {
     <div className=" bg-zinc-950 text-zinc-100 min-h-screen relative">
       <Navbar />
       <main className="px-6 md:px-12 py-16 max-w-7xl mx-auto relative z-10">
-        <section className="mb-24 relative">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Hello, I&apos;m{" "}
-              <span className="text-red-600 relative">
-                Vasjan Çupri
-                <span className="absolute -z-10 inset-x-0 bottom-1 h-3 bg-red-600/20 blur-md"></span>
-              </span>
-            </h1>
-            <p className="text-xl mb-10 text-zinc-300 leading-relaxed max-w-2xl">
-              {siteConfig.description}
-            </p>
-            <div className="flex flex-wrap gap-2 md:gap-4">
-              <a
-                href="#projects"
-                className="group bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-6 rounded-md transition-all duration-300 relative overflow-hidden flex items-center"
-              >
-                <span className="relative z-10">View Projects</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </a>
-              <a
-                href="#contact"
-                className="group bg-transparent text-white font-medium py-3 px-6 border border-zinc-700 hover:border-red-600 rounded-md transition-all duration-300 relative overflow-hidden flex items-center"
-              >
-                <span className="relative z-10">Get in Touch</span>
-                <span className="absolute inset-0 bg-red-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </a>
-            </div>
-          </div>
-        </section>
-
+      <AnimatedSection />
         <section className="mb-24">
           <div className="flex flex-wrap gap-4 justify-center">
             {Object.entries(siteConfig.links).map(([platform, url]) => (
@@ -107,7 +78,7 @@ export default function Page() {
               <h2 className="text-3xl font-bold mb-4">
                 Let&apos;s Build Something Together
               </h2>
-              <p className="text-lg mb-8 max-w-lg mx-auto text-zinc-400">
+              <p className="text-md mb-8 font-light max-w-lg mx-auto text-zinc-400">
                 Need a custom web solution for your business? Let&apos;s discuss
                 how I can help you meet your goals.
               </p>

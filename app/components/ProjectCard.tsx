@@ -14,10 +14,10 @@ export const ProjectCard = ({ project }: { project: Project }) => {
       className="group bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/50 hover:border-red-600 transition-all duration-500 h-full flex flex-col rounded-md hover:shadow-[0_5px_30px_-15px_rgba(220,38,38,0.3)]"
     >
       <div className="p-6 flex flex-col flex-grow">
-        <h3 className="text-xl font-semibold mb-3 group-hover:text-red-500 transition-colors duration-300">
+        <h3 className="text-xl font-bold mb-3 group-hover:text-red-500 transition-colors duration-300">
           {project.title}
         </h3>
-        <p className="mb-6 text-zinc-400 leading-relaxed flex-grow">
+        <p className="mb-6 text-zinc-400 font-light flex-grow">
           {project.description}
         </p>
 

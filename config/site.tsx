@@ -42,6 +42,14 @@ export const siteConfig = {
       sourceCode: "https://github.com/v4sj4n/Vaschat",
       technologies: ["nextjs", "shadcn"],
     },
+   
+    {
+      title: "Moments",
+      description:
+        "Connect with others and preserve shared memories in a dedicated space for your favorite groups.",
+      sourceCode: "https://github.com/v4sj4n/Moments",
+      technologies: ["nextjs", "supabase", "clerk"],
+    },
     {
       title: "HR Software",
       description:
@@ -55,13 +63,6 @@ export const siteConfig = {
         "nest-js",
         "mongodb",
       ],
-    },
-    {
-      title: "Moments",
-      description:
-        "Connect with others and preserve shared memories in a dedicated space for your favorite groups.",
-      sourceCode: "https://github.com/v4sj4n/Moments",
-      technologies: ["nextjs", "supabase", "clerk"],
     },
   ],
 };
