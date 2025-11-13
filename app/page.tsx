@@ -1,100 +1,65 @@
-import { siteConfig } from "@/config/site";
-import {
-  GithubLogo,
-  LinkedinLogo,
-  XLogo,
-} from "@phosphor-icons/react/dist/ssr";
-import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
-import { ProjectCard } from "./components/ProjectCard";
-import AnimatedSection from "./components/TextSlide";
+import Image from "next/image";
 
-export default function Page() {
-  const socialIcons: { [key: string]: React.ReactNode } = {
-    github: <GithubLogo weight="fill" className="mr-2" size={18} />,
-    x: <XLogo weight="fill" className="mr-2" size={18} />,
-    linkedin: <LinkedinLogo weight="fill" className="mr-2" size={18} />,
-  };
-
+export default function Home() {
   return (
-    <div className=" bg-zinc-950 text-zinc-100 min-h-screen relative">
-      <Navbar />
-      <main className="px-6 md:px-12 py-16 max-w-7xl mx-auto relative z-10">
-      <AnimatedSection />
-        <section className="mb-24">
-          <div className="flex flex-wrap gap-4 justify-center">
-            {Object.entries(siteConfig.links).map(([platform, url]) => (
-              <a
-                key={platform}
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 bg-zinc-900 hover:bg-zinc-800 px-6 py-3 rounded-md transition-all duration-300 border border-zinc-800 hover:border-red-600"
-              >
-                {socialIcons[platform]}
-                <span className="font-medium">
-                  {platform.charAt(0).toUpperCase() + platform.slice(1)}
-                </span>
-              </a>
-            ))}
-          </div>
-        </section>
-
-        <section id="projects" className="mb-24 scroll-mt-24">
-          <div className="relative">
-            <h2 className="text-3xl font-bold mb-12 relative inline-block">
-              Projects
-              <svg
-                className="absolute -bottom-3 left-0"
-                width="120"
-                height="25"
-                viewBox="0 0 120 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M2 9.5C20 4.5 40 3.5 60.5 9.5C81 15.5 100 12.5 118 9.5"
-                  stroke="#DC2626"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="opacity-80"
-                />
-              </svg>
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {siteConfig.projects.map((project) => (
-              <ProjectCard project={project} key={project.sourceCode} />
-            ))}
-          </div>
-        </section>
-
-        <section id="contact" className="mb-16 scroll-mt-24">
-          <div className="bg-zinc-900/80 backdrop-blur-sm border border-zinc-800/50 p-8 md:p-12 text-center max-w-4xl mx-auto rounded-md relative overflow-hidden group hover:border-red-600/50 transition-all duration-500">
-            <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            <div className="relative z-10">
-              <h2 className="text-3xl font-bold mb-4">
-                Let&apos;s Build Something Together
-              </h2>
-              <p className="text-md mb-8 font-light max-w-lg mx-auto text-zinc-400">
-                Need a custom web solution for your business? Let&apos;s discuss
-                how I can help you meet your goals.
-              </p>
-              <a
-                href={`mailto:${siteConfig.email}`}
-                className="group bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-8 rounded-md transition-all duration-300 inline-flex items-center relative overflow-hidden"
-              >
-                <span className="relative z-10">Contact Me</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-red-600 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-              </a>
-            </div>
-          </div>
-        </section>
+    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={100}
+          height={20}
+          priority
+        />
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+            To get started, edit the page.tsx file.
+          </h1>
+          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            Looking for a starting point or more instructions? Head over to{" "}
+            <a
+              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
+            >
+              Templates
+            </a>{" "}
+            or the{" "}
+            <a
+              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
+            >
+              Learning
+            </a>{" "}
+            center.
+          </p>
+        </div>
+        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
+          <a
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={16}
+              height={16}
+            />
+            Deploy Now
+          </a>
+          <a
+            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Documentation
+          </a>
+        </div>
       </main>
-
-      <Footer />
     </div>
   );
 }
