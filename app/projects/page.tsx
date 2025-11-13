@@ -44,7 +44,7 @@ function ProjectCard({ project }: { project: Project }) {
 
 export default function ProjectsPage() {
 	return (
-		<main className="mt-20 py-4 md:py-8">
+		<main className="mt-8 lg:mt-20 py-4 md:py-8">
 			<h3 className="mb-8 text-2xl font-bold">projects.</h3>
 
 			<div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
