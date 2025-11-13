@@ -52,7 +52,7 @@ function ContactLinkCard({ link }: { link: ContactLink }) {
 
 export default function ContactPage() {
 	return (
-		<main className="mt-8 lg:mt-20 py-4 md:py-8">
+		<main className="mt-8 lg:mt-20 py-4 md:py-8 px-4 md:px-6 lg:px-8">
 			<h3 className="mb-8 text-2xl font-bold">contact.</h3>
 
 			<div className="grid grid-cols-1 gap-12 lg:grid-cols-5">

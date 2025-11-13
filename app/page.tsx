@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HomePage() {
 	return (
-		<main className="mt-8 lg:mt-20 py-4 md:py-8">
+		<main className="mt-8 lg:mt-20 py-4 md:py-8 px-4 md:px-6 lg:px-8">
 			<h3 className="mb-8 text-2xl font-bold">home.</h3>
 			<div className="grid grid-cols-1 lg:grid-cols-4 lg:grid-rows-2 min-h-[60vh] rounded-lg border-2 border-primary dark:bg-accent bg-accent">
 				<div className="p-6 md:p-8 lg:col-span-2 lg:row-span-2 border-b lg:border-b-0 lg:border-r border-primary items-center justify-center flex">
