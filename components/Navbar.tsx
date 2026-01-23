@@ -25,8 +25,8 @@ export default function Navbar() {
     const mutedText = isLight ? "text-neutral-500" : "text-neutral-400";
 
     return (
-        <header className={`sticky top-0 z-50 border-b ${borderColor} backdrop-blur-xl ${isLight ? 'bg-white/80' : 'bg-neutral-950/80'}`}>
-            <div className="max-w-screen-2xl mx-auto flex items-center justify-between h-16 md:h-20 px-6 md:px-8">
+        <header className={`sticky top-0 z-50 backdrop-blur-2xl py-4 backdrop-saturate-150 ${isLight ? 'bg-white/40' : 'bg-neutral-950/40'} border-b border-neutral-200/20`}>
+            <div className="max-w-screen-2xl mx-auto flex items-center justify-between h-12 md:h-14 px-6 md:px-8">
 
                 {/* BRAND */}
                 <a href="#home" className="group flex items-center gap-1">

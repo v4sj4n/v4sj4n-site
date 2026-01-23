@@ -18,7 +18,7 @@ const mutedText = "text-neutral-500 dark:text-neutral-400";
 
 export default function HomePage() {
    return (
-      <div className={`min-h-screen font-sans transition-colors duration-300 ${themeColors}`}>
+      <div className={`min-h-screen font-sans border-x border-neutral-200 dark:border-neutral-800 transition-colors duration-300 ${themeColors}`}>
 
          {/* HEADER: ENHANCED STICKY NAVBAR */}
          <Navbar />
