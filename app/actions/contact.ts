@@ -14,7 +14,7 @@ export async function submitContact(formData: FormData) {
 
     await notion.pages.create({
         parent: {
-            database_id: process.env.NEXT_PUBLIC_NOTION_DB_ID!,
+            database_id: process.env.NOTION_DB_ID!,
         },
         properties: {
             Name: {
