@@ -6,7 +6,9 @@ import cloudflare from "@astrojs/cloudflare";
 export default defineConfig({
   integrations: [react()],
   output: "server",
-  adapter: cloudflare(),
+  adapter: cloudflare({
+    imageService: 'compile',
+  }),
   env: {
     schema: {
       NOTION_SECRET: envField.string({ context: "server", access: "secret" }),

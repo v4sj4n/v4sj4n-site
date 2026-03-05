@@ -39,12 +39,9 @@ export const server = {
                 });
 
                 return { success: true };
-            } catch (error) {
+            } catch (error: any) {
                 console.error("Action error:", error);
-                throw new ActionError({
-                    code: "INTERNAL_SERVER_ERROR",
-                    message: "Failed to submit message",
-                });
+                return { success: false, error: error.message || "Submit failed" };
             }
         },
     }),

@@ -24,8 +24,8 @@ export default function ContactForm() {
         try {
             const { data: resData, error } = await actions.contact(data);
 
-            if (error) {
-                console.error("Action error:", error);
+            if (error || (resData && !resData.success)) {
+                console.error("Action error:", error || resData?.error);
                 throw new Error("Failed");
             }
 
