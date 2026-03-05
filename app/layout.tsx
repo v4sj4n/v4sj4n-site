@@ -12,7 +12,15 @@ export const metadata: Metadata = {
 	title: "Vasjan Çupri - Full-Stack Developer",
 	description:
 		"I develop efficient, scalable web solutions that empower businesses to streamline operations and achieve digital growth. Specializing in TypeScript, React, Next.js, and Node.js.",
-	keywords: ["Full-Stack Developer", "React", "Next.js", "TypeScript", "Node.js", "Web Development", "Vasjan Çupri"],
+	keywords: [
+		"Full-Stack Developer",
+		"React",
+		"Next.js",
+		"TypeScript",
+		"Node.js",
+		"Web Development",
+		"Vasjan Çupri",
+	],
 	authors: [{ name: "Vasjan Çupri", url: "https://vasjan.com" }],
 	creator: "Vasjan Çupri",
 	metadataBase: new URL("https://vasjan.com"),
@@ -23,11 +31,23 @@ export const metadata: Metadata = {
 			{ url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
 		],
 		apple: [
-			{ url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+			{
+				url: "/icons/apple-touch-icon.png",
+				sizes: "180x180",
+				type: "image/png",
+			},
 		],
 		other: [
-			{ rel: "android-chrome", url: "/icons/android-chrome-192x192.png", sizes: "192x192" },
-			{ rel: "android-chrome", url: "/icons/android-chrome-512x512.png", sizes: "512x512" },
+			{
+				rel: "android-chrome",
+				url: "/icons/android-chrome-192x192.png",
+				sizes: "192x192",
+			},
+			{
+				rel: "android-chrome",
+				url: "/icons/android-chrome-512x512.png",
+				sizes: "512x512",
+			},
 		],
 	},
 	manifest: "/icons/site.webmanifest",
@@ -76,9 +96,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body
-				className={`${geologica.variable} antialiased`}
-			>
+			<body className={`${geologica.variable} antialiased`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"

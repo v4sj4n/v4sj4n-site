@@ -1,75 +1,111 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import { Moon, Sun } from 'lucide-react';
-import { useTheme } from 'next-themes';
+"use client";
+import React, { useState, useEffect } from "react";
+import { Moon, Sun } from "lucide-react";
+import { useTheme } from "next-themes";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+
+const navItems = ["Home", "Projects", "Contact"];
 
 export default function Navbar() {
-    const { resolvedTheme, setTheme } = useTheme();
-    const [mounted, setMounted] = useState(false);
-    const [time, setTime] = useState<Date | null>(null);
+	const { resolvedTheme, setTheme } = useTheme();
+	const [mounted, setMounted] = useState(false);
+	const [scrolled, setScrolled] = useState(false);
+	const { scrollY } = useScroll();
 
-    useEffect(() => {
-        setMounted(true);
-        setTime(new Date());
-        const timer = setInterval(() => setTime(new Date()), 1000);
-        return () => clearInterval(timer);
-    }, []);
+	useEffect(() => {
+		setMounted(true);
+	}, []);
 
-    const toggleTheme = () => setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
+	useMotionValueEvent(scrollY, "change", (latest) => {
+		setScrolled(latest > 50);
+	});
 
-    // Use dark theme as default for SSR to avoid hydration mismatch
-    const isLight = mounted ? resolvedTheme === 'light' : false;
+	const toggleTheme = () =>
+		setTheme(resolvedTheme === "light" ? "dark" : "light");
+	const isLight = mounted ? resolvedTheme === "light" : false;
 
-    const borderColor = isLight ? "border-neutral-950" : "border-white";
-    const subBorderColor = isLight ? "border-neutral-200" : "border-neutral-800";
-    const mutedText = isLight ? "text-neutral-500" : "text-neutral-400";
+	return (
+		<motion.header
+			initial={{ y: -20, opacity: 0 }}
+			animate={{ y: 0, opacity: 1 }}
+			transition={{ duration: 0.4, ease: [0.32, 0.72, 0, 1] }}
+			className={`fixed z-50 transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+				scrolled
+					? `top-4 left-4 right-4 md:left-0 md:right-0 md:mx-auto max-w-2xl rounded-2xl backdrop-blur-2xl backdrop-saturate-150 border shadow-lg ${
+							isLight
+								? "bg-white/70 border-neutral-200/50 shadow-black/3"
+								: "bg-neutral-950/70 border-neutral-800/50 shadow-black/20"
+						}`
+					: "top-0 left-0 right-0 w-full bg-transparent border-b border-transparent"
+			}`}
+		>
+			<div
+				className={`mx-auto flex items-center justify-between transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] ${scrolled ? "px-5 h-12" : "px-6 md:px-8 h-14 md:h-16 max-w-screen-xl"}`}
+			>
+				{/* BRAND */}
+				<motion.a
+					href="#home"
+					className="group flex items-center gap-0 overflow-hidden"
+					whileHover={{ scale: 1.02 }}
+					whileTap={{ scale: 0.98 }}
+				>
+					<h1 className="text-lg md:text-xl font-semibold tracking-tight leading-none transition-colors duration-300 group-hover:text-primary flex items-baseline">
+						{/* The "v" is always visible */}
+						<span className="inline-block">v</span>
 
-    return (
-        <header className={`sticky top-0 z-50 backdrop-blur-2xl py-4 backdrop-saturate-150 ${isLight ? 'bg-white/40' : 'bg-neutral-950/40'} border-b border-neutral-200/20`}>
-            <div className="max-w-screen-2xl mx-auto flex items-center justify-between h-12 md:h-14 px-6 md:px-8">
+						{/* The remaining letters morph out when scrolled */}
+						<span
+							className="inline-flex overflow-hidden transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)]"
+							style={{
+								maxWidth: scrolled ? "0px" : "120px",
+								opacity: scrolled ? 0 : 1,
+							}}
+						>
+							<span className="whitespace-nowrap">asjan</span>
+						</span>
 
-                {/* BRAND */}
-                <a href="#home" className="group flex items-center gap-1">
-                    <h1 className="text-xl md:text-2xl font-bold tracking-tighter uppercase leading-none transition-colors group-hover:text-red-600">
-                        Vasjan<span className="text-red-600 group-hover:scale-125 inline-block transition-transform">.</span>
-                    </h1>
-                </a>
+						{/* The dot */}
+						<span className="text-primary group-hover:scale-125 inline-block transition-transform duration-300">
+							.
+						</span>
+					</h1>
+				</motion.a>
 
-                {/* NAV LINKS */}
-                <nav className="hidden md:flex items-center gap-10">
-                    {['Home', 'Projects', 'Contact'].map((item) => (
-                        <a
-                            key={item}
-                            href={`#${item.toLowerCase()}`}
-                            className={`relative text-xs font-bold uppercase tracking-widest py-2 transition-colors hover:text-red-600 after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-red-600 after:transition-all after:duration-300 hover:after:w-full`}
-                        >
-                            {item}
-                        </a>
-                    ))}
-                </nav>
+				{/* NAV LINKS - Desktop */}
+				<nav className="hidden md:flex items-center gap-1">
+					{navItems.map((item) => (
+						<a
+							key={item}
+							href={`#${item.toLowerCase()}`}
+							className={`relative px-4 py-2 text-[13px] font-medium tracking-wide transition-colors duration-300 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800/50 ${
+								isLight
+									? "text-neutral-600 hover:text-neutral-950"
+									: "text-neutral-400 hover:text-white"
+							}`}
+						>
+							{item}
+						</a>
+					))}
+				</nav>
 
-                {/* RIGHT SIDE: TIME + THEME + MOBILE MENU */}
-                <div className="flex items-center gap-4 md:gap-6">
-                    {/* Live Clock */}
-                    {time && (
-                        <div className={`hidden md:flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider ${mutedText} px-3 py-1.5 rounded-full border ${subBorderColor}`}>
-                            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
-                            {time.toLocaleTimeString('en-GB')}
-                        </div>
-                    )}
-
-                    {/* Theme Toggle */}
-                    <button
-                        onClick={toggleTheme}
-                        className={`p-2.5 rounded-full border ${subBorderColor} hover:border-red-600 hover:text-red-600 transition-all duration-300 hover:scale-105`}
-                        aria-label="Toggle Theme"
-                    >
-                        {isLight ? <Moon size={16} /> : <Sun size={16} />}
-                    </button>
-
-
-                </div>
-            </div>
-        </header>
-    );
+				{/* RIGHT SIDE */}
+				<div className="flex items-center gap-3">
+					{/* Theme Toggle */}
+					<motion.button
+						onClick={toggleTheme}
+						whileHover={{ scale: 1.05 }}
+						whileTap={{ scale: 0.95 }}
+						className={`p-2.5 rounded-full transition-all duration-300 ${
+							isLight
+								? "hover:bg-neutral-100 text-neutral-500 hover:text-neutral-950"
+								: "hover:bg-neutral-800 text-neutral-400 hover:text-white"
+						}`}
+						aria-label="Toggle Theme"
+					>
+						{isLight ? <Moon size={18} /> : <Sun size={18} />}
+					</motion.button>
+				</div>
+			</div>
+		</motion.header>
+	);
 }
