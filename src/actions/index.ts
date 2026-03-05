@@ -1,7 +1,7 @@
 import { defineAction, ActionError } from "astro:actions";
 import { z } from "astro:schema";
-import { notion } from "@/lib/notion";
-
+import { NOTION_SECRET, NOTION_DB_ID } from "astro:env/server";
+import { Client } from "@notionhq/client";
 export const server = {
     contact: defineAction({
         accept: "json",
@@ -12,9 +12,10 @@ export const server = {
         }),
         handler: async (input) => {
             try {
+                const notion = new Client({ auth: NOTION_SECRET });
                 await notion.pages.create({
                     parent: {
-                        database_id: import.meta.env.NOTION_DB_ID,
+                        database_id: NOTION_DB_ID,
                     },
                     properties: {
                         Name: {
