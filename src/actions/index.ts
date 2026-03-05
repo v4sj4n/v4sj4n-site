@@ -4,7 +4,7 @@ import { NOTION_SECRET, NOTION_DB_ID } from "astro:env/server";
 import { Client } from "@notionhq/client";
 export const server = {
     contact: defineAction({
-        accept: "json",
+        accept: "form",
         input: z.object({
             name: z.string().min(1),
             email: z.string().email(),
@@ -12,7 +12,10 @@ export const server = {
         }),
         handler: async (input) => {
             try {
-                const notion = new Client({ auth: NOTION_SECRET });
+                const notion = new Client({
+                    auth: NOTION_SECRET,
+                    fetch: (url, init) => fetch(url, init as RequestInit),
+                });
                 await notion.pages.create({
                     parent: {
                         database_id: NOTION_DB_ID,

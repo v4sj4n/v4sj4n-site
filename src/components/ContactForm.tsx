@@ -1,44 +1,32 @@
 import { Send } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useActionState, useEffect, useRef } from "react";
 import { actions } from "astro:actions";
 
 const ease = [0.32, 0.72, 0, 1] as const;
 
 export default function ContactForm() {
-    const [status, setStatus] = useState<
-        "idle" | "submitting" | "success" | "error"
-    >("idle");
-
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        setStatus("submitting");
-
-        const formData = new FormData(e.currentTarget);
-        const data = {
-            name: formData.get("name") as string,
-            email: formData.get("email") as string,
-            message: formData.get("message") as string,
-        };
-
-        try {
-            const { data: resData, error } = await actions.contact(data);
-
-            if (error || (resData && !resData.success)) {
-                console.error("Action error:", error || resData?.error);
-                throw new Error("Failed");
+    const formRef = useRef<HTMLFormElement>(null);
+    const [state, submitAction, isPending] = useActionState(
+        async (prevState: any, formData: FormData) => {
+            try {
+                const { data, error } = await actions.contact(formData);
+                if (error || (data && !data.success)) {
+                    return { status: "error", message: error?.message || data?.error };
+                }
+                return { status: "success" };
+            } catch (err) {
+                return { status: "error", message: "Network error" };
             }
+        },
+        { status: "idle" }
+    );
 
-            setStatus("success");
-            (e.target as HTMLFormElement).reset();
-
-            // Reset status after a few seconds
-            setTimeout(() => setStatus("idle"), 3000);
-        } catch {
-            setStatus("error");
-            setTimeout(() => setStatus("idle"), 3000);
+    useEffect(() => {
+        if (state.status === "success") {
+            formRef.current?.reset();
         }
-    };
+    }, [state.status]);
 
     return (
         <div className="relative rounded-2xl border border-neutral-200/60 dark:border-neutral-800/60 bg-white dark:bg-neutral-900/50 p-8 md:p-10">
@@ -49,7 +37,7 @@ export default function ContactForm() {
                 </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form ref={formRef} action={submitAction} className="space-y-8">
                 {[
                     {
                         label: "Name",
@@ -104,6 +92,10 @@ export default function ContactForm() {
                     />
                 </motion.div>
 
+                {state.status === "error" && (
+                    <p className="text-red-500 text-sm">Failed: {state.message}</p>
+                )}
+
                 <motion.div
                     initial={{ opacity: 0, y: 12 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -112,19 +104,17 @@ export default function ContactForm() {
                 >
                     <motion.button
                         type="submit"
-                        disabled={status === "submitting"}
+                        disabled={isPending}
                         whileHover={{ scale: 1.01 }}
                         whileTap={{ scale: 0.99 }}
                         className="group w-full py-4 mt-4 flex justify-center items-center gap-3 bg-neutral-950 dark:bg-white text-white dark:text-neutral-950 rounded-xl text-[13px] font-semibold tracking-wide hover:bg-primary dark:hover:bg-primary dark:hover:text-white transition-all duration-500 disabled:opacity-60"
                     >
-                        {status === "submitting"
+                        {isPending
                             ? "Sending..."
-                            : status === "success"
+                            : state.status === "success"
                                 ? "Message Sent ✓"
-                                : status === "error"
-                                    ? "Failed — Try Again"
-                                    : "Send Message"}
-                        {status === "idle" && (
+                                : "Send Message"}
+                        {!isPending && state.status !== "success" && (
                             <Send
                                 size={14}
                                 className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-300"
