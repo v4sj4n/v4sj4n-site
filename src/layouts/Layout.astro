@@ -11,7 +11,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -76,13 +76,12 @@ const {
 		<script is:inline>
 			(function () {
 				const saved = localStorage.getItem("theme");
-				const prefersDark = window.matchMedia(
-					"(prefers-color-scheme: dark)",
-				).matches;
-				if (saved === "dark" || (!saved && prefersDark)) {
-					document.documentElement.classList.add("dark");
-				} else {
+				if (saved === "light") {
 					document.documentElement.classList.remove("dark");
+				} else {
+					document.documentElement.classList.add("dark");
+					// Default to dark
+					if (!saved) localStorage.setItem("theme", "dark");
 				}
 			})();
 		</script>
