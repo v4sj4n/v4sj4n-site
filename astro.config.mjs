@@ -7,4 +7,11 @@ export default defineConfig({
   integrations: [react()],
   output: "server",
   adapter: cloudflare(),
+  vite: {
+    resolve: {
+      alias: {
+        "react-dom/server": "react-dom/server.edge",
+      },
+    },
+  },
 });
