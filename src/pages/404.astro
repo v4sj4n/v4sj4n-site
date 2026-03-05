@@ -1,0 +1,49 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import "@/styles/globals.css";
+---
+
+<Layout title="404 - Page Not Found">
+	<main class="mt-8 lg:mt-20 py-4 md:py-8 px-4 md:px-6 lg:px-8">
+		<h3 class="mb-8 text-2xl font-bold">404.</h3>
+		<div
+			class="flex min-h-[60vh] items-center justify-center rounded-lg border-2 border-primary bg-accent dark:bg-accent"
+		>
+			<div class="p-6 md:p-8 text-center max-w-2xl">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="80"
+					height="80"
+					viewBox="0 0 256 256"
+					class="mx-auto mb-6 text-primary"
+				>
+					<path
+						fill="currentColor"
+						d="M128 20a108 108 0 1 0 108 108A108.12 108.12 0 0 0 128 20Zm0 196a88 88 0 1 1 88-88a88.1 88.1 0 0 1-88 88Zm-8-80V80a8 8 0 0 1 16 0v56a8 8 0 0 1-16 0Zm20 36a12 12 0 1 1-12-12a12 12 0 0 1 12 12Z"
+					></path>
+				</svg>
+				<h1 class="text-4xl md:text-5xl font-bold mb-4">Page Not Found</h1>
+				<p class="text-lg text-muted-foreground mb-8">
+					The page you&apos;re looking for doesn&apos;t exist or has been moved.
+				</p>
+				<a
+					href="/"
+					class="inline-flex items-center gap-2 rounded-lg border border-primary bg-primary px-6 py-3 text-lg font-medium text-primary-foreground transition-all duration-300 hover:bg-primary/90 hover:shadow-lg"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 256 256"
+						fill="currentColor"
+					>
+						<path
+							d="M219.31 108.68l-80-80a16 16 0 0 0-22.62 0l-80 80A15.87 15.87 0 0 0 32 120v96a8 8 0 0 0 8 8h64a8 8 0 0 0 8-8v-56h32v56a8 8 0 0 0 8 8h64a8 8 0 0 0 8-8v-96a15.87 15.87 0 0 0-4.69-11.32Z"
+						></path>
+					</svg>
+					Back to Home
+				</a>
+			</div>
+		</div>
+	</main>
+</Layout>

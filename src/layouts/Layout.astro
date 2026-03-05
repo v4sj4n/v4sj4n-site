@@ -1,0 +1,95 @@
+---
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = "Vasjan Çupri - Full-Stack Developer",
+	description = "I develop efficient, scalable web solutions that empower businesses to streamline operations and achieve digital growth. Specializing in TypeScript, React, Next.js, and Node.js.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- SEO -->
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<meta
+			name="keywords"
+			content="Full-Stack Developer, React, Next.js, TypeScript, Node.js, Web Development, Vasjan Çupri"
+		/>
+		<meta name="author" content="Vasjan Çupri" />
+		<meta name="creator" content="Vasjan Çupri" />
+		<meta name="robots" content="index, follow" />
+		<meta
+			name="googlebot"
+			content="index, follow, max-video-preview:-1, max-image-preview:large, max-snippet:-1"
+		/>
+		<link rel="canonical" href="https://vasjan.com" />
+
+		<!-- Favicons -->
+		<link rel="icon" href="/favicon.ico" sizes="any" />
+		<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
+		<link rel="manifest" href="/icons/site.webmanifest" />
+
+		<!-- Open Graph -->
+		<meta property="og:type" content="website" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:url" content="https://vasjan.com" />
+		<meta property="og:site_name" content="Vasjan Çupri" />
+		<meta property="og:title" content="Vasjan Çupri - Full-Stack Developer" />
+		<meta
+			property="og:description"
+			content="I develop efficient, scalable web solutions that empower businesses to streamline operations and achieve digital growth."
+		/>
+		<meta property="og:image" content="/cover.png" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Vasjan Çupri - Full-Stack Developer" />
+
+		<!-- Twitter -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Vasjan Çupri - Full-Stack Developer" />
+		<meta
+			name="twitter:description"
+			content="I develop efficient, scalable web solutions that empower businesses to streamline operations and achieve digital growth."
+		/>
+		<meta name="twitter:creator" content="@v4sj4n" />
+		<meta name="twitter:image" content="/cover.png" />
+
+		<!-- Google Fonts: Geologica -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<!-- Theme initialization (prevent flash) -->
+		<script is:inline>
+			(function () {
+				const saved = localStorage.getItem("theme");
+				const prefersDark = window.matchMedia(
+					"(prefers-color-scheme: dark)",
+				).matches;
+				if (saved === "dark" || (!saved && prefersDark)) {
+					document.documentElement.classList.add("dark");
+				} else {
+					document.documentElement.classList.remove("dark");
+				}
+			})();
+		</script>
+	</head>
+	<body class="antialiased">
+		<div class="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-48">
+			<slot />
+		</div>
+	</body>
+</html>
