@@ -120,7 +120,13 @@
 			"emailPlaceholder": "your@email.com",
 			"message": "Meddelande",
 			"messagePlaceholder": "Berätta om ditt projekt...",
-			"submit": "Skicka meddelande"
+			"submit": "Skicka meddelande",
+			"consent": "I agree to be contacted about my inquiry.",
+			"consentRequired": "Please accept the checkbox to continue.",
+			"submitting": "Sending...",
+			"success": "Message sent! I'll get back to you within 24 hours.",
+			"error": "Something went wrong. Please try again.",
+			"turnstileError": "Verification failed. Please try again."
 		}
 	},
 	"footer": {

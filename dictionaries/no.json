@@ -120,7 +120,13 @@
 			"emailPlaceholder": "your@email.com",
 			"message": "Melding",
 			"messagePlaceholder": "Fortell meg om prosjektet ditt...",
-			"submit": "Send melding"
+			"submit": "Send melding",
+			"consent": "I agree to be contacted about my inquiry.",
+			"consentRequired": "Please accept the checkbox to continue.",
+			"submitting": "Sending...",
+			"success": "Message sent! I'll get back to you within 24 hours.",
+			"error": "Something went wrong. Please try again.",
+			"turnstileError": "Verification failed. Please try again."
 		}
 	},
 	"footer": {

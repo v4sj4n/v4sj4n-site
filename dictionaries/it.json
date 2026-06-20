@@ -124,7 +124,13 @@
 			"emailPlaceholder": "your@email.com",
 			"message": "Messaggio",
 			"messagePlaceholder": "Raccontami del tuo progetto...",
-			"submit": "Invia Messaggio"
+			"submit": "Invia Messaggio",
+			"consent": "Accetto di essere contattato riguardo alla mia richiesta.",
+			"consentRequired": "Seleziona la casella per continuare.",
+			"submitting": "Invio in corso...",
+			"success": "Messaggio inviato! Ti risponderò entro 24 ore.",
+			"error": "Qualcosa è andato storto. Riprova.",
+			"turnstileError": "Verifica non riuscita. Riprova."
 		}
 	},
 	"footer": {

@@ -22,8 +22,8 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadContext, resolveTargetSelection } from "./context.mjs";
-import { resolveFiles } from "./live-inject.mjs";
 import { readLiveServerInfo } from "./lib/impeccable-paths.mjs";
+import { resolveFiles } from "./live-inject.mjs";
 import { resolveLiveTarget } from "./live-target.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));

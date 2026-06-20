@@ -1,6 +1,6 @@
+import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
 import { getMessages, setRequestLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
 import { LocaleProvider } from "@/components/LocaleProvider";
 import { SetHtmlLang } from "@/components/SetHtmlLang";
 import { routing } from "@/i18n/routing";

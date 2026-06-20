@@ -2,8 +2,8 @@
 
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { Link } from "@/i18n/navigation";
 import { appleEase } from "@/lib/motion";
 
 /** Scroll distance over which the pill morph completes */

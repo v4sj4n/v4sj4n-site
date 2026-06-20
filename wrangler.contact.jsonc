@@ -1,0 +1,6 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "v4sj4n-contact",
+	"main": "workers/contact/index.ts",
+	"compatibility_date": "2025-06-20"
+}

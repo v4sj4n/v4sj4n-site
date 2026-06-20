@@ -124,7 +124,13 @@
 			"emailPlaceholder": "your@email.com",
 			"message": "Mensagem",
 			"messagePlaceholder": "Fale-me sobre o seu projeto...",
-			"submit": "Enviar Mensagem"
+			"submit": "Enviar Mensagem",
+			"consent": "Concordo em ser contactado sobre o meu pedido.",
+			"consentRequired": "Marque a caixa para continuar.",
+			"submitting": "A enviar...",
+			"success": "Mensagem enviada! Responderei em 24 horas.",
+			"error": "Algo correu mal. Tente novamente.",
+			"turnstileError": "A verificação falhou. Tente novamente."
 		}
 	},
 	"footer": {

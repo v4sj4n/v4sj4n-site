@@ -124,7 +124,13 @@
 			"emailPlaceholder": "your@email.com",
 			"message": "Nachricht",
 			"messagePlaceholder": "Erzählen Sie mir von Ihrem Projekt...",
-			"submit": "Nachricht senden"
+			"submit": "Nachricht senden",
+			"consent": "Ich stimme zu, bezüglich meiner Anfrage kontaktiert zu werden.",
+			"consentRequired": "Bitte aktivieren Sie das Kontrollkästchen.",
+			"submitting": "Wird gesendet...",
+			"success": "Nachricht gesendet! Ich melde mich innerhalb von 24 Stunden.",
+			"error": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+			"turnstileError": "Verifizierung fehlgeschlagen. Bitte erneut versuchen."
 		}
 	},
 	"footer": {

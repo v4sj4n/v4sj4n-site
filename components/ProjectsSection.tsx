@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { useState, type ComponentType } from "react";
+import { type ComponentType, useState } from "react";
 import {
 	HrSoftwareMockup,
 	MomentsMockup,

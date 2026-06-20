@@ -124,7 +124,13 @@
 			"emailPlaceholder": "your@email.com",
 			"message": "Message",
 			"messagePlaceholder": "Parlez-moi de votre projet...",
-			"submit": "Envoyer le Message"
+			"submit": "Envoyer le Message",
+			"consent": "J'accepte d'être contacté au sujet de ma demande.",
+			"consentRequired": "Veuillez cocher la case pour continuer.",
+			"submitting": "Envoi en cours...",
+			"success": "Message envoyé ! Je vous répondrai sous 24 heures.",
+			"error": "Une erreur est survenue. Veuillez réessayer.",
+			"turnstileError": "Échec de la vérification. Veuillez réessayer."
 		}
 	},
 	"footer": {

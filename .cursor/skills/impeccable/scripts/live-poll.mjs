@@ -12,11 +12,11 @@
 import { execFileSync } from "node:child_process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { readLiveServerInfo } from "./lib/impeccable-paths.mjs";
 import {
 	completionAckForAcceptResult,
 	completionTypeForAcceptResult,
 } from "./live/completion.mjs";
-import { readLiveServerInfo } from "./lib/impeccable-paths.mjs";
 
 // Absolute path to a sibling script in this skill's scripts dir, so runtime
 // error hints print a directly-runnable command instead of a placeholder.

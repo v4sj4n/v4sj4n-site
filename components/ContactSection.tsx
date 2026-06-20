@@ -3,9 +3,9 @@
 import { ArrowUpRight, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
 import type { ComponentType, SVGProps } from "react";
-import { ContactForm } from "./ContactForm";
 import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import { SectionEyebrow } from "@/components/SectionEyebrow";
+import { ContactForm } from "./ContactForm";
 
 type ChannelIcon = ComponentType<SVGProps<SVGSVGElement>>;
 
