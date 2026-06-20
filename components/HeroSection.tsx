@@ -2,14 +2,13 @@
 
 import { ArrowDown, ArrowUpRight } from "lucide-react";
 import {
-	AnimatePresence,
 	motion,
 	useReducedMotion,
 	useScroll,
 	useTransform,
 } from "motion/react";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { ClipReveal } from "@/components/ClipReveal";
 import { HeroFloatingUI } from "@/components/HeroFloatingUI";
 import { SectionEyebrow } from "@/components/SectionEyebrow";
@@ -59,7 +58,6 @@ export function HeroSection() {
 		shouldAnimateAmbient,
 		completeEnter,
 	} = useProgressiveMotion();
-	const [showShortName, setShowShortName] = useState(false);
 
 	const enter = !prefersReducedMotion && shouldEnter;
 	const ambient = !prefersReducedMotion && shouldAnimateAmbient;
@@ -67,11 +65,16 @@ export function HeroSection() {
 	const contentY = useTransform(scrollYProgress, [0, 1], [0, -72]);
 	const contentOpacity = useTransform(scrollYProgress, [0, 0.55], [1, 0]);
 	const scrollOpacity = useTransform(scrollYProgress, [0, 0.12], [1, 0]);
+
 	useEffect(() => {
-		if (prefersReducedMotion) return;
-		const timer = window.setTimeout(() => setShowShortName(true), 1300);
-		return () => window.clearTimeout(timer);
-	}, [prefersReducedMotion]);
+		const mq = window.matchMedia("(min-width: 1024px)");
+		const syncEnter = () => {
+			if (!mq.matches) completeEnter();
+		};
+		syncEnter();
+		mq.addEventListener("change", syncEnter);
+		return () => mq.removeEventListener("change", syncEnter);
+	}, [completeEnter]);
 
 	return (
 		<section
@@ -79,7 +82,7 @@ export function HeroSection() {
 			id="home"
 			className="relative flex min-h-dvh flex-col justify-center overflow-hidden"
 		>
-			<div className="pointer-events-none absolute inset-0 overflow-hidden">
+			<div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block">
 				<motion.div
 					initial={{ opacity: 0, scale: 0.85 }}
 					animate={{ opacity: 1, scale: 1 }}
@@ -150,7 +153,7 @@ export function HeroSection() {
 					</ClipReveal>
 				</div>
 
-				<div className="min-w-0 w-full overflow-visible">
+				<div className="hidden min-w-0 w-full overflow-visible lg:block">
 					<HeroFloatingUI
 						shouldEnter={enter}
 						shouldAnimateAmbient={ambient}

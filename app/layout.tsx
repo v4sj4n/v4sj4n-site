@@ -1,5 +1,14 @@
+import type { Metadata } from "next";
 import { Fraunces, Geologica } from "next/font/google";
 import "./globals.css";
+
+export const metadata: Metadata = {
+	icons: {
+		icon: "/favicon.png",
+		shortcut: "/favicon.png",
+		apple: "/favicon.png",
+	},
+};
 
 const geologica = Geologica({
 	variable: "--font-geologica",
@@ -36,6 +45,7 @@ export default function RootLayout({
 			suppressHydrationWarning
 		>
 			<head>
+				{/* biome-ignore lint/security/noDangerouslySetInnerHtml: static theme bootstrap to prevent flash */}
 				<script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
 			</head>
 			<body className="flex min-h-full flex-col transition-colors duration-300">

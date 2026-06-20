@@ -175,9 +175,12 @@ export function HrSoftwareMockup({ accent, title }: MockupProps) {
 									<p className="mb-1 truncate text-[8px] font-medium text-muted-foreground sm:mb-1.5 sm:text-[10px]">
 										{col.label}
 									</p>
-									{Array.from({ length: col.count }).map((_, i) => (
+									{Array.from(
+										{ length: col.count },
+										(_, cardIndex) => `${col.label}-card-${cardIndex + 1}`,
+									).map((cardKey) => (
 										<div
-											key={i}
+											key={cardKey}
 											className="mb-1 rounded border border-black/10 bg-white/90 p-1.5 dark:border-white/5 dark:bg-card/90 sm:mb-1.5 sm:p-2"
 										>
 											<Skeleton

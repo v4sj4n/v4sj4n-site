@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { Send } from "lucide-react";
 import Script from "next/script";
 import { useTranslations } from "next-intl";
 import { validateContactInput } from "@/lib/contact-validation";
@@ -12,6 +13,7 @@ type TurnstileApi = {
 		options: {
 			sitekey: string;
 			theme?: "light" | "dark" | "auto";
+			appearance?: "always" | "execute" | "interaction-only";
 			size?: "normal" | "flexible" | "compact";
 			action?: string;
 			callback?: (token: string) => void;
@@ -85,6 +87,9 @@ export function ContactForm() {
 	const turnstileRef = useRef<HTMLDivElement>(null);
 	const turnstileWidgetId = useRef<string | null>(null);
 	const [token, setToken] = useState("");
+	const [name, setName] = useState("");
+	const [email, setEmail] = useState("");
+	const [message, setMessage] = useState("");
 	const [status, setStatus] = useState<FormStatus>("idle");
 	const [errorKey, setErrorKey] = useState<FormErrorKey | null>(null);
 	const [turnstileTheme, setTurnstileTheme] = useState<"light" | "dark">(
@@ -135,6 +140,7 @@ export function ContactForm() {
 			turnstileWidgetId.current = turnstile.render(turnstileRef.current, {
 				sitekey: turnstileSiteKey,
 				theme: turnstileTheme,
+				appearance: "interaction-only",
 				size: "flexible",
 				action: "contact-form",
 				callback: (nextToken) => setToken(nextToken),
@@ -227,6 +233,9 @@ export function ContactForm() {
 
 			setStatus("success");
 			form.reset();
+			setName("");
+			setEmail("");
+			setMessage("");
 			resetTurnstile();
 		} catch {
 			setErrorKey("error");
@@ -236,7 +245,9 @@ export function ContactForm() {
 	};
 
 	const isSubmitting = status === "submitting";
-	const canSubmit = !!token && !isSubmitting;
+	const isFormValid = validateContactInput({ name, email, message }) === null;
+	const canSubmit =
+		isFormValid && (!turnstileSiteKey || !!token) && !isSubmitting;
 
 	return (
 		<>
@@ -260,6 +271,8 @@ export function ContactForm() {
 							type="text"
 							required
 							minLength={2}
+							value={name}
+							onChange={(event) => setName(event.target.value)}
 							disabled={isSubmitting}
 							placeholder={t("namePlaceholder")}
 							className={inputClassName}
@@ -277,6 +290,8 @@ export function ContactForm() {
 							name="email"
 							type="email"
 							required
+							value={email}
+							onChange={(event) => setEmail(event.target.value)}
 							disabled={isSubmitting}
 							placeholder={t("emailPlaceholder")}
 							className={inputClassName}
@@ -296,6 +311,8 @@ export function ContactForm() {
 						name="message"
 						rows={4}
 						required
+						value={message}
+						onChange={(event) => setMessage(event.target.value)}
 						disabled={isSubmitting}
 						placeholder={t("messagePlaceholder")}
 						className={`${inputClassName} resize-none`}
@@ -303,9 +320,7 @@ export function ContactForm() {
 				</div>
 
 				{turnstileSiteKey ? (
-					<div
-						className={`turnstile-field ${fieldSurfaceClassName} px-3 py-2.5 sm:px-4 sm:py-3`}
-					>
+					<div className="turnstile-field">
 						<div ref={turnstileRef} className="w-full" />
 					</div>
 				) : null}
@@ -327,9 +342,10 @@ export function ContactForm() {
 					disabled={!canSubmit}
 					whileHover={canSubmit ? { scale: 1.02 } : undefined}
 					whileTap={canSubmit ? { scale: 0.96 } : undefined}
-					className="rounded-full bg-foreground px-7 py-3.5 text-[13px] font-semibold tracking-wide text-background transition-colors duration-500 hover:bg-primary disabled:cursor-not-allowed disabled:opacity-50"
+					className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-[13px] font-semibold tracking-wide text-background transition-colors duration-500 hover:bg-primary disabled:cursor-not-allowed disabled:opacity-50"
 				>
-					{isSubmitting ? t("submitting") : t("submit")}
+					<span>{isSubmitting ? t("submitting") : t("submit")}</span>
+					<Send size={16} strokeWidth={2} className="shrink-0" aria-hidden />
 				</motion.button>
 			</form>
 		</>

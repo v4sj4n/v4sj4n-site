@@ -98,6 +98,7 @@ function ChartCard({
 				</span>
 			</div>
 			<div className="relative px-4 py-4">
+				{/* biome-ignore lint/a11y/noSvgWithoutTitle: decorative chart illustration */}
 				<svg
 					viewBox={`0 0 ${chartWidth + 8} 60`}
 					className="h-[96px] w-full sm:h-[108px]"

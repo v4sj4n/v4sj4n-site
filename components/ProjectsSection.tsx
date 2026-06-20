@@ -132,7 +132,9 @@ function ProjectPanel({ projectKey }: { projectKey: ProjectKey }) {
 			transition={appleSpringSnappy}
 			className="space-y-3 sm:space-y-4 md:space-y-5"
 		>
-			<ProjectScreenshot projectKey={projectKey} title={title} />
+			<div className="hidden md:block">
+				<ProjectScreenshot projectKey={projectKey} title={title} />
+			</div>
 
 			<div className="space-y-3 px-4 pb-5 sm:space-y-4 sm:px-6 sm:pb-6 md:px-8 md:pb-8">
 				<h3 className="text-xl font-semibold tracking-[-0.02em] sm:text-2xl md:text-3xl">
