@@ -130,6 +130,9 @@
 			"submitting": "Sending...",
 			"success": "Message sent! I'll get back to you within 24 hours.",
 			"error": "Something went wrong. Please try again.",
+			"nameTooShort": "Name must be at least 2 characters.",
+			"invalidEmail": "Please enter a valid email address.",
+			"messageTooShort": "Message must be at least 4 words.",
 			"turnstileError": "Verification failed. Please try again."
 		}
 	},

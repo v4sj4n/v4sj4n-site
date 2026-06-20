@@ -137,3 +137,16 @@ h3 {
 p {
 	text-wrap: pretty;
 }
+
+.turnstile-field {
+	min-height: 4.5rem;
+}
+
+.turnstile-field > div {
+	width: 100%;
+}
+
+.turnstile-field iframe {
+	display: block;
+	width: 100% !important;
+}

@@ -130,6 +130,9 @@
 			"submitting": "Invio in corso...",
 			"success": "Messaggio inviato! Ti risponderò entro 24 ore.",
 			"error": "Qualcosa è andato storto. Riprova.",
+			"nameTooShort": "Il nome deve contenere almeno 2 caratteri.",
+			"invalidEmail": "Inserisci un indirizzo email valido.",
+			"messageTooShort": "Il messaggio deve contenere almeno 4 parole.",
 			"turnstileError": "Verifica non riuscita. Riprova."
 		}
 	},

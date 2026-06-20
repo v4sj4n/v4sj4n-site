@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { hasLocale } from "next-intl";
-import { getMessages, setRequestLocale } from "next-intl/server";
+import { getMessages, getTimeZone, setRequestLocale } from "next-intl/server";
 import { LocaleProvider } from "@/components/LocaleProvider";
 import { SetHtmlLang } from "@/components/SetHtmlLang";
 import { routing } from "@/i18n/routing";
@@ -23,9 +23,10 @@ export default async function LocaleLayout({ children, params }: Props) {
 
 	setRequestLocale(locale);
 	const messages = await getMessages();
+	const timeZone = await getTimeZone();
 
 	return (
-		<LocaleProvider locale={locale} messages={messages}>
+		<LocaleProvider locale={locale} messages={messages} timeZone={timeZone}>
 			<SetHtmlLang locale={locale} />
 			{children}
 		</LocaleProvider>

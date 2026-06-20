@@ -130,6 +130,9 @@
 			"submitting": "Enviando...",
 			"success": "¡Mensaje enviado! Te responderé en 24 horas.",
 			"error": "Algo salió mal. Inténtalo de nuevo.",
+			"nameTooShort": "El nombre debe tener al menos 2 caracteres.",
+			"invalidEmail": "Introduce una dirección de correo válida.",
+			"messageTooShort": "El mensaje debe tener al menos 4 palabras.",
 			"turnstileError": "La verificación falló. Inténtalo de nuevo."
 		}
 	},

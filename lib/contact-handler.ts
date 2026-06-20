@@ -1,3 +1,5 @@
+import { validateContactInput } from "./contact-validation";
+
 export interface ContactEnv {
 	TURNSTILE_SECRET_KEY?: string;
 	CLOUDFLARE_SECRET?: string;
@@ -21,7 +23,6 @@ type ContactPayload = {
 	name?: string;
 	email?: string;
 	message?: string;
-	consent?: boolean;
 	token?: string;
 };
 
@@ -162,7 +163,11 @@ export async function handleContactPost(
 	const origin = request.headers.get("Origin");
 	const resolved = resolveEnv(env);
 
-	if (!resolved.turnstileSecret || !resolved.notionSecret || !resolved.notionDbId) {
+	if (
+		!resolved.turnstileSecret ||
+		!resolved.notionSecret ||
+		!resolved.notionDbId
+	) {
 		return jsonResponse(
 			{ ok: false, error: "server_misconfigured" },
 			500,
@@ -183,18 +188,10 @@ export async function handleContactPost(
 	const message = payload.message?.trim() ?? "";
 	const token = payload.token?.trim() ?? "";
 
-	if (!name || !email || !message) {
+	const validationError = validateContactInput({ name, email, message });
+	if (validationError) {
 		return jsonResponse(
-			{ ok: false, error: "missing_fields" },
-			400,
-			origin,
-			env,
-		);
-	}
-
-	if (!payload.consent) {
-		return jsonResponse(
-			{ ok: false, error: "consent_required" },
+			{ ok: false, error: validationError },
 			400,
 			origin,
 			env,
@@ -204,16 +201,6 @@ export async function handleContactPost(
 	if (!token) {
 		return jsonResponse(
 			{ ok: false, error: "turnstile_required" },
-			400,
-			origin,
-			env,
-		);
-	}
-
-	const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-	if (!emailPattern.test(email)) {
-		return jsonResponse(
-			{ ok: false, error: "invalid_email" },
 			400,
 			origin,
 			env,
@@ -249,7 +236,11 @@ export async function handleContactPost(
 		);
 	}
 
-	const mailResponse = await sendContactEmail(resolved, { name, email, message });
+	const mailResponse = await sendContactEmail(resolved, {
+		name,
+		email,
+		message,
+	});
 	if (mailResponse && !mailResponse.ok) {
 		return jsonResponse(
 			{ ok: false, error: "delivery_failed" },

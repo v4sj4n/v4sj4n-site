@@ -130,6 +130,9 @@
 			"submitting": "Envoi en cours...",
 			"success": "Message envoyé ! Je vous répondrai sous 24 heures.",
 			"error": "Une erreur est survenue. Veuillez réessayer.",
+			"nameTooShort": "Le nom doit contenir au moins 2 caractères.",
+			"invalidEmail": "Veuillez saisir une adresse e-mail valide.",
+			"messageTooShort": "Le message doit contenir au moins 4 mots.",
 			"turnstileError": "Échec de la vérification. Veuillez réessayer."
 		}
 	},

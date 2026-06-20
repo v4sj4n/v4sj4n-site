@@ -130,6 +130,9 @@
 			"submitting": "Wird gesendet...",
 			"success": "Nachricht gesendet! Ich melde mich innerhalb von 24 Stunden.",
 			"error": "Etwas ist schiefgelaufen. Bitte erneut versuchen.",
+			"nameTooShort": "Der Name muss mindestens 2 Zeichen lang sein.",
+			"invalidEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+			"messageTooShort": "Die Nachricht muss mindestens 4 Wörter enthalten.",
 			"turnstileError": "Verifizierung fehlgeschlagen. Bitte erneut versuchen."
 		}
 	},

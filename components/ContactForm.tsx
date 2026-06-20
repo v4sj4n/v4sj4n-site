@@ -3,41 +3,179 @@
 import { motion } from "motion/react";
 import Script from "next/script";
 import { useTranslations } from "next-intl";
-import { useCallback, useId, useState } from "react";
+import { validateContactInput } from "@/lib/contact-validation";
+import { useCallback, useEffect, useRef, useState } from "react";
 
-declare global {
-	interface Window {
-		onContactTurnstileSuccess?: (token: string) => void;
-		onContactTurnstileExpired?: () => void;
-		onContactTurnstileError?: () => void;
-	}
-}
+type TurnstileApi = {
+	render: (
+		container: HTMLElement,
+		options: {
+			sitekey: string;
+			theme?: "light" | "dark" | "auto";
+			size?: "normal" | "flexible" | "compact";
+			action?: string;
+			callback?: (token: string) => void;
+			"expired-callback"?: () => void;
+			"error-callback"?: () => void;
+		},
+	) => string;
+	reset: (widgetId?: string) => void;
+	remove: (widgetId: string) => void;
+	ready: (callback: () => void) => void;
+};
 
-const inputClassName =
-	"w-full rounded-xl border border-black/[0.06] bg-card/95 px-4 py-3 text-sm outline outline-1 outline-black/[0.08] backdrop-blur-md transition-[border-color,box-shadow,transform] duration-300 placeholder:text-muted-foreground/60 hover:border-primary/20 hover:shadow-[0_2px_8px_rgba(0,0,0,0.04)] focus:border-primary/40 focus:shadow-[0_0_0_3px_oklch(from_var(--primary)_l_c_h/0.12),0_2px_8px_rgba(0,0,0,0.04)] dark:border-white/[0.06] dark:bg-card/90 dark:outline-white/[0.08] dark:hover:shadow-[0_2px_8px_rgba(0,0,0,0.25)]";
+const fieldSurfaceClassName =
+	"w-full rounded-xl border border-black/[0.06] bg-card/95 outline outline-1 outline-black/[0.08] backdrop-blur-md transition-[border-color,box-shadow] duration-300 dark:border-white/[0.06] dark:bg-card/90 dark:outline-white/[0.08]";
+
+const inputClassName = `${fieldSurfaceClassName} px-4 py-3 text-sm placeholder:text-muted-foreground/60 hover:border-primary/20 hover:shadow-[0_2px_8px_rgba(0,0,0,0.04)] focus:border-primary/40 focus:shadow-[0_0_0_3px_oklch(from_var(--primary)_l_c_h/0.12),0_2px_8px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_2px_8px_rgba(0,0,0,0.25)]`;
 
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
 const contactApiUrl = process.env.NEXT_PUBLIC_CONTACT_API_URL ?? "/api/contact";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
+type FormErrorKey =
+	| "turnstileError"
+	| "nameTooShort"
+	| "invalidEmail"
+	| "messageTooShort"
+	| "error";
+
+function mapValidationError(
+	error: ReturnType<typeof validateContactInput>,
+): FormErrorKey {
+	switch (error) {
+		case "invalid_name":
+			return "nameTooShort";
+		case "invalid_email":
+			return "invalidEmail";
+		case "message_too_short":
+			return "messageTooShort";
+		default:
+			return "error";
+	}
+}
+
+function mapServerError(error: string | undefined): FormErrorKey {
+	switch (error) {
+		case "turnstile_failed":
+		case "turnstile_required":
+			return "turnstileError";
+		case "invalid_name":
+			return "nameTooShort";
+		case "invalid_email":
+			return "invalidEmail";
+		case "message_too_short":
+			return "messageTooShort";
+		default:
+			return "error";
+	}
+}
+
+function readSiteTheme(): "light" | "dark" {
+	if (typeof document === "undefined") {
+		return "dark";
+	}
+
+	return document.documentElement.classList.contains("dark") ? "dark" : "light";
+}
+
 export function ContactForm() {
 	const t = useTranslations("contact.form");
-	const consentId = useId();
+	const turnstileRef = useRef<HTMLDivElement>(null);
+	const turnstileWidgetId = useRef<string | null>(null);
 	const [token, setToken] = useState("");
-	const [consent, setConsent] = useState(false);
 	const [status, setStatus] = useState<FormStatus>("idle");
-	const [errorKey, setErrorKey] = useState<string | null>(null);
+	const [errorKey, setErrorKey] = useState<FormErrorKey | null>(null);
+	const [turnstileTheme, setTurnstileTheme] = useState<"light" | "dark">(
+		"dark",
+	);
+
+	useEffect(() => {
+		setTurnstileTheme(readSiteTheme());
+
+		const observer = new MutationObserver(() => {
+			setTurnstileTheme(readSiteTheme());
+		});
+
+		observer.observe(document.documentElement, {
+			attributes: true,
+			attributeFilter: ["class"],
+		});
+
+		return () => observer.disconnect();
+	}, []);
+
+	useEffect(() => {
+		if (!turnstileSiteKey) {
+			return;
+		}
+
+		let cancelled = false;
+		let pollId: number | undefined;
+
+		const mountTurnstile = () => {
+			if (cancelled || !turnstileRef.current) {
+				return false;
+			}
+
+			const turnstile = (window as Window & { turnstile?: TurnstileApi })
+				.turnstile;
+			if (!turnstile) {
+				return false;
+			}
+
+			if (turnstileWidgetId.current) {
+				turnstile.remove(turnstileWidgetId.current);
+				turnstileWidgetId.current = null;
+			}
+
+			setToken("");
+
+			turnstileWidgetId.current = turnstile.render(turnstileRef.current, {
+				sitekey: turnstileSiteKey,
+				theme: turnstileTheme,
+				size: "flexible",
+				action: "contact-form",
+				callback: (nextToken) => setToken(nextToken),
+				"expired-callback": () => setToken(""),
+				"error-callback": () => {
+					setToken("");
+					setErrorKey("turnstileError");
+					setStatus("error");
+				},
+			});
+
+			return true;
+		};
+
+		if (!mountTurnstile()) {
+			pollId = window.setInterval(() => {
+				if (mountTurnstile() && pollId !== undefined) {
+					window.clearInterval(pollId);
+				}
+			}, 50);
+		}
+
+		return () => {
+			cancelled = true;
+			if (pollId !== undefined) {
+				window.clearInterval(pollId);
+			}
+			const api = (window as Window & { turnstile?: TurnstileApi }).turnstile;
+			if (turnstileWidgetId.current && api) {
+				api.remove(turnstileWidgetId.current);
+				turnstileWidgetId.current = null;
+			}
+		};
+	}, [turnstileTheme]);
 
 	const resetTurnstile = useCallback(() => {
 		setToken("");
-		if (typeof window !== "undefined" && "turnstile" in window) {
-			const turnstile = (
-				window as Window & {
-					turnstile?: { reset: () => void };
-				}
-			).turnstile;
-			turnstile?.reset();
+		const turnstile = (window as Window & { turnstile?: TurnstileApi })
+			.turnstile;
+		if (turnstileWidgetId.current && turnstile) {
+			turnstile.reset(turnstileWidgetId.current);
 		}
 	}, []);
 
@@ -45,26 +183,21 @@ export function ContactForm() {
 		e.preventDefault();
 		setErrorKey(null);
 
-		if (!consent) {
-			setErrorKey("consentRequired");
-			setStatus("error");
-			return;
-		}
-
-		if (!token) {
-			setErrorKey("turnstileError");
-			setStatus("error");
-			return;
-		}
-
 		const form = e.currentTarget;
 		const formData = new FormData(form);
 		const name = String(formData.get("name") ?? "").trim();
 		const email = String(formData.get("email") ?? "").trim();
 		const message = String(formData.get("message") ?? "").trim();
 
-		if (!name || !email || !message) {
-			setErrorKey("error");
+		const validationError = validateContactInput({ name, email, message });
+		if (validationError) {
+			setErrorKey(mapValidationError(validationError));
+			setStatus("error");
+			return;
+		}
+
+		if (!token) {
+			setErrorKey("turnstileError");
 			setStatus("error");
 			return;
 		}
@@ -79,7 +212,6 @@ export function ContactForm() {
 					name,
 					email,
 					message,
-					consent: true,
 					token,
 				}),
 			});
@@ -87,14 +219,7 @@ export function ContactForm() {
 			const data = (await response.json()) as { ok?: boolean; error?: string };
 
 			if (!response.ok || !data.ok) {
-				setErrorKey(
-					data.error === "consent_required"
-						? "consentRequired"
-						: data.error === "turnstile_failed" ||
-								data.error === "turnstile_required"
-							? "turnstileError"
-							: "error",
-				);
+				setErrorKey(mapServerError(data.error));
 				setStatus("error");
 				resetTurnstile();
 				return;
@@ -102,7 +227,6 @@ export function ContactForm() {
 
 			setStatus("success");
 			form.reset();
-			setConsent(false);
 			resetTurnstile();
 		} catch {
 			setErrorKey("error");
@@ -112,26 +236,13 @@ export function ContactForm() {
 	};
 
 	const isSubmitting = status === "submitting";
-	const canSubmit = consent && !!token && !isSubmitting;
+	const canSubmit = !!token && !isSubmitting;
 
 	return (
 		<>
 			<Script
-				src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+				src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit"
 				strategy="afterInteractive"
-				onLoad={() => {
-					window.onContactTurnstileSuccess = (nextToken: string) => {
-						setToken(nextToken);
-					};
-					window.onContactTurnstileExpired = () => {
-						setToken("");
-					};
-					window.onContactTurnstileError = () => {
-						setToken("");
-						setErrorKey("turnstileError");
-						setStatus("error");
-					};
-				}}
 			/>
 
 			<form className="space-y-5 py-6 md:py-8" onSubmit={handleSubmit}>
@@ -148,6 +259,7 @@ export function ContactForm() {
 							name="name"
 							type="text"
 							required
+							minLength={2}
 							disabled={isSubmitting}
 							placeholder={t("namePlaceholder")}
 							className={inputClassName}
@@ -190,33 +302,12 @@ export function ContactForm() {
 					/>
 				</div>
 
-				<div className="flex items-start gap-3">
-					<input
-						id={consentId}
-						name="consent"
-						type="checkbox"
-						checked={consent}
-						disabled={isSubmitting}
-						onChange={(e) => setConsent(e.target.checked)}
-						className="mt-0.5 size-4 shrink-0 rounded border border-border accent-primary"
-					/>
-					<label
-						htmlFor={consentId}
-						className="text-[13px] leading-relaxed text-muted-foreground"
-					>
-						{t("consent")}
-					</label>
-				</div>
-
 				{turnstileSiteKey ? (
 					<div
-						className="cf-turnstile"
-						data-sitekey={turnstileSiteKey}
-						data-action="contact-form"
-						data-callback="onContactTurnstileSuccess"
-						data-expired-callback="onContactTurnstileExpired"
-						data-error-callback="onContactTurnstileError"
-					/>
+						className={`turnstile-field ${fieldSurfaceClassName} px-3 py-2.5 sm:px-4 sm:py-3`}
+					>
+						<div ref={turnstileRef} className="w-full" />
+					</div>
 				) : null}
 
 				{status === "success" ? (
@@ -227,11 +318,7 @@ export function ContactForm() {
 
 				{status === "error" && errorKey ? (
 					<p role="alert" className="text-sm font-medium text-destructive">
-						{errorKey === "consentRequired"
-							? t("consentRequired")
-							: errorKey === "turnstileError"
-								? t("turnstileError")
-								: t("error")}
+						{t(errorKey)}
 					</p>
 				) : null}
 
