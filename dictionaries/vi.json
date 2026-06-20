@@ -1,0 +1,131 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Nhà phát triển Full-stack",
+		"description": "Nhà phát triển full-stack tập trung vào việc xây dựng các sản phẩm kỹ thuật số vượt trội. Bằng cách tận dụng các công nghệ web hiện đại và AI, tôi tạo ra các giải pháp có thể mở rộng, hiệu suất cao và lấy người dùng làm trung tâm để giải quyết các vấn đề kinh doanh thực tế."
+	},
+	"nav": {
+		"home": "Trang chủ",
+		"projects": "Dự án",
+		"contact": "Liên hệ",
+		"themeLight": "Chuyển sang chế độ sáng",
+		"themeDark": "Chuyển sang chế độ tối"
+	},
+	"hero": {
+		"badge": "Sẵn sàng nhận dự án",
+		"title": "Tôi kiến tạo trải nghiệm",
+		"titleAccent": "kỹ thuật số.",
+		"description": "Nhà phát triển full-stack tập trung vào việc xây dựng các sản phẩm kỹ thuật số vượt trội. Bằng cách tận dụng các công nghệ web hiện đại và AI, tôi tạo ra các giải pháp có thể mở rộng, hiệu suất cao và lấy người dùng làm trung tâm để giải quyết các vấn đề kinh doanh thực tế.",
+		"resume": "Xem CV",
+		"work": "Xem các dự án",
+		"scroll": "Cuộn xuống",
+		"ui": {
+			"chart": {
+				"title": "Thời gian phản hồi",
+				"metric": "42ms",
+				"mon": "Hai",
+				"wed": "Tư",
+				"fri": "Sáu",
+				"sun": "CN"
+			},
+			"command": {
+				"placeholder": "Tìm kiếm…",
+				"searchProjects": "Tìm kiếm dự án…",
+				"createBranch": "Tạo nhánh",
+				"runCommand": "Chạy lệnh"
+			}
+		}
+	},
+	"projects": {
+		"label": "Dự án Tiêu biểu",
+		"title": "Những dự án giúp",
+		"titleAccent": "giải quyết vấn đề thực tế.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Hệ thống quản lý học tập (LMS) thế hệ mới được thiết kế để thay đổi cách học của học sinh và cách giảng dạy của giáo viên. OptimoLMS tận dụng AI để tự động tóm tắt các tài liệu dài, trích xuất các khái niệm cốt lõi từ các bài thuyết trình, tạo tài liệu học tập cá nhân hóa và hỗ trợ tức thì bất cứ khi nào học sinh cần trợ giúp. Bằng cách giảm thời gian tìm kiếm nội dung và tăng mức độ tương tác, nó tạo ra một trải nghiệm học tập thông minh và hiệu quả hơn."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "Một nền tảng quản lý nhân sự và lực lượng lao động toàn diện, kết hợp các hoạt động quản trị nhân sự truyền thống với các tính năng CRM mạnh mẽ. Từ tiếp nhận nhân viên mới, theo dõi chấm công, quản lý tiền lương và đánh giá hiệu suất đến quản lý danh sách ứng viên, quy trình tuyển dụng và quản lý mối quan hệ khách hàng, nền tảng này tập trung hóa mọi khía cạnh của nhân sự vào một hệ sinh thái duy nhất."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "Một nền tảng mạng xã hội cộng tác được xây dựng xung quanh những trải nghiệm chung. Người dùng có thể tạo các nhóm riêng tư hoặc công khai, nơi bạn bè, gia đình, đội ngũ hoặc cộng đồng có thể trò chuyện, chia sẻ phương tiện truyền thông và lưu giữ những kỷ niệm ý nghĩa nhất của họ ở một nơi. Moments biến các cuộc trò chuyện thành một dòng thời gian sống động về những trải nghiệm chung."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "Một nền tảng trò chuyện AI giúp người dùng kiểm soát hoàn toàn trải nghiệm AI của họ. Thay vì trả phí đăng ký định kỳ hàng tháng, người dùng chỉ cần kết nối các khóa API của riêng họ và truy cập ngay vào các mô hình AI yêu thích thông qua giao diện sạch sẽ và trực quan, đồng thời duy trì quyền sở hữu đối với mức độ sử dụng và chi phí của họ."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": ["Sinh học đại cương", "Giải tích II", "Lịch sử thế giới"],
+				"aiSummary": "Tóm tắt bằng AI",
+				"askPlaceholder": "Hỏi về Chương 4…"
+			},
+			"hrSoftware": {
+				"employees": "Nhân viên",
+				"openRoles": "Vị trí tuyển dụng",
+				"attendance": "Chấm công",
+				"applied": "Đã ứng tuyển",
+				"interview": "Phỏng vấn",
+				"offer": "Mời nhận việc",
+				"notifications": [
+					"Đã hoàn thành tính lương",
+					"Nhân viên mới: Sarah M.",
+					"Đến hạn đánh giá"
+				]
+			},
+			"moments": {
+				"groups": ["Chuyến đi gia đình", "Teambuilding", "Cuối tuần"],
+				"memoryCount": "{count} kỷ niệm"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": ["Kế hoạch refactor", "Thư nháp", "Hỗ trợ sửa lỗi"],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Liên hệ",
+		"title": "Hãy cùng tạo nên",
+		"titleAccent": "điều gì đó tuyệt vời.",
+		"description": "Tôi hiện đang tiếp nhận các dự án tự do và cơ hội hợp tác. Vui lòng liên hệ với tôi qua bất kỳ kênh nào bên dưới.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Hồ sơ chuyên nghiệp & mạng lưới kết nối."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "Tất cả mã nguồn và dự án của tôi."
+			},
+			"email": {
+				"label": "Email",
+				"description": "Gửi trực tiếp đến hộp thư của tôi."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Suy nghĩ & cập nhật."
+			}
+		},
+		"form": {
+			"heading": "Gửi tin nhắn",
+			"subheading": "Tôi sẽ phản hồi trong vòng 24 giờ.",
+			"name": "Tên",
+			"namePlaceholder": "Tên của bạn",
+			"email": "Email",
+			"emailPlaceholder": "your@email.com",
+			"message": "Tin nhắn",
+			"messagePlaceholder": "Hãy cho tôi biết về dự án của bạn...",
+			"submit": "Gửi tin nhắn"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Thiết kế bằng sự tận tâm",
+		"backToTop": "Về đầu trang"
+	}
+}

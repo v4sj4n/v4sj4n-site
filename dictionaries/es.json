@@ -1,0 +1,135 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Desarrollador Full-stack",
+		"description": "Desarrollador full-stack enfocado en la creación de productos digitales excepcionales. Aprovechando las tecnologías web modernas y la IA, creo soluciones escalables, eficientes y centradas en el usuario que resuelven problemas reales de negocio."
+	},
+	"nav": {
+		"home": "Inicio",
+		"projects": "Proyectos",
+		"contact": "Contacto",
+		"themeLight": "Cambiar a modo claro",
+		"themeDark": "Cambiar a modo oscuro"
+	},
+	"hero": {
+		"badge": "Disponible para trabajar",
+		"title": "Diseño experiencias",
+		"titleAccent": "digitales.",
+		"description": "Desarrollador full-stack enfocado en la creación de productos digitales excepcionales. Aprovechando las tecnologías web modernas y la IA, creo soluciones escalables, eficientes y centradas en el usuario que resuelven problemas reales de negocio.",
+		"resume": "Ver Currículum",
+		"work": "Ver mis proyectos",
+		"scroll": "Deslizar",
+		"ui": {
+			"chart": {
+				"title": "Tiempo de respuesta",
+				"metric": "42ms",
+				"mon": "Lun",
+				"wed": "Mié",
+				"fri": "Vie",
+				"sun": "Dom"
+			},
+			"command": {
+				"placeholder": "Buscar…",
+				"searchProjects": "Buscar proyectos…",
+				"createBranch": "Crear rama",
+				"runCommand": "Ejecutar comando"
+			}
+		}
+	},
+	"projects": {
+		"label": "Proyectos Seleccionados",
+		"title": "Proyectos que",
+		"titleAccent": "resuelven problemas reales.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Un sistema de gestión de aprendizaje (LMS) de próxima generación diseñado para transformar la forma en que los estudiantes aprenden y los educadores enseñan. OptimoLMS aprovecha la IA para resumir automáticamente documentos extensos, extraer conceptos clave de presentaciones, generar materiales de aprendizaje personalizados y brindar asistencia instantánea siempre que los estudiantes lo necesiten. Al reducir el tiempo dedicado a buscar contenido y aumentar la participación, crea una experiencia de aprendizaje más inteligente y eficiente."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "Una plataforma integral de gestión de recursos humanos y personal que combina las operaciones tradicionales de RR. HH. con potentes capacidades de CRM. Desde la incorporación de empleados, el seguimiento de asistencia, la gestión de nóminas y las revisiones de desempeño hasta los canales de candidatos, los flujos de trabajo de reclutamiento y la gestión de relaciones con los clientes, la plataforma centraliza todos los aspectos de los recursos humanos en un solo ecosistema."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "Una plataforma social colaborativa construida en torno a experiencias compartidas. Los usuarios pueden crear grupos privados o públicos donde amigos, familias o equipos pueden chatear, compartir archivos multimedia y preservar sus recuerdos más significativos en un solo lugar. Moments transforma las conversaciones en una línea de tiempo viva de experiencias compartidas."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "Una plataforma de chat de IA que brinda a los usuarios un control total sobre su experiencia de inteligencia artificial. En lugar de pagar tarifas de suscripción recurrentes, los usuarios simplemente pueden conectar sus propias claves API y acceder instantáneamente a sus modelos de IA favoritos a través de una interfaz limpia e intuitiva, manteniendo la propiedad de su uso y costos."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": ["Intro a la Biología", "Cálculo II", "Historia Universal"],
+				"aiSummary": "Resumen IA",
+				"askPlaceholder": "Preguntar sobre el Capítulo 4…"
+			},
+			"hrSoftware": {
+				"employees": "Empleados",
+				"openRoles": "Puestos Abiertos",
+				"attendance": "Asistencia",
+				"applied": "Postulados",
+				"interview": "Entrevista",
+				"offer": "Oferta",
+				"notifications": [
+					"Cálculo de nómina completado",
+					"Nuevo empleado: Sarah M.",
+					"Evaluación pendiente"
+				]
+			},
+			"moments": {
+				"groups": ["Viaje Familiar", "Retiro de Equipo", "Fin de Semana"],
+				"memoryCount": "{count} recuerdos"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": [
+					"Plan de refactorización",
+					"Borrador de correo",
+					"Ayuda de debug"
+				],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Ponte en contacto",
+		"title": "Creemos algo",
+		"titleAccent": "grandioso.",
+		"description": "Actualmente estoy aceptando proyectos freelance y oportunidades de colaboración. No dudes en contactarme a través de cualquiera de los canales a continuación.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Perfil profesional y red."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "Todo mi código y proyectos."
+			},
+			"email": {
+				"label": "Correo electrónico",
+				"description": "Directo a mi bandeja de entrada."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Pensamientos y actualizaciones."
+			}
+		},
+		"form": {
+			"heading": "Enviar un mensaje",
+			"subheading": "Te responderé dentro de las 24 horas.",
+			"name": "Nombre",
+			"namePlaceholder": "Tu nombre",
+			"email": "Correo electrónico",
+			"emailPlaceholder": "your@email.com",
+			"message": "Mensaje",
+			"messagePlaceholder": "Cuéntame sobre tu proyecto...",
+			"submit": "Enviar Mensaje"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Diseñado con cuidado",
+		"backToTop": "Volver arriba"
+	}
+}

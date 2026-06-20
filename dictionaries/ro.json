@@ -1,0 +1,135 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Dezvoltator Full-stack",
+		"description": "Dezvoltator full-stack axat pe crearea de produse digitale excepționale. Utilizând tehnologii web moderne și AI, creez soluții scalabile, performante și centrate sur utilizator, care rezolvă probleme reale de business."
+	},
+	"nav": {
+		"home": "Acasă",
+		"projects": "Proiecte",
+		"contact": "Contact",
+		"themeLight": "Comută la modul luminos",
+		"themeDark": "Comută la modul întunecat"
+	},
+	"hero": {
+		"badge": "Disponibil pentru proiecte",
+		"title": "Creez experiențe",
+		"titleAccent": "digitale.",
+		"description": "Dezvoltator full-stack axat pe crearea de produse digitale excepționale. Utilizând tehnologii web moderne și AI, creez soluții scalabile, performante și centrate pe utilizator, care rezolvă probleme reale de business.",
+		"resume": "Vezi CV-ul",
+		"work": "Vezi proiectele mele",
+		"scroll": "Derulează",
+		"ui": {
+			"chart": {
+				"title": "Timp de răspuns",
+				"metric": "42ms",
+				"mon": "Lun",
+				"wed": "Mie",
+				"fri": "Vin",
+				"sun": "Dum"
+			},
+			"command": {
+				"placeholder": "Caută…",
+				"searchProjects": "Caută proiecte…",
+				"createBranch": "Creează branch",
+				"runCommand": "Rulează comanda"
+			}
+		}
+	},
+	"projects": {
+		"label": "Proiecte Selectate",
+		"title": "Proiecte care",
+		"titleAccent": "rezolvă probleme reale.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Un sistem de management al învățării (LMS) de generație următoare, conceput pentru a transforma modul în care studenții învață și profesorii predau. OptimoLMS folosește inteligența artificială pentru a rezuma automat documente lungi, a extrage concepte-cheie din prezentări, a genera materiale de învățare personalizate și a oferi asistență instantanee ori de câte ori studenții au nevoie de ajutor. Prin reducerea timpului petrecut cu căutarea conținutului și creșterea implicării, acesta creează o experiență de învățare mai inteligentă și mai eficientă atât pentru profesori, cât și pentru cursanți."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "O platformă cuprinzătoare de management al resurselor umane și al forței de muncă, ce combină operațiunile tradiționale de resurse umane cu capacități puternice de CRM. De la integrarea angajaților, urmărirea prezenței, gestionarea salarizării și evaluările de performanță, până la fluxurile de recrutare și gestionarea relațiilor cu clienții, platforma centralizează fiecare aspect al resurselor umane într-un singur ecosistem. Concepută pentru a eficientiza operațiunile, a îmbunătăți productivitatea echipei și a oferi perspective acționabile prin analize în timp real și automatizare."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "O platformă socială de colaborare construită în jurul experiențelor comune. Utilizatorii pot crea grupuri private sau publice unde prietenii, familiile, echipele sau comunitățile pot discuta, partaja conținut media și își pot păstra cele mai semnificative amintiri într-un singur loc. Fie că este vorba despre documentarea călătoriilor, evenimentelor, reperelor importante sau a vieții de zi cu zi, Moments transformă conversațiile într-o cronologie vie a experiențelor împărtășite, care pot fi revizitate și celebrate împreună."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "O platformă de chat AI care oferă utilizatorilor control complet asupra experienței lor cu inteligența artificială. În loc să plătească taxe de abonament recurente, utilizatorii își pot conecta pur și simplu propriile chei API și pot accesa instantaneu modelele AI preferate printr-o interfață curată și intuitivă. VasChat acceptă mai mulți furnizori și modele, permițând utilizatorilor să compare răspunsurile, să gestioneze conversațiile și să utilizeze capacități avansate de AI, menținând în același timp controlul total asupra utilizării și costurilor lor."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": [
+					"Introducere în Biologie",
+					"Analiză Matematică II",
+					"Istorie Universală"
+				],
+				"aiSummary": "Rezumat AI",
+				"askPlaceholder": "Întreabă despre Capitolul 4…"
+			},
+			"hrSoftware": {
+				"employees": "Angajați",
+				"openRoles": "Roluri Deschise",
+				"attendance": "Prezență",
+				"applied": "Aplicați",
+				"interview": "Interviu",
+				"offer": "Ofertă",
+				"notifications": [
+					"Calculul salarial a fost finalizat",
+					"Angajat nou: Sarah M.",
+					"Evaluare scadentă"
+				]
+			},
+			"moments": {
+				"groups": ["Excursie în Familie", "Team Offsite", "Weekend"],
+				"memoryCount": "{count} amintiri"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": ["Plan refactoring", "Draft e-mail", "Ajutor debugging"],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Contactează-mă",
+		"title": "Să creăm",
+		"titleAccent": "ceva minunat.",
+		"description": "În prezent accept proiecte freelance și oportunități de colaborare. Nu ezita să mă contactezi prin oricare dintre canalele de mai jos.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Profil profesional și rețea."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "Toate proiectele și codul meu."
+			},
+			"email": {
+				"label": "Email",
+				"description": "Direct în căsuța poștală."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Gânduri și noutăți."
+			}
+		},
+		"form": {
+			"heading": "Trimite un mesaj",
+			"subheading": "Voi răspunde în termen de 24 de ore.",
+			"name": "Nume",
+			"namePlaceholder": "Numele tău",
+			"email": "Email",
+			"emailPlaceholder": "your@email.com",
+			"message": "Mesaj",
+			"messagePlaceholder": "Spune-mi despre proiectul tău...",
+			"submit": "Trimite Mesaj"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Proiectat cu atenție",
+		"backToTop": "Înapoi sus"
+	}
+}

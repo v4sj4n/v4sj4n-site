@@ -1,0 +1,135 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Full-stack Ontwikkelaar",
+		"description": "Full-stack ontwikkelaar gericht op het bouwen van uitzonderlijke digitale producten. Met behulp van moderne webtechnologieën en AI creëer ik schaalbare, performante en gebruikersgerichte oplossingen die echte zakelijke problemen oplossen."
+	},
+	"nav": {
+		"home": "Home",
+		"projects": "Projecten",
+		"contact": "Contact",
+		"themeLight": "Schakel over naar lichte modus",
+		"themeDark": "Schakel over naar donkere modus"
+	},
+	"hero": {
+		"badge": "Beschikbaar voor werk",
+		"title": "Ik maak digitale",
+		"titleAccent": "ervaringen.",
+		"description": "Full-stack ontwikkelaar gericht op het bouwen van uitzonderlijke digitale producten. Met behulp van moderne webtechnologieën und AI creëer ik schaalbare, performante en gebruikersgerichte oplossingen die echte zakelijke problemen oplossen.",
+		"resume": "Bekijk Resume",
+		"work": "Bekijk mijn werk",
+		"scroll": "Scrollen",
+		"ui": {
+			"chart": {
+				"title": "Responstijd",
+				"metric": "42ms",
+				"mon": "Maa",
+				"wed": "Woe",
+				"fri": "Vrij",
+				"sun": "Zon"
+			},
+			"command": {
+				"placeholder": "Zoeken…",
+				"searchProjects": "Zoek projecten…",
+				"createBranch": "Branch aanmaken",
+				"runCommand": "Opdracht uitvoeren"
+			}
+		}
+	},
+	"projects": {
+		"label": "Geselecteerd Werk",
+		"title": "Projecten die",
+		"titleAccent": "echte problemen oplossen.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Een next-generation Learning Management System (LMS) ontworpen om de manier waarop studenten leren en docenten lesgeven te transformeren. OptimoLMS maakt gebruik van AI om lange documenten automatisch samen te vatten, kernconcepten uit presentaties te extraheren, gepersonaliseerd leermateriaal te genereren en direct hulp te bieden wanneer studenten dat nodig hebben. Door zoektijden naar inhoud te verminderen en betrokkenheid te vergroten, creëert het een intelligentere, efficiëntere leerervaring."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "Een uitgebreid HR- en personeelsbeheerplatform dat traditionele HR-processen combineert met krachtige CRM-mogelijkheden. Van onboarding van medewerkers, urenregistratie, salarisadministratie en functioneringsgesprekken tot kandidatenpipelines, wervingsworkflows en klantrelatiebeheer; het platform centraliseert elk aspect van human resources in één enkel ecosysteem."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "Een interactief sociaal platform gebouwd rond gedeelde ervaringen. Gebruikers kunnen besloten of openbare groepen aanmaken waar vrienden, families of teams kunnen chatten, media kunnen delen en hun meest betekenisvolle herinneringen op één plek kunnen bewaren. Moments transformeert gesprekken in een levende tijdlijn van gedeelde ervaringen."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "Een AI-chatplatform dat gebruikers volledige controle geeft over hun AI-ervaring. In plaats van terugkerende abonnementskosten te betalen, kunnen gebruikers eenvoudig hun eigen API-sleutels koppelen en direct toegang krijgen tot hun favoriete AI-modellen via een schone en intuïtieve interface, terwijl ze de volledige controle behouden over hun verbruik en kosten."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": [
+					"Introductie Biologie",
+					"Calculus II",
+					"Wereldgeschiedenis"
+				],
+				"aiSummary": "AI-Samenvatting",
+				"askPlaceholder": "Stel een vraag over Hoofdstuk 4…"
+			},
+			"hrSoftware": {
+				"employees": "Medewerkers",
+				"openRoles": "Openstaande Vacatures",
+				"attendance": "Aanwezigheid",
+				"applied": "Gesolliciteerd",
+				"interview": "Gesprek",
+				"offer": "Aanbod",
+				"notifications": [
+					"Salarisronde voltooid",
+					"Nieuwe medewerker: Sarah M.",
+					"Beoordeling vereist"
+				]
+			},
+			"moments": {
+				"groups": ["Familiereis", "Team Offsite", "Weekend"],
+				"memoryCount": "{count} herinneringen"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": ["Refactorplan", "E-mailconcept", "Debug-hulp"],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Neem contact op",
+		"title": "Laten we samen",
+		"titleAccent": "iets moois creëren.",
+		"description": "Ik accepteer momenteel freelance projecten en samenwerkingsmogelijkheden. Neem gerust contact op via een van de onderstaande kanalen.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Professioneel profiel & netwerk."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "Al mijn code en projecten."
+			},
+			"email": {
+				"label": "E-mail",
+				"description": "Rechtstreeks in mijn inbox."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Gedachten & updates."
+			}
+		},
+		"form": {
+			"heading": "Stuur een bericht",
+			"subheading": "Ik reageer binnen 24 uur.",
+			"name": "Naam",
+			"namePlaceholder": "Jouw naam",
+			"email": "E-mail",
+			"emailPlaceholder": "your@email.com",
+			"message": "Bericht",
+			"messagePlaceholder": "Vertel me over je project...",
+			"submit": "Bericht Verzenden"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Met zorg ontworpen",
+		"backToTop": "Terug naar boven"
+	}
+}

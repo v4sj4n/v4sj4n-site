@@ -1,0 +1,42 @@
+import { defineRouting } from "next-intl/routing";
+
+export const routing = defineRouting({
+	locales: [
+		"en",
+		"ar",
+		"arc",
+		"bg",
+		"bn",
+		"de",
+		"el",
+		"es",
+		"fr",
+		"he",
+		"hi",
+		"hr",
+		"id",
+		"is",
+		"it",
+		"ja",
+		"ka",
+		"ko",
+		"nl",
+		"no",
+		"pl",
+		"pt",
+		"ro",
+		"ru",
+		"sq",
+		"sr",
+		"sv",
+		"th",
+		"tr",
+		"uk",
+		"ur",
+		"vi",
+		"zh",
+	],
+	defaultLocale: "en",
+});
+
+export type Locale = (typeof routing.locales)[number];

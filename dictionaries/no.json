@@ -1,0 +1,131 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Full-stack-utvikler",
+		"description": "Full-stack-utvikler fokusert på å bygge eksepsjonelle digitale produkter. Ved å kombinere moderne webteknologier og AI, skaper jeg skalerbare, ytelsessterke og sentrerte løsninger som løser reelle forretningsproblemer."
+	},
+	"nav": {
+		"home": "Hjem",
+		"projects": "Prosjekter",
+		"contact": "Kontakt",
+		"themeLight": "Bytt til lyst modus",
+		"themeDark": "Bytt til mørkt modus"
+	},
+	"hero": {
+		"badge": "Tilgjengelig for oppdrag",
+		"title": "Jeg skaper digitale",
+		"titleAccent": "opplevelser.",
+		"description": "Full-stack-utvikler fokusert på å bygge eksepsjonelle digitale produkter. Ved å kombinere moderne webteknologier og AI, skaper jeg skalerbare, ytelsessterke og sentrerte løsninger som løser reelle forretningsproblemer.",
+		"resume": "Vis CV",
+		"work": "Se mine arbeider",
+		"scroll": "Rull ned",
+		"ui": {
+			"chart": {
+				"title": "Svarstid",
+				"metric": "42ms",
+				"mon": "Man",
+				"wed": "Ons",
+				"fri": "Fre",
+				"sun": "Søn"
+			},
+			"command": {
+				"placeholder": "Søk…",
+				"searchProjects": "Søk prosjekter…",
+				"createBranch": "Opprett branch",
+				"runCommand": "Kjør kommando"
+			}
+		}
+	},
+	"projects": {
+		"label": "Utvalgte Arbeider",
+		"title": "Prosjekter som løser",
+		"titleAccent": "reelle problemer.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Neste generasjons læringsplattform (LMS) designet for å transformere måten studenter lærer og lærere underviser på. OptimoLMS bruker AI til å automatisk oppsummere lange dokumenter, hente ut kjernekonsepter fra presentasjoner, generere tilpasset studiemateriale og gi umiddelbar hjelp når studenter trenger det. Ved å redusere tiden som brukes på å lete etter innhold, skapes en mer intelligent og effektiv læringsopplevelse."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "En omfattende HR- og personaladministrasjonsplattform som kombinerer tradisjonelle HR-prosesser med kraftfulle CRM-funksjoner. Fra onboarding, fraværssporing, lønnshåndtering og medarbeidersamtaler til kandidatpipelines, rekrutteringsflyt og kundeoppfølging – plattformen sentraliserer alle aspekter av HR i ett felles økosystem."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "En samhandlingplattform bygget rundt delte opplevelser. Brukere kan opprette private eller offentlige grupper der venner, familier eller team kan chatte, dele medier og bevare sine mest meningsfulle minner på ett sted. Moments forvandler samtaler til en levende tidslinje av delte opplevelser."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "En AI-chattplattform som gir brukere fullstendig kontroll over sin AI-opplevelse. I stedet for å betale repeterende abonnementsavgifter, kan brukere enkelt koble til sine egne API-nøkler og umiddelbart få tilgang til sine favoritt-AI-modeller via et rent og intuitivt grensesnitt, med fullt eierskap over eget forbruk og kostnader."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": ["Intro til Biologi", "Analyse II", "Verdenshistorie"],
+				"aiSummary": "AI-Sammendrag",
+				"askPlaceholder": "Spør om Kapittel 4…"
+			},
+			"hrSoftware": {
+				"employees": "Ansatte",
+				"openRoles": "Ledige Stillinger",
+				"attendance": "Oppmøte",
+				"applied": "Søkere",
+				"interview": "Intervju",
+				"offer": "Tilbud",
+				"notifications": [
+					"Lønnskjøring fullført",
+					"Nyansatt: Sarah M.",
+					"Evaluering forfaller"
+				]
+			},
+			"moments": {
+				"groups": ["Familietur", "Team-samling", "Helg"],
+				"memoryCount": "{count} minner"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": ["Refaktoreringsplan", "E-postutkast", "Debug-hjelp"],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Ta kontakt",
+		"title": "La oss skape",
+		"titleAccent": "noe stort sammen.",
+		"description": "Jeg tar for tiden imot frilansoppdrag og samarbeidsprosjekter. Ta gjerne kontakt via en av kanalene nedenfor.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Profesjonell profil og nettverk."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "All min kode og mine prosjekter."
+			},
+			"email": {
+				"label": "E-post",
+				"description": "Direkte til min innboks."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Tanker og oppdateringer."
+			}
+		},
+		"form": {
+			"heading": "Send en melding",
+			"subheading": "Jeg svarer deg innen 24 timer.",
+			"name": "Navn",
+			"namePlaceholder": "Ditt navn",
+			"email": "E-post",
+			"emailPlaceholder": "your@email.com",
+			"message": "Melding",
+			"messagePlaceholder": "Fortell meg om prosjektet ditt...",
+			"submit": "Send melding"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Designet med omhu",
+		"backToTop": "Tilbake til toppen"
+	}
+}

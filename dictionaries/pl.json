@@ -1,0 +1,139 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Full-stack Developer",
+		"description": "Full-stack developer skoncentrowany na tworzeniu wyjątkowych produktów cyfrowych. Wykorzystując nowoczesne technologie internetowe oraz AI, tworzę skalowalne, wydajne i zorientowane na użytkownika rozwiązania, które rozwiązują realne problemy biznesowe."
+	},
+	"nav": {
+		"home": "Strona główna",
+		"projects": "Projekty",
+		"contact": "Kontakt",
+		"themeLight": "Przełącz na tryb jasny",
+		"themeDark": "Przełącz na tryb ciemny"
+	},
+	"hero": {
+		"badge": "Dostępny do pracy",
+		"title": "Projektuję cyfrowe",
+		"titleAccent": "doświadczenia.",
+		"description": "Full-stack developer skoncentrowany na tworzeniu wyjątkowych produktów cyfrowych. Wykorzystując nowoczesne technologie internetowe oraz AI, tworzę skalowalne, wydajne i zorientowane na użytkownika rozwiązania, które rozwiązują realne problemy biznesowe.",
+		"resume": "Zobacz CV",
+		"work": "Zobacz moje projekty",
+		"scroll": "Przewiń",
+		"ui": {
+			"chart": {
+				"title": "Czas reakcji",
+				"metric": "42ms",
+				"mon": "Pon",
+				"wed": "Śr",
+				"fri": "Pt",
+				"sun": "Ned"
+			},
+			"command": {
+				"placeholder": "Szukaj…",
+				"searchProjects": "Szukaj projektów…",
+				"createBranch": "Utwórz gałąź",
+				"runCommand": "Uruchom komendę"
+			}
+		}
+	},
+	"projects": {
+		"label": "Wybrane Projekty",
+		"title": "Projekty, które",
+		"titleAccent": "rozwiązują realne problemy.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "System zarządzania nauczaniem (LMS) nowej generacji zaprojektowany z myślą o transformacji sposobu, w jaki studenci się uczą, a nauczyciele nauczają. OptimoLMS wykorzystuje sztuczną inteligencję do automatycznego podsumowywania długich dokumentów, wyciągania kluczowych pojęć z prezentacji, generowania spersonalizowanych materiałów edukacyjnych oraz zapewniania natychmiastowej pomocy zawsze wtedy, gdy studenci tego potrzebują. Zmniejszając czas spędzany na przeszukiwaniu treści i zwiększając zaangażowanie, tworzy inteligentniejsze, bardziej wydajne środowisko edukacyjne."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "Kompleksowa platforma do zarządzania zasobami ludzkimi i kadrami, łącząca tradycyjne operacje HR z potężnymi możliwościami systemów CRM. Od onboardingu pracowników, śledzenia obecności, zarządzania płacami i ocen wydajności, po rekrutację, procesy kadrowe i zarządzanie relacjami z klientami – platforma centralizuje każdy aspekt HR w jednym ekosystemie."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "Współdzielona platforma społecznościowa zbudowana wokół wspólnych doświadczeń. Użytkownicy mogą tworzyć prywatne lub publiczne grupy, w których znajomi, rodziny lub zespoły mogą czatować, udostępniać multimedia i zachowywać swoje najważniejsze wspomnienia w jednym miejscu. Moments przekształca rozmowy w żywą linię czasu wspólnych przeżyć."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "Platforma czatu AI, która daje użytkownikom pełną kontrolę nad ich interakcją z technologią sztucznej inteligencji. Zamiast płacić powtarzające się opłaty subskrypcyjne, użytkownicy mogą po prostu podpiąć własne klucze API i natychmiast uzyskać dostęp do ulubionych modeli AI za pośrednictwem czystego i intuicyjnego interfejsu, zachowując pełną kontrolę nad wydatkami."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": [
+					"Wstęp do biologii",
+					"Analiza matematyczna II",
+					"Historia świata"
+				],
+				"aiSummary": "Podsumowanie AI",
+				"askPlaceholder": "Zadaj pytanie o Rozdział 4…"
+			},
+			"hrSoftware": {
+				"employees": "Pracownicy",
+				"openRoles": "Otwarte rekrutacje",
+				"attendance": "Obecność",
+				"applied": "Aplikacje",
+				"interview": "Rozmowa",
+				"offer": "Oferta",
+				"notifications": [
+					"Lista płac została zamknięta",
+					"Nowy pracownik: Sarah M.",
+					"Wymagana ocena okresowa"
+				]
+			},
+			"moments": {
+				"groups": ["Wyjazd rodzinny", "Wyjazd firmowy", "Weekend"],
+				"memoryCount": "{count} wspomnień"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": [
+					"Plan refaktoryzacji",
+					"Szkic e-maila",
+					"Pomoc w debugowaniu"
+				],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Skontaktuj się",
+		"title": "Stwórzmy razem",
+		"titleAccent": "coś wielkiego.",
+		"description": "Obecnie przyjmuję projekty jako freelancer oraz propozycje współpracy. Śmiało skontaktuj się ze mną za pośrednictwem dowolnego kanału poniżej.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Profil zawodowy i sieć kontaktów."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "Cały mój kod oraz projekty."
+			},
+			"email": {
+				"label": "E-mail",
+				"description": "Bezpośrednio do mojej skrzynki."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Przemyślenia i aktualności."
+			}
+		},
+		"form": {
+			"heading": "Wyślij wiadomość",
+			"subheading": "Odpiszę w ciągu 24 godzin.",
+			"name": "Imię",
+			"namePlaceholder": "Twoje imię",
+			"email": "E-mail",
+			"emailPlaceholder": "your@email.com",
+			"message": "Wiadomość",
+			"messagePlaceholder": "Opowiedz mi o swoim projekcie...",
+			"submit": "Wyślij wiadomość"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Zaprojektowane z dbałością",
+		"backToTop": "Powrót do góry"
+	}
+}

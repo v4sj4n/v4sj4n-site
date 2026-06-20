@@ -1,0 +1,131 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — 풀스택 개발자",
+		"description": "뛰어난 디지털 제품을 구축하는 데 집중하는 풀스택 개발자입니다. 현대적인 웹 기술과 AI를 활용하여 실제 비즈니스 문제를 해결하는 확장 가능하고 성능이 뛰어나며 사용자 중심적인 솔루션을 만듭니다."
+	},
+	"nav": {
+		"home": "홈",
+		"projects": "프로젝트",
+		"contact": "문의",
+		"themeLight": "라이트 모드로 전환",
+		"themeDark": "다크 모드로 전환"
+	},
+	"hero": {
+		"badge": "업무 의뢰 가능",
+		"title": "디지털 경험을",
+		"titleAccent": "제작합니다.",
+		"description": "뛰어난 디지털 제품을 구축하는 데 집중하는 풀스택 개발자입니다. 현대적인 웹 기술과 AI를 활용하여 실제 비즈니스 문제를 해결하는 확장 가능하고 성능이 뛰어나며 사용자 중심적인 솔루션을 만듭니다.",
+		"resume": "이력서 보기",
+		"work": "포트폴리오 보기",
+		"scroll": "스크롤",
+		"ui": {
+			"chart": {
+				"title": "응답 시간",
+				"metric": "42ms",
+				"mon": "월",
+				"wed": "수",
+				"fri": "금",
+				"sun": "일"
+			},
+			"command": {
+				"placeholder": "검색…",
+				"searchProjects": "프로젝트 검색…",
+				"createBranch": "브랜치 생성",
+				"runCommand": "명령어 실행"
+			}
+		}
+	},
+	"projects": {
+		"label": "주요 프로젝트",
+		"title": "실제 문제를",
+		"titleAccent": "해결하는 프로젝트.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "학생들의 학습 방식과 교육자들의 교수 방식을 혁신하기 위해 설계된 차세대 학습 관리 시스템(LMS)입니다. OptimoLMS는 AI를 활용하여 긴 문서를 자동으로 요약하고, 프레젠테이션에서 핵심 개념을 추출하며, 개인 맞춤형 학습 자료를 생성하고, 학생들이 도움이 필요할 때마다 즉각적인 지원을 제공합니다. 콘텐츠 검색에 소요되는 시간을 줄이고 참여도를 높여 교사와 학습자 모두에게 더 스마트하고 효율적인 학습 경험을 제공합니다."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "전통적인 인사 업무와 강력한 CRM 기능을 결합한 종합적인 인사 및 인력 관리 플랫폼입니다. 직원의 온보딩, 근태 추적, 급여 관리, 인사 고과부터 지원자 파이프라인, 채용 워크플로우, 고객 관계 관리에 이르기까지 인사의 모든 측면을 단일 에코시스템으로 통합합니다. 운영을 간소화하고 팀 생산성을 향상시키며 실시간 분석 및 자동화를 통해 실행 가능한 인사이트를 제공하도록 설계되었습니다."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "공유된 경험을 중심으로 구축된 협업 소셜 플랫폼입니다. 사용자는 비공개 또는 공개 그룹을 만들어 친구, 가족, 팀 또는 커뮤니티가 채팅하고 미디어를 공유하며 가장 의미 있는 기억을 한곳에 보관할 수 있습니다. 여행, 이벤트, 중요한 이정표 또는 일상생활을 기록할 때, Moments는 대화를 함께 다시 돌아보고 축하할 수 있는 생생한 공유 경험의 타임라인으로 바꿔줍니다."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "사용자가 AI 경험을 완전히 제어할 수 있는 AI 채팅 플랫폼입니다. 반복적인 구독료를 지불하는 대신, 사용자는 간단히 자신의 API 키를 연결하고 깔끔하고 직관적인 인터페이스를 통해 좋아하는 AI 모델에 즉시 액세스할 수 있습니다. VasChat은 여러 제공업체와 모델을 지원하므로 사용량과 비용에 대한 소유권을 유지하면서 답변을 비교하고, 대화를 관리하고, 고급 AI 기능을 활용할 수 있습니다."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": ["생물학 입문", "미적분학 II", "세계사"],
+				"aiSummary": "AI 요약",
+				"askPlaceholder": "4장에 대해 질문하기…"
+			},
+			"hrSoftware": {
+				"employees": "직원 현황",
+				"openRoles": "채용 중인 직무",
+				"attendance": "근태 관리",
+				"applied": "지원 완료",
+				"interview": "면접",
+				"offer": "합격 제안",
+				"notifications": [
+					"급여 정산이 완료되었습니다",
+					"신규 입사자: Sarah M.",
+					"인사 평가 마감일"
+				]
+			},
+			"moments": {
+				"groups": ["가족 여행", "팀 워크숍", "주말"],
+				"memoryCount": "{count}개의 추억"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": ["리팩토링 계획", "이메일 초안", "디버깅 도움말"],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "연락처",
+		"title": "함께 위대한 것을",
+		"titleAccent": "만들어봅시다.",
+		"description": "현재 프리랜서 프로젝트 및 협업 기회를 제안받고 있습니다. 아래 채널 중 편하신 곳으로 언제든 연락 주시기 바랍니다.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "전문가 프로필 및 네트워크"
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "모든 코드와 프로젝트 소스"
+			},
+			"email": {
+				"label": "Email",
+				"description": "내 받은 편지함으로 직접 전송"
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "생각 및 업데이트 소식"
+			}
+		},
+		"form": {
+			"heading": "메시지 보내기",
+			"subheading": "24시간 이내에 회신해 드리겠습니다.",
+			"name": "이름",
+			"namePlaceholder": "이름을 입력하세요",
+			"email": "이메일",
+			"emailPlaceholder": "your@email.com",
+			"message": "메시지",
+			"messagePlaceholder": "프로젝트에 대해 설명해주세요...",
+			"submit": "메시지 보내기"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "정성을 담아 디자인함",
+		"backToTop": "맨 위로 이동"
+	}
+}

@@ -1,0 +1,131 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Full-stack-utvecklare",
+		"description": "Full-stack-utvecklare fokuserad på att bygga exceptionella digitala produkter. Genom att använda modern webbteknik och AI skapar jag skalbara, högpresterande och användarcentrerade lösningar som löser verkliga affärsproblem."
+	},
+	"nav": {
+		"home": "Hem",
+		"projects": "Projekt",
+		"contact": "Kontakt",
+		"themeLight": "Byt till ljust läge",
+		"themeDark": "Byt till mörkt läge"
+	},
+	"hero": {
+		"badge": "Tillgänglig för uppdrag",
+		"title": "Jag skapar digitala",
+		"titleAccent": "upplevelser.",
+		"description": "Full-stack-utvecklare fokuserad på att bygga exceptionella digitala produkter. Genom att använda modern webbteknik och AI skapar jag skalbara, högpresterande och användarcentrerade lösningar som löser verkliga affärsproblem.",
+		"resume": "Visa CV",
+		"work": "Se mina projekt",
+		"scroll": "Bläddra",
+		"ui": {
+			"chart": {
+				"title": "Svarstid",
+				"metric": "42ms",
+				"mon": "Mån",
+				"wed": "Ons",
+				"fri": "Fre",
+				"sun": "Sön"
+			},
+			"command": {
+				"placeholder": "Sök…",
+				"searchProjects": "Sök projekt…",
+				"createBranch": "Skapa branch",
+				"runCommand": "Kör kommando"
+			}
+		}
+	},
+	"projects": {
+		"label": "Utvalda Arbeten",
+		"title": "Projekt som löser",
+		"titleAccent": "verkliga problem.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Nästa generations lärplattform (LMS) designad för att transformera hur studenter lär sig och lärare undervisar. OptimoLMS använder AI för att automatiskt sammanfatta långa dokument, extrahera nyckelkoncept från presentationer, generera personligt anpassat studiematerial och erbjuda omedelbar hjälp när studenter behöver det. Genom att minska tiden som läggs på att söka efter innehåll skapas en effektivare inlärningsupplevelse."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "En omfattande HR- och personalhanteringsplattform som kombinerar traditionella HR-processer med kraftfulla CRM-funktioner. Från onboarding, närvarospårning, lönehantering och medarbetarsamtal till kandidatpipelines, rekryteringsflöden och hantering av kundrelationer – plattformen centraliserar varje aspekt av HR i ett enda ekosystem."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "En kollaborativ social plattform byggd kring delade upplevelser. Användare kan skapa privata eller publika grupper där vänner, familjer eller team kan chatta, dela media och bevara sina mest meningsfulla minnen på en och samma plats. Moments förvandlar konversationer till en levande tidslinje av delade upplevelser."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "En AI-chattplattform som ger användare fullständig kontroll över sin AI-upplevelse. Istället för att betala återkommande prenumerationsavgifter kan användare helt enkelt ansluta sina egna API-nycklar och omedelbart få tillgång till sina favorit-AI-modeller via ett rent och intuitivt gränssnitt, med fullt ägandeskap över användning och kostnader."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": ["Intro till Biologi", "Analys II", "Världshistoria"],
+				"aiSummary": "AI-Sammanfattning",
+				"askPlaceholder": "Fråga om Kapitel 4…"
+			},
+			"hrSoftware": {
+				"employees": "Anställda",
+				"openRoles": "Lediga Roller",
+				"attendance": "Närvaro",
+				"applied": "Sökande",
+				"interview": "Intervju",
+				"offer": "Erbjudande",
+				"notifications": [
+					"Lönekörning slutförd",
+					"Nyanställd: Sarah M.",
+					"Utvärdering ska göras"
+				]
+			},
+			"moments": {
+				"groups": ["Familjeresa", "Teambuilding", "Helg"],
+				"memoryCount": "{count} minnen"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": ["Refaktoreringsplan", "E-postutkast", "Debug-hjälp"],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Hör av dig",
+		"title": "Låt oss skapa",
+		"titleAccent": "något fantastiskt.",
+		"description": "Jag tar för närvarande emot frilansuppdrag och samarbeten. Kontakta mig gärna via någon av kanalerna nedan.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Professionell profil & nätverk."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "All min kod och mina projekt."
+			},
+			"email": {
+				"label": "E-post",
+				"description": "Direkt till min inkorg."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Tankar & uppdateringar."
+			}
+		},
+		"form": {
+			"heading": "Skicka ett meddelande",
+			"subheading": "Jag återkommer till dig inom 24 timmar.",
+			"name": "Namn",
+			"namePlaceholder": "Ditt namn",
+			"email": "E-post",
+			"emailPlaceholder": "your@email.com",
+			"message": "Meddelande",
+			"messagePlaceholder": "Berätta om ditt projekt...",
+			"submit": "Skicka meddelande"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Designat med omsorg",
+		"backToTop": "Tillbaka till toppen"
+	}
+}

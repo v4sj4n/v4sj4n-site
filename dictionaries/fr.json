@@ -1,0 +1,135 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Développeur Full-stack",
+		"description": "Développeur full-stack axé sur la création de produits digitaux exceptionnels. En tirant parti des technologies web modernes et de l'IA, je crée des solutions évolutives, performantes et centrées sur l'utilisateur qui résolvent de réels problèmes d'entreprise."
+	},
+	"nav": {
+		"home": "Accueil",
+		"projects": "Projets",
+		"contact": "Contact",
+		"themeLight": "Passer au mode clair",
+		"themeDark": "Passer au mode sombre"
+	},
+	"hero": {
+		"badge": "Disponible pour travailler",
+		"title": "Je conçois des expériences",
+		"titleAccent": "digitales.",
+		"description": "Développeur full-stack axé sur la création de produits digitaux exceptionnels. En tirant parti des technologies web modernes et de l'IA, je crée des solutions évolutives, performantes et centrées sur l'utilisateur qui résolvent de réels problèmes d'entreprise.",
+		"resume": "Voir le CV",
+		"work": "Voir mon travail",
+		"scroll": "Faire défiler",
+		"ui": {
+			"chart": {
+				"title": "Temps de réponse",
+				"metric": "42ms",
+				"mon": "Lun",
+				"wed": "Mer",
+				"fri": "Ven",
+				"sun": "Dim"
+			},
+			"command": {
+				"placeholder": "Rechercher…",
+				"searchProjects": "Rechercher des projets…",
+				"createBranch": "Créer une branche",
+				"runCommand": "Exécuter la commande"
+			}
+		}
+	},
+	"projects": {
+		"label": "Travaux Sélectionnés",
+		"title": "Des projets qui",
+		"titleAccent": "résolvent de vrais problèmes.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Un système de gestion de l'apprentissage (LMS) de nouvelle génération conçu pour transformer la façon dont les étudiants apprennent et les éducateurs enseignent. OptimoLMS utilise l'IA pour résumer automatiquement de longs documents, extraire les concepts clés des présentations, générer des supports d'apprentissage personnalisés et fournir une assistance instantanée dès que les étudiants en ont besoin. En réduisant le temps passé à chercher du contenu, il crée une expérience plus intelligente."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "Une plateforme complète de gestion des ressources humaines et des effectifs qui combine les opérations RH traditionnelles avec de puissantes fonctionnalités CRM. De l'intégration des employés, du suivi des présences, de la gestion de la paie et des évaluations de performance aux pipelines de candidats, flux de recrutement et gestion de la relation client, la plateforme centralise tous les aspects des RH en un seul écosystème."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "Une plateforme sociale collaborative construite autour d'expériences partagées. Les utilisateurs peuvent créer des groupes privés ou publics où amis, familles ou équipes peuvent discuter, partager des médias et préserver leurs souvenirs les plus précieux en un seul endroit. Moments transforme les conversations en une chronologie vivante d'expériences partagées."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "Une plateforme de chat IA qui donne aux utilisateurs un contrôle total sur leur expérience d'intelligence artificielle. Au lieu de payer des frais d'abonnement récurrents, il suffit de connecter ses propres clés API pour accéder instantanément à ses modèles d'IA préférés via une interface claire et intuitive, tout en conservant la propriété de son utilisation et de ses coûts."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": ["Intro à la Biologie", "Calcul II", "Histoire du Monde"],
+				"aiSummary": "Résumé IA",
+				"askPlaceholder": "Poser une question sur le Chapitre 4…"
+			},
+			"hrSoftware": {
+				"employees": "Employés",
+				"openRoles": "Postes Ouverts",
+				"attendance": "Présences",
+				"applied": "Candidats",
+				"interview": "Entretien",
+				"offer": "Offre",
+				"notifications": [
+					"Traitement de la paie terminé",
+					"Nouvelle recrue: Sarah M.",
+					"Évaluation due"
+				]
+			},
+			"moments": {
+				"groups": ["Voyage en Famille", "Séminaire d'Équipe", "Weekend"],
+				"memoryCount": "{count} souvenirs"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": [
+					"Plan de refactorisation",
+					"Brouillon d'e-mail",
+					"Aide au debug"
+				],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Me contacter",
+		"title": "Créons",
+		"titleAccent": "quelque chose de grand.",
+		"description": "J'accepte actuellement des projets en freelance et des opportunités de collaboration. N'hésitez pas à me contacter via l'un des canaux ci-dessous.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Profil professionnel & réseau."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "Tous mes codes et projets."
+			},
+			"email": {
+				"label": "E-mail",
+				"description": "Directement dans ma boîte de réception."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Pensées & actualités."
+			}
+		},
+		"form": {
+			"heading": "Envoyer un message",
+			"subheading": "Je vous répondrai dans les 24 heures.",
+			"name": "Nom",
+			"namePlaceholder": "Votre nom",
+			"email": "E-mail",
+			"emailPlaceholder": "your@email.com",
+			"message": "Message",
+			"messagePlaceholder": "Parlez-moi de votre projet...",
+			"submit": "Envoyer le Message"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Conçu avec soin",
+		"backToTop": "Retour en haut"
+	}
+}

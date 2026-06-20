@@ -1,0 +1,135 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Zhvillues Full-stack",
+		"description": "Zhvillues full-stack i fokusuar në ndërtimin e produkteve digjitale të jashtëzakonshme. Duke përdorur teknologjitë moderne të uebit dhe AI, unë krijoj zgjidhje të shkallëzueshme, performuese dhe të përqendruara te përdoruesi që zgjidhin probleme reale të biznesit."
+	},
+	"nav": {
+		"home": "Kreu",
+		"projects": "Projekte",
+		"contact": "Kontakt",
+		"themeLight": "Kalo në modalitetin e dritës",
+		"themeDark": "Kalo në modalitetin e errët"
+	},
+	"hero": {
+		"badge": "I disponueshëm për punë",
+		"title": "Unë krijoj eksperienca",
+		"titleAccent": "digjitale.",
+		"description": "Zhvillues full-stack i fokusuar në ndërtimin e produkteve digjitale të jashtëzakonshme. Duke përdorur teknologjitë moderne të uebit dhe AI, unë krijoj zgjidhje të shkallëzueshme, performuese dhe të përqendruara te përdoruesi që zgjidhin probleme reale të biznesit.",
+		"resume": "Shiko CV-në",
+		"work": "Shiko punën time",
+		"scroll": "Shfleto poshtë",
+		"ui": {
+			"chart": {
+				"title": "Koha e përgjigjes",
+				"metric": "42ms",
+				"mon": "Hën",
+				"wed": "Mër",
+				"fri": "Pre",
+				"sun": "Die"
+			},
+			"command": {
+				"placeholder": "Kërko…",
+				"searchProjects": "Kërko projekte…",
+				"createBranch": "Krijo degë",
+				"runCommand": "Ekzekuto komandën"
+			}
+		}
+	},
+	"projects": {
+		"label": "Punë të Përzgjedhura",
+		"title": "Projekte që",
+		"titleAccent": "zgjidhin probleme reale.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Një Sistem i Menaxhimit të Të Nxënit (LMS) i gjeneratës së ardhshme i krijuar për të transformuar mënyrën se si studentët nxënë dhe edukatorët mësojnë. OptimoLMS përdor AI për të përmbledhur automatikisht dokumente të gjata, për të nxjerrë koncepte kyçe nga prezantimet, për të gjeneruar materiale mësimore të personalizuara dhe për të ofruar ndihmë të menjëhershme sa herë që studentët kanë nevojë. Duke reduktuar kohën e shpenzuar për të kërkuar nëpër përmbajtje dhe duke rritur angazhimin, ai krijon një përvojë më të zgjuar dhe më efikase të të nxënit si për mësuesit ashtu edhe për nxënësit."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "Një platformë gjithëpërfshirëse e BNJ-së (Burimeve Njerëzore) dhe menaxhimit të fuqisë punëtore që ndërthur operacionet tradicionale të BNJ-së me aftësi të fuqishme të CRM-së. Nga pranimi i punonjësve të rinj, ndjekja e pjesëmarrjes, menaxhimi i pagave dhe rishikimet e performancës, deri te tubacionet e kandidatëve, rrjedhat e punës së rekrutimit dhe menaxhimi i marrëdhënieve me klientët, platforma qendërzon çdo aspekt të burimeve njerëzore në një ekosistem të vetëm. E projektuar për të rregulluar operacionet, për të përmirësuar produktivitetin e ekipit dhe për të ofruar njohuri të zbatueshme përmes analizave në kohë reale dhe automatizimit."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "Një platformë sociale bashkëpunuese e ndërtuar rreth përvojave të ndara. Përdoruesit mund të krijojnë grupe private ose publike ku miqtë, familjet, ekipet ose komunitetet mund të bisedojnë, të ndajnë media dhe të ruajnë kujtimet e tyre më domethënëse në një vend. Pavarësisht nëse bëhet fjalë për dokumentimin e udhëtimeve, ngjarjeve, pikave historike apo jetës së përditshme, Moments i shndërron bisedat në një linjë kohore të gjallë të përvojave të ndara që mund të rishikohen dhe të festohen së bashku."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "Një platformë bisede me AI që u jep përdoruesve kontroll të plotë mbi përvojën e tyre të inteligjencës artificiale. Në vend që të paguajnë tarifa të përsëritura abonimi, përdoruesit thjesht mund të lidhin çelësat e tyre të API-së dhe të qasen menjëherë në modelet e tyre të preferuara të AI përmes një ndërfaqeje të pastër dhe intuitive. VasChat mbështet ofrues dhe modele të shumta, duke i lejuar përdoruesit të krahasojnë përgjigjet, të menaxhojnë bisedat dhe të përdorin aftësitë e avancuara të AI duke ruajtur pronësinë e përdorimit dhe kostove të tyre."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": ["Hyrje në Biologji", "Kalkulus II", "Histori Botërore"],
+				"aiSummary": "Përmbledhje me AI",
+				"askPlaceholder": "Pyet rreth Kapitullit 4…"
+			},
+			"hrSoftware": {
+				"employees": "Punonjësit",
+				"openRoles": "Pozicione të Hapura",
+				"attendance": "Prezenca",
+				"applied": "Aplikuar",
+				"interview": "Intervistë",
+				"offer": "Ofertë",
+				"notifications": [
+					"Ekzekutimi i listëpagesës përfundoi",
+					"Punonjës i ri: Sarah M.",
+					"Afati i rishikimit"
+				]
+			},
+			"moments": {
+				"groups": ["Udhëtim Familjar", "Jashtë Zyre me Ekipin", "Fundjavë"],
+				"memoryCount": "{count} kujtime"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": [
+					"Plani i refaktorimit",
+					"Drafti i email-it",
+					"Ndihmë për debugim"
+				],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Kontaktoni",
+		"title": "Le të krijojmë",
+		"titleAccent": "diçka të madhe.",
+		"description": "Aktualisht jam duke pranuar projekte freelance dhe mundësi bashkëpunimi. Mos ngurroni të më kontaktoni përmes çdo kanali më poshtë.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Profili profesional dhe rrjeti."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "I gjithë kodi dhe projektet e mia."
+			},
+			"email": {
+				"label": "Email",
+				"description": "Drejtpërdrejt në inbox-in tim."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Mendime dhe përditësime."
+			}
+		},
+		"form": {
+			"heading": "Dërgo një mesazh",
+			"subheading": "Do t'ju kthej përgjigje brenda 24 orëve.",
+			"name": "Emri",
+			"namePlaceholder": "Emri juaj",
+			"email": "Email",
+			"emailPlaceholder": "your@email.com",
+			"message": "Mesazhi",
+			"messagePlaceholder": "Më tregoni për projektin tuaj...",
+			"submit": "Dërgo Mesazhin"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Dizajnuar me kujdes",
+		"backToTop": "Kthehu lart"
+	}
+}

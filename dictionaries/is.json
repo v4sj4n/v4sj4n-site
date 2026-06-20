@@ -1,0 +1,139 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Full-stack forritari",
+		"description": "Full-stack forritari sem einbeitir sér að því að smíða framúrskarandi stafrænar vörur. Með því að nýta nútíma veftækni og gervigreind, bý ég til stigstærðar, afkastamiklar og notendamiðaðar lausnir sem leysa raunveruleg viðskiptavandamál."
+	},
+	"nav": {
+		"home": "Heim",
+		"projects": "Verkefni",
+		"contact": "Hafa samband",
+		"themeLight": "Skipta í ljósa stillingu",
+		"themeDark": "Skipta í dökka stillingu"
+	},
+	"hero": {
+		"badge": "Laus til vinnu",
+		"title": "Ég smíða stafræna",
+		"titleAccent": "upplifun.",
+		"description": "Full-stack forritari sem einbeitir sér að því að smíða framúrskarandi stafrænar vörur. Með því að nýta nútíma veftækni og gervigreind, bý ég til stigstærðar, afkastamiklar og notendamiðaðar lausnir sem leysa raunveruleg viðskiptavandamál.",
+		"resume": "Skoða ferilskrá",
+		"work": "Sjá verkefni",
+		"scroll": "Skruna",
+		"ui": {
+			"chart": {
+				"title": "Svartími",
+				"metric": "42ms",
+				"mon": "Mán",
+				"wed": "Mið",
+				"fri": "Fös",
+				"sun": "Sun"
+			},
+			"command": {
+				"placeholder": "Leita…",
+				"searchProjects": "Leita í verkefnum…",
+				"createBranch": "Stofna grein (branch)",
+				"runCommand": "Keyra skipun"
+			}
+		}
+	},
+	"projects": {
+		"label": "Valin verkefni",
+		"title": "Verkefni sem",
+		"titleAccent": "leysa raunveruleg vandamál.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Næsta kynslóð námsstjórnunarkerfa (LMS) hannað til að umbreyta því hvernig nemendur læra og kennarar kenna. OptimoLMS nýtir gervigreind til að draga sjálfkrafa saman löng skjöl, vinna lykilhugtök úr kynningum, búa til persónulegt námsefni og veita tafarlausa aðstoð hvenær sem nemendur þurfa hjálp. Með því að minnka tímann sem fer í að leita að efni skapar það snjallari og skilvirkari námsupplifun."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "Alhliða mannauðs- og starfsmannastjórnunarkerfi sem sameinar hefðbundinn mannauðsrekstur og öfluga CRM eiginleika. Allt frá móttöku nýrra starfsmanna, mætingarskráningu, launavinnslu og frammistöðumötum yfir í ráðningarferli og stjórnun viðskiptatengsla, samnýtir kerfið alla þætti mannauðsmála á einum stað."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "Samstarfsvettvangur hannaður í kringum sameiginlega upplifun. Notendur geta búið til lokaða eða opna hópa þar sem vinir, fjölskyldur eða teymi geta spjallað, deilt miðlum og varðveitt sínar mikilvægustu minningar á einum stað. Moments breytir samræðum í lifandi tímalínu sameiginlegrar upplifunar."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "Gervigreindarspjallkerfi sem gefur notendum fulla stjórn á upplifun sinni. Í stað þess að borga endurtekin áskriftargjöld geta notendur einfaldlega tengt eigin API lykla og fengið tafarlausan aðgang að sínum uppáhalds gervigreindarlíkönum í gegnum einfalt og skýrt viðmót, á meðan þeir halda eignarhaldinu á notkun sinni og kostnaði."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": [
+					"Inngangur að líffræði",
+					"Stærðfræðigreining II",
+					"Saga veraldar"
+				],
+				"aiSummary": "Samantekt gervigreindar",
+				"askPlaceholder": "Spyrja um kafla 4…"
+			},
+			"hrSoftware": {
+				"employees": "Starfsmenn",
+				"openRoles": "Laus störf",
+				"attendance": "Mæting",
+				"applied": "Umsóknir",
+				"interview": "Viðtal",
+				"offer": "Atvinnutilboð",
+				"notifications": [
+					"Launavinnsla tókst",
+					"Nýr starfsmaður: Sarah M.",
+					"Frammistöðumat á dagskrá"
+				]
+			},
+			"moments": {
+				"groups": ["Fjölskylduferð", "Teymisferð", "Helgi"],
+				"memoryCount": "{count} minningar"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": [
+					"Endurskipulagning kóða",
+					"Netfangadrög",
+					"Aðstoð við kembileit"
+				],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Hafa samband",
+		"title": "Við skulum skapa",
+		"titleAccent": "eitthvað frábært.",
+		"description": "Ég tek núna við verkefnum í lausamennsku og tækifærum til samstarfs. Ekki hika við að hafa samband í gegnum rásirnar hér að neðan.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Faglegur prófíll og tengslanet."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "Allur minn kóði og verkefni."
+			},
+			"email": {
+				"label": "Netfang",
+				"description": "Beint í pósthólfið mitt."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Pælingar & uppfærslur."
+			}
+		},
+		"form": {
+			"heading": "Senda skilaboð",
+			"subheading": "Ég svara innan 24 klukkustunda.",
+			"name": "Nafn",
+			"namePlaceholder": "Nafnið þitt",
+			"email": "Netfang",
+			"emailPlaceholder": "your@email.com",
+			"message": "Skilaboð",
+			"messagePlaceholder": "Segðu mér frá verkefninu þínu...",
+			"submit": "Senda skilaboð"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Hannað af alúð",
+		"backToTop": "Fara efst upp"
+	}
+}

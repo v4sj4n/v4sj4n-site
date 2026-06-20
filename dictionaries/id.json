@@ -1,0 +1,131 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Pengembang Full-stack",
+		"description": "Pengembang full-stack yang berfokus pada pembuatan produk digital yang luar biasa. Memanfaatkan teknologi web modern dan AI, saya menciptakan solusi yang skalabel, berkinerja tinggi, dan berpusat pada pengguna untuk memecahkan masalah bisnis yang nyata."
+	},
+	"nav": {
+		"home": "Beranda",
+		"projects": "Proyek",
+		"contact": "Kontak",
+		"themeLight": "Ubah ke mode terang",
+		"themeDark": "Ubah ke mode gelap"
+	},
+	"hero": {
+		"badge": "Tersedia untuk proyek",
+		"title": "Saya merancang pengalaman",
+		"titleAccent": "digital.",
+		"description": "Pengembang full-stack yang berfokus pada pembuatan produk digital yang luar biasa. Memanfaatkan teknologi web modern dan AI, saya menciptakan solusi yang skalabel, berkinerja tinggi, dan berpusat pada pengguna untuk memecahkan masalah bisnis yang nyata.",
+		"resume": "Lihat Resume",
+		"work": "Lihat karya saya",
+		"scroll": "Gulir",
+		"ui": {
+			"chart": {
+				"title": "Waktu respons",
+				"metric": "42ms",
+				"mon": "Sen",
+				"wed": "Rab",
+				"fri": "Jum",
+				"sun": "Min"
+			},
+			"command": {
+				"placeholder": "Cari…",
+				"searchProjects": "Cari proyek…",
+				"createBranch": "Buat branch",
+				"runCommand": "Jalankan perintah"
+			}
+		}
+	},
+	"projects": {
+		"label": "Karya Pilihan",
+		"title": "Proyek yang",
+		"titleAccent": "memecahkan masalah nyata.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Sistem Manajemen Pembelajaran (LMS) generasi berikutnya yang dirancang untuk mengubah cara siswa belajar dan guru mengajar. OptimoLMS memanfaatkan AI untuk merangkum dokumen panjang secara otomatis, mengekstrak konsep inti dari presentasi, menghasilkan materi pembelajaran yang dipersonalisasi, dan memberikan bantuan instan kapan pun siswa membutuhkan bantuan. Dengan mengurangi waktu yang dihabiskan untuk mencari konten, platform ini menciptakan pengalaman belajar yang lebih cerdas dan efisien."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "Platform manajemen SDM dan tenaga kerja komprehensif yang menggabungkan operasional HR tradisional dengan kemampuan CRM yang kuat. Dari proses onboarding karyawan, pelacakan kehadiran, manajemen penggajian, dan tinjauan kinerja hingga manajemen rekrutmen, alur kerja perekrutan, dan manajemen hubungan klien, platform ini memusatkan setiap aspek sumber daya manusia ke dalam satu ekosistem terpadu."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "Platform sosial kolaboratif yang dibangun di seputar pengalaman bersama. Pengguna dapat membuat grup privat atau publik di mana teman, keluarga, tim, atau komunitas dapat mengobrol, berbagi media, dan melestarikan kenangan paling berharga mereka di satu tempat. Moments mengubah percakapan menjadi linimasa hidup dari pengalaman bersama yang dapat dikunjungi kembali dan dirayakan bersama."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "Platform obrolan AI yang memberikan kontrol penuh kepada pengguna atas pengalaman AI mereka. Alih-alih membayar biaya langganan bulanan, pengguna cukup menghubungkan kunci API mereka sendiri dan langsung mengakses model AI favorit mereka melalui antarmuka yang bersih dan intuitif, sekaligus mempertahankan kepemilikan penuh atas penggunaan dan biaya mereka."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": ["Pengantar Biologi", "Kalkulus II", "Sejarah Dunia"],
+				"aiSummary": "Ringkasan AI",
+				"askPlaceholder": "Tanyakan tentang Bab 4…"
+			},
+			"hrSoftware": {
+				"employees": "Karyawan",
+				"openRoles": "Lowongan Aktif",
+				"attendance": "Kehadiran",
+				"applied": "Dilamar",
+				"interview": "Wawancara",
+				"offer": "Penawaran",
+				"notifications": [
+					"Proses penggajian selesai",
+					"Karyawan baru: Sarah M.",
+					"Tinjauan kinerja jatuh tempo"
+				]
+			},
+			"moments": {
+				"groups": ["Liburan Keluarga", "Acara Tim", "Akhir Pekan"],
+				"memoryCount": "{count} kenangan"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": ["Rencana refaktor", "Draf email", "Bantuan debugging"],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Hubungi saya",
+		"title": "Mari ciptakan",
+		"titleAccent": "sesuatu yang hebat.",
+		"description": "Saya saat ini menerima proyek lepas (freelance) dan peluang kolaborasi. Jangan ragu untuk menghubungi saya melalui saluran apa pun di bawah ini.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Profil profesional & jaringan."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "Semua kode dan proyek saya."
+			},
+			"email": {
+				"label": "Email",
+				"description": "Langsung ke kotak masuk saya."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Pemikiran & pembaruan."
+			}
+		},
+		"form": {
+			"heading": "Kirim pesan",
+			"subheading": "Saya akan membalas Anda dalam waktu 24 jam.",
+			"name": "Nama",
+			"namePlaceholder": "Nama Anda",
+			"email": "Email",
+			"emailPlaceholder": "your@email.com",
+			"message": "Pesan",
+			"messagePlaceholder": "Ceritakan tentang proyek Anda...",
+			"submit": "Kirim Pesan"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Didesain dengan sepenuh hati",
+		"backToTop": "Kembali ke atas"
+	}
+}

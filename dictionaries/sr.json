@@ -1,0 +1,139 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Full-stack programer",
+		"description": "Full-stack programer fokusiran na kreiranje izuzetnih digitalnih proizvoda. Koristeći moderne veb tehnologije i AI, kreiram skalabilna, performantna i korisnički orijentisana rešenja koja rešavaju stvarne poslovne probleme."
+	},
+	"nav": {
+		"home": "Početna",
+		"projects": "Projekti",
+		"contact": "Kontakt",
+		"themeLight": "Prebaci na svetao režim",
+		"themeDark": "Prebaci na taman režim"
+	},
+	"hero": {
+		"badge": "Dostupan za rad",
+		"title": "Kreiram digitalna",
+		"titleAccent": "iskustva.",
+		"description": "Full-stack programer fokusiran na kreiranje izuzetnih digitalnih proizvoda. Koristeći moderne veb tehnologije i AI, kreiram skalabilna, performantna i korisnički orijentisana rešenja koja rešavaju stvarne poslovne probleme.",
+		"resume": "Pogledaj biografiju",
+		"work": "Pogledaj moj rad",
+		"scroll": "Skroluj",
+		"ui": {
+			"chart": {
+				"title": "Vreme odziva",
+				"metric": "42ms",
+				"mon": "Pon",
+				"wed": "Sre",
+				"fri": "Pet",
+				"sun": "Ned"
+			},
+			"command": {
+				"placeholder": "Pretraži…",
+				"searchProjects": "Pretraži projekte…",
+				"createBranch": "Kreiraj granu",
+				"runCommand": "Pokreni komandu"
+			}
+		}
+	},
+	"projects": {
+		"label": "Izabrani radovi",
+		"title": "Projekti koji",
+		"titleAccent": "rešavaju stvarne probleme.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Sistem za upravljanje učenjem (LMS) sledeće generacije, dizajniran da transformiše način na koji studenti uče i profesori predaju. OptimoLMS koristi veštačku inteligenciju za automatsko sumiranje dugih dokumenata, izdvajanje ključnih koncepata iz prezentacija, generisanje personalizovanih materijala za učenje i pružanje trenutne pomoći studentima kada im je potrebna. Smanjenjem vremena provedenog u potrazi za sadržajem i povećanjem angažovanja, stvara pametnije i efikasnije iskustvo učenja."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "Sveobuhvatna platforma za upravljanje ljudskim resursima i radnom snagom koja kombinuje tradicionalne HR operacije sa moćnim CRM mogućnostima. Od uvođenja zaposlenih u posao, praćenja prisustva, upravljanja platama i pregleda učinka, do selekcije kandidata, procesa zapošljavanja i upravljanja odnosima sa klijentima, platforma centralizuje svaki aspekt ljudskih resursa u jedan ekosistem."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "Zajednička društvena platforma izgrađena oko deljenih iskustava. Korisnici mogu da kreiraju privatne ili javne grupe u kojima prijatelji, porodice ili timovi mogu da četuju, dele medije i čuvaju svoje najznačajnije uspomene na jednom mestu. Moments pretvara razgovore u živu hronologiju deljenih iskustava."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "AI platforma za čet koja korisnicima daje potpunu kontrolu nad njihovim AI iskustvom. Umesto plaćanja periodičnih pretplata, korisnici mogu jednostavno da povežu sopstvene API ključeve i trenutno pristupe omiljenim AI modelima kroz čist i intuitivan interfejs, zadržavajući vlasništvo nad svojom potrošnjom i troškovima."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": [
+					"Uvod u biologiju",
+					"Matematička analiza II",
+					"Svetska istorija"
+				],
+				"aiSummary": "AI Rezime",
+				"askPlaceholder": "Pitaj o Poglavlju 4…"
+			},
+			"hrSoftware": {
+				"employees": "Zaposleni",
+				"openRoles": "Otvorene pozicije",
+				"attendance": "Prisustvo",
+				"applied": "Prijavljeni",
+				"interview": "Intervju",
+				"offer": "Ponuda",
+				"notifications": [
+					"Obračun plata završen",
+					"Novi zaposleni: Sara M.",
+					"Rok za evaluaciju"
+				]
+			},
+			"moments": {
+				"groups": ["Porodično putovanje", "Timski sastanak", "Vikend"],
+				"memoryCount": "{count} uspomena"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": [
+					"Plan refaktorisanja",
+					"Nacrt imejla",
+					"Pomoć pri debagovanju"
+				],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Stupite u kontakt",
+		"title": "Hajde da kreiramo",
+		"titleAccent": "nešto sjajno.",
+		"description": "Trenutno prihvatam frilens projekte i prilike za saradnju. Slobodno me kontaktirajte putem bilo kog kanala ispod.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Profesionalni profil i mreža."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "Sav moj kod i projekti."
+			},
+			"email": {
+				"label": "Email",
+				"description": "Direktno u moje sanduče."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Misli i novosti."
+			}
+		},
+		"form": {
+			"heading": "Pošalji poruku",
+			"subheading": "Odgovoriću vam u roku od 24 sata.",
+			"name": "Ime",
+			"namePlaceholder": "Vaše ime",
+			"email": "Email",
+			"emailPlaceholder": "your@email.com",
+			"message": "Poruka",
+			"messagePlaceholder": "Recite mi nešto o vašem projektu...",
+			"submit": "Pošalji poruku"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Dizajnirano sa pažnjom",
+		"backToTop": "Nazad na vrh"
+	}
+}

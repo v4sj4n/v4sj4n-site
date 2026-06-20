@@ -1,0 +1,131 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Full-stack Geliştirici",
+		"description": "Olağanüstü dijital ürünler geliştirmeye odaklanmış full-stack geliştirici. Modern web teknolojilerini ve yapay zekayı harmanlayarak, gerçek iş problemlerini çözen; ölçeklenebilir, performanslı ve kullanıcı odaklı çözümler üretiyorum."
+	},
+	"nav": {
+		"home": "Anasayfa",
+		"projects": "Projeler",
+		"contact": "İletişim",
+		"themeLight": "Açık moda geç",
+		"themeDark": "Karanlık moda geç"
+	},
+	"hero": {
+		"badge": "Yeni projeler için müsait",
+		"title": "Dijital deneyimler",
+		"titleAccent": "tasarlıyorum.",
+		"description": "Olağanüstü dijital ürünler geliştirmeye odaklanmış full-stack geliştirici. Modern web teknolojilerini ve yapay zekayı harmanlayarak, gerçek iş problemlerini çözen; ölçeklenebilir, performanslı ve kullanıcı odaklı çözümler üretiyorum.",
+		"resume": "Özgeçmişi Görüntüle",
+		"work": "Çalışmalarımı Gör",
+		"scroll": "Kaydır",
+		"ui": {
+			"chart": {
+				"title": "Yant süresi",
+				"metric": "42ms",
+				"mon": "Pzt",
+				"wed": "Çar",
+				"fri": "Cum",
+				"sun": "Paz"
+			},
+			"command": {
+				"placeholder": "Ara…",
+				"searchProjects": "Projelerde ara…",
+				"createBranch": "Branch oluştur",
+				"runCommand": "Komut çalıştır"
+			}
+		}
+	},
+	"projects": {
+		"label": "Seçilmiş Çalışmalar",
+		"title": "Gerçek problemleri",
+		"titleAccent": "çözen projeler.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "Öğrencilerin öğrenme, eğitmenlerin ise öğretme biçimini dönüştürmek için tasarlanmış yeni nesil bir Öğrenme Yönetim Sistemi (LMS). OptimoLMS, uzun dokümanları otomatik olarak özetlemek, sunumlardan anahtar kavramları çıkarmak, kişiselleştirilmiş öğrenme materyalleri oluşturmak ve öğrencilerin yardıma ihtiyaç duyduğu her an anında destek sağlamak için yapay zekadan yararlanır. İçerik aramakla harcanan zamanı azaltıp etkileşimi artırarak hem öğretmenler hem de öğrenciler için daha akıllı ve verimli bir öğrenme deneyimi sunar."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "Geleneksel İK operasyonlarını güçlü CRM yetenekleriyle birleştiren kapsamlı bir insan kaynakları ve iş gücü yönetim platformu. İşe alım süreçleri, devamlılık takibi, bordro yönetimi ve performans değerlendirmelerinden aday havuzlarına, işe alım iş akışlarına ve müşteri ilişkileri yönetimine kadar platform, İK'nın her yönünü tek bir ekosistemde merkezileştirir. Operasyonları kolaylaştırmak, takım üretkenliğini artırmak ve gerçek zamanlı analitik ile otomasyon aracılığıyla uygulanabilir içgörüler sağlamak için tasarlanmıştır."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "Paylaşılan deneyimler etrafında kurulmuş ortaklaşa bir sosyal platform. Kullanıcılar; arkadaşları, aileleri, takımları veya toplulukları ile mesajlaşabilecekleri, medya paylaşabilecekleri ve en anlamlı anılarını tek bir yerde saklayabilecekleri gizli veya açık gruplar oluşturabilirler. Seyahatleri, etkinlikleri, dönüm noktalarını veya günlük hayatı belgelerken Moments, konuşmaları birlikte yeniden ziyaret edilebilecek ve kutlanabilecek canlı bir paylaşılan deneyimler zaman tüneline dönüştürür."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "Kullanıcılara yapay zeka deneyimleri üzerinde tam kontrol sağlayan bir yapay zeka sohbet platformu. Kullanıcılar, tekrarlayan abonelik ücretleri ödemek yerine kendi API anahtarlarını bağlayarak temiz ve sezgisel bir arayüz üzerinden favori yapay zeka modellerine anında erişebilirler. VasChat, birden fazla sağlayıcıyı ve modeli destekleyerek kullanıcıların yanıtları karşılaştırmasına, konuşmaları yönetmesine ve kullanım ile maliyetlerin sahipliğini korurken gelişmiş yapay zeka yeteneklerinden yararlanmasına olanak tanır."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": ["Biyolojiye Giriş", "Kalkülüs II", "Dünya Tarihi"],
+				"aiSummary": "AI Özeti",
+				"askPlaceholder": "Bölüm 4 hakkında sorun…"
+			},
+			"hrSoftware": {
+				"employees": "Çalışanlar",
+				"openRoles": "Açık Pozisyonlar",
+				"attendance": "Devamlılık",
+				"applied": "Başvuruldu",
+				"interview": "Mülakat",
+				"offer": "Teklif",
+				"notifications": [
+					"Bordro işlemi tamamlandı",
+					"Yeni çalışan: Sarah M.",
+					"Değerlendirme zamanı geldi"
+				]
+			},
+			"moments": {
+				"groups": ["Aile Gezisi", "Takım Etkinliği", "Hafta Sonu"],
+				"memoryCount": "{count} anı"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": ["Refaktör planı", "E-posta taslağı", "Hata ayıklama yardımı"],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "İletişime geçin",
+		"title": "Birlikte harika",
+		"titleAccent": "bir şeyler yaratalım.",
+		"description": "Şu anda serbest zamanlı (freelance) projeler ve iş birliği fırsatlarını kabul ediyorum. Aşağıdaki kanallardan herhangi biri aracılığıyla bana ulaşmaktan çekinmeyin.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Profesyonel profil & ağ."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "Tüm kodlarım ve projelerim."
+			},
+			"email": {
+				"label": "E-posta",
+				"description": "Doğrudan gelen kutuma."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Düşünceler & güncellemeler."
+			}
+		},
+		"form": {
+			"heading": "Mesaj gönder",
+			"subheading": "24 saat içinde dönüş yapacağım.",
+			"name": "İsim",
+			"namePlaceholder": "Adınız",
+			"email": "E-posta",
+			"emailPlaceholder": "your@email.com",
+			"message": "Mesaj",
+			"messagePlaceholder": "Bana projenizden bahsedin...",
+			"submit": "Mesajı Gönder"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Özenle tasarlandı",
+		"backToTop": "Başa dön"
+	}
+}

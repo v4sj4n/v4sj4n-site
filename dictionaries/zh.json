@@ -1,0 +1,131 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — 全栈开发人员",
+		"description": "专注于打造卓越数字化产品的全栈开发人员。利用现代 Web 技术和人工智能，我创建了可扩展、高性能且以用户为中心 pages 解决方案，用以解决现实中的业务问题。"
+	},
+	"nav": {
+		"home": "首页",
+		"projects": "项目",
+		"contact": "联系我",
+		"themeLight": "切换至浅色模式",
+		"themeDark": "切换至深色模式"
+	},
+	"hero": {
+		"badge": "即可开始工作",
+		"title": "我打造数字化",
+		"titleAccent": "体验。",
+		"description": "专注于打造卓越数字化产品的全栈开发人员。利用现代 Web 技术和人工智能，我创建了可扩展、高性能且以用户为中心 pages 解决方案，用以解决现实中的业务问题。",
+		"resume": "查看简历",
+		"work": "浏览我的作品",
+		"scroll": "向下滑动",
+		"ui": {
+			"chart": {
+				"title": "响应时间",
+				"metric": "42ms",
+				"mon": "周一",
+				"wed": "周三",
+				"fri": "周五",
+				"sun": "周日"
+			},
+			"command": {
+				"placeholder": "搜索…",
+				"searchProjects": "搜索项目…",
+				"createBranch": "创建分支",
+				"runCommand": "运行命令"
+			}
+		}
+	},
+	"projects": {
+		"label": "精选作品",
+		"title": "致力于",
+		"titleAccent": "解决实际问题的项目。",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "下一代学习管理系统 (LMS)，旨在彻底改变学生的学习方式和教师的教学方式。OptimoLMS 利用人工智能自动总结冗长的文档、从演示文稿中提取核心概念、生成个性化的学习材料，并在学生需要帮助时随时提供即时援助。通过减少寻找内容的时间并提高参与度，它为教师和学习者创造了更智能、更高效的学习体验。"
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "一个综合性的人力资源和劳动力管理平台，将传统的人事运营与强大的 CRM 功能相结合。从员工入职、考勤跟踪、薪酬管理、绩效评估到候选人管道、招聘工作流程和客户关系管理，该平台将人力资源的各个方面集中到一个单一的生态系统中。"
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "一个围绕共同体验构建的协作式社交平台。用户可以创建私有或公开群组，供朋友、家人、团队或社区进行聊天、分享媒体并把他们最有意义的回忆珍藏在一个地方。Moments 将对话转化为共同体验的生动时间线。"
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "一个让用户完全掌控其 AI 体验的 AI 聊天平台。用户无需支付周期性的订阅费用，只需连接自己的 API 密钥，即可通过干净直观的界面立即访问自己喜爱的 AI 模型，同时保持对使用额度和成本的所有权。"
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": ["生物学导论", "微积分 II", "世界历史"],
+				"aiSummary": "AI 总结",
+				"askPlaceholder": "提问关于第 4 章的内容…"
+			},
+			"hrSoftware": {
+				"employees": "员工总数",
+				"openRoles": "开放职位",
+				"attendance": "考勤",
+				"applied": "已申请",
+				"interview": "面试中",
+				"offer": "录用信",
+				"notifications": [
+					"薪资发放计算已完成",
+					"新入职员工：Sarah M.",
+					"待完成绩效评估"
+				]
+			},
+			"moments": {
+				"groups": ["家庭旅行", "团队团建", "周末"],
+				"memoryCount": "{count} 条回忆"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": ["重构计划", "邮件草稿", "调试帮助"],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "保持联系",
+		"title": "让我们携手共同",
+		"titleAccent": "创造辉煌。",
+		"description": "我目前承接自由职业项目和各种合作机会。欢迎随时通过以下任何渠道与我联系。",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "专业档案与人脉网络。"
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "我所有的代码和项目。"
+			},
+			"email": {
+				"label": "电子邮箱",
+				"description": "直达我的收件箱。"
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "想法与动态更新。"
+			}
+		},
+		"form": {
+			"heading": "发送消息",
+			"subheading": "我会在 24 小时内回复您。",
+			"name": "姓名",
+			"namePlaceholder": "您的姓名",
+			"email": "电子邮箱",
+			"emailPlaceholder": "your@email.com",
+			"message": "留言内容",
+			"messagePlaceholder": "向我介绍一下您的项目...",
+			"submit": "发送消息"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "精心设计，匠心呈现",
+		"backToTop": "返回 authoritative 顶部"
+	}
+}

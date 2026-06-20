@@ -1,0 +1,131 @@
+{
+	"metadata": {
+		"title": "Vasjan Çupri — Full-stack Developer",
+		"description": "Full-stack developer focused on building exceptional digital products. Leveraging modern web technologies and AI, I create scalable, performant, and user-centric solutions that solve real business problems."
+	},
+	"nav": {
+		"home": "Home",
+		"projects": "Projects",
+		"contact": "Contact",
+		"themeLight": "Switch to light mode",
+		"themeDark": "Switch to dark mode"
+	},
+	"hero": {
+		"badge": "Available for work",
+		"title": "I craft digital",
+		"titleAccent": "experiences.",
+		"description": "Full-stack developer focused on building exceptional digital products. Leveraging modern web technologies and AI, I create scalable, performant, and user-centric solutions that solve real business problems.",
+		"resume": "View Resume",
+		"work": "See my work",
+		"scroll": "Scroll",
+		"ui": {
+			"chart": {
+				"title": "Response time",
+				"metric": "42ms",
+				"mon": "Mon",
+				"wed": "Wed",
+				"fri": "Fri",
+				"sun": "Sun"
+			},
+			"command": {
+				"placeholder": "Search…",
+				"searchProjects": "Search projects…",
+				"createBranch": "Create branch",
+				"runCommand": "Run command"
+			}
+		}
+	},
+	"projects": {
+		"label": "Selected Work",
+		"title": "Projects that",
+		"titleAccent": "solve real problems.",
+		"items": {
+			"optimolms": {
+				"title": "OptimoLMS",
+				"description": "A next-generation Learning Management System designed to transform the way students learn and educators teach. OptimoLMS leverages AI to automatically summarize lengthy documents, extract key concepts from presentations, generate personalized learning materials, and provide instant assistance whenever students need help. By reducing time spent searching through content and increasing engagement, it creates a smarter, more efficient learning experience for both teachers and learners."
+			},
+			"hrSoftware": {
+				"title": "HR Software",
+				"description": "A comprehensive HR and workforce management platform that combines traditional HR operations with powerful CRM capabilities. From employee onboarding, attendance tracking, payroll management, and performance reviews to candidate pipelines, recruitment workflows, and client relationship management, the platform centralizes every aspect of human resources into a single ecosystem. Designed to streamline operations, improve team productivity, and provide actionable insights through real-time analytics and automation."
+			},
+			"moments": {
+				"title": "Moments",
+				"description": "A collaborative social platform built around shared experiences. Users can create private or public groups where friends, families, teams, or communities can chat, share media, and preserve their most meaningful memories in one place. Whether it's documenting trips, events, milestones, or everyday life, Moments transforms conversations into a living timeline of shared experiences that can be revisited and celebrated together."
+			},
+			"vaschat": {
+				"title": "VasChat",
+				"description": "An AI chat platform that gives users complete control over their AI experience. Instead of paying recurring subscription fees, users can simply connect their own API keys and instantly access their favorite AI models through a clean and intuitive interface. VasChat supports multiple providers and models, allowing users to compare responses, manage conversations, and use advanced AI capabilities while maintaining ownership of their usage and costs."
+			}
+		},
+		"mockups": {
+			"optimolms": {
+				"courses": ["Intro to Biology", "Calculus II", "World History"],
+				"aiSummary": "AI Summary",
+				"askPlaceholder": "Ask about Chapter 4…"
+			},
+			"hrSoftware": {
+				"employees": "Employees",
+				"openRoles": "Open Roles",
+				"attendance": "Attendance",
+				"applied": "Applied",
+				"interview": "Interview",
+				"offer": "Offer",
+				"notifications": [
+					"Payroll run completed",
+					"New hire: Sarah M.",
+					"Review due"
+				]
+			},
+			"moments": {
+				"groups": ["Family Trip", "Team Offsite", "Weekend"],
+				"memoryCount": "{count} memories"
+			},
+			"vaschat": {
+				"api": "API",
+				"chats": ["Refactor plan", "Email draft", "Debug help"],
+				"claudeModel": "Claude 4.6 Sonnet",
+				"gptModel": "GPT 5.5"
+			}
+		}
+	},
+	"contact": {
+		"label": "Get in touch",
+		"title": "Let's create",
+		"titleAccent": "something great.",
+		"description": "I'm currently accepting freelance projects and collaboration opportunities. Feel free to reach out through any channel below.",
+		"channels": {
+			"linkedin": {
+				"label": "LinkedIn",
+				"description": "Professional profile & network."
+			},
+			"github": {
+				"label": "GitHub",
+				"description": "All my code and projects."
+			},
+			"email": {
+				"label": "Email",
+				"description": "Direct to my inbox."
+			},
+			"twitter": {
+				"label": "X (Twitter)",
+				"description": "Thoughts & updates."
+			}
+		},
+		"form": {
+			"heading": "Send a message",
+			"subheading": "I'll get back to you within 24 hours.",
+			"name": "Name",
+			"namePlaceholder": "Your name",
+			"email": "Email",
+			"emailPlaceholder": "your@email.com",
+			"message": "Message",
+			"messagePlaceholder": "Tell me about your project...",
+			"submit": "Send Message"
+		}
+	},
+	"footer": {
+		"copyright": "© {year} Vasjan Çupri",
+		"tagline": "Designed with care",
+		"backToTop": "Back to top"
+	}
+}
