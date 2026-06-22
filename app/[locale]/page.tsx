@@ -7,7 +7,7 @@ import { Navbar } from "@/components/Navbar";
 import { ProjectsSection } from "@/components/ProjectsSection";
 import { routing } from "@/i18n/routing";
 
-const SITE_URL = "https://v4sj4n.com";
+const SITE_URL = "https://vasjan.com";
 
 type Props = {
 	params: Promise<{ locale: string }>;
