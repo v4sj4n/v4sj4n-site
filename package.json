@@ -12,7 +12,8 @@
 		"pages:deploy": "npm run build && wrangler pages deploy out",
 		"format": "biome format . --write",
 		"lint": "biome lint .",
-		"check": "biome check --write ."
+		"check": "biome check --write .",
+		"extract-metadata": "node scripts/extract-metadata.mjs"
 	},
 	"dependencies": {
 		"lucide-react": "^1.21.0",

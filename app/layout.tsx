@@ -45,6 +45,7 @@ export default function RootLayout({
 			suppressHydrationWarning
 		>
 			<head>
+				<meta name="apple-mobile-web-app-title" content="Vasjan" />
 				{/* biome-ignore lint/security/noDangerouslySetInnerHtml: static theme bootstrap to prevent flash */}
 				<script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
 			</head>
