@@ -1,4 +1,4 @@
-import { routing, type Locale } from "@/i18n/routing";
+import { type Locale, routing } from "@/i18n/routing";
 
 const locales = new Set<string>(routing.locales);
 

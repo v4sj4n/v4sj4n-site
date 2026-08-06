@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "motion/react";
 import { Send } from "lucide-react";
+import { motion } from "motion/react";
 import Script from "next/script";
 import { useTranslations } from "next-intl";
-import { validateContactInput } from "@/lib/contact-validation";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { validateContactInput } from "@/lib/contact-validation";
 
 type TurnstileApi = {
 	render: (

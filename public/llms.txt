@@ -1,0 +1,33 @@
+# llms.txt
+# Full documentation: https://llmstxt.org/
+# Canonical URL: https://vasjan.com/llms.txt
+# Full version: https://vasjan.com/llms-full.txt
+
+- **Full documentation for this site:** https://vasjan.com/llms-full.txt
+- **Sitemap:** https://vasjan.com/sitemap.xml
+- **Robots.txt:** https://vasjan.com/robots.txt
+- **Website:** https://vasjan.com/
+
+## About
+
+Vasjan Çupri — Full-stack developer focused on building exceptional digital products. Leveraging modern web technologies and AI to create scalable, performant, and user-centric solutions that solve real business problems. Available for freelance projects and collaboration opportunities.
+
+## Primary URLs
+
+- **English homepage:** https://vasjan.com/en/
+- **Resume (PDF):** https://vasjan.com/resume.pdf
+
+## Projects
+
+- **OptimoLMS** — AI-powered Learning Management System: https://vasjan.com/en/#projects
+- **HR Software** — Unified HR + CRM workforce platform: https://vasjan.com/en/#projects
+- **Moments** — Collaborative shared-experience social platform: https://vasjan.com/en/#projects
+- **VasChat** — Bring-your-own-API-key AI chat platform: https://vasjan.com/en/#projects
+
+## Contact
+
+- **LinkedIn:** https://www.linkedin.com/in/vasjancupri
+- **GitHub:** https://github.com/v4sj4n
+- **Email:** hello@vasjan.com
+- **X (Twitter):** https://x.com/v4sj4n
+- **Contact form:** https://vasjan.com/en/#contact

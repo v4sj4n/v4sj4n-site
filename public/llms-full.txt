@@ -1,0 +1,257 @@
+# llms-full.txt
+# Full documentation: https://llmstxt.org/
+# Canonical URL: https://vasjan.com/llms-full.txt
+# Companion entry point: https://vasjan.com/llms.txt
+# Sitemap: https://vasjan.com/sitemap.xml
+
+# =============================================================================
+# VASJAN ÇUPRI — Full-stack Developer Portfolio
+# Site: https://vasjan.com/
+# =============================================================================
+
+## Personal Information
+
+- **Name:** Vasjan Çupri
+- **Role:** Full-stack Developer
+- **Primary language:** English (en)
+- **Languages on site:** 32 locales via locale-prefixed URLs (see "All Locale URLs" section below)
+- **Default locale fallback:** /en/
+
+## Professional Summary
+
+Full-stack developer focused on building exceptional digital products. Leveraging modern web technologies and AI to create scalable, performant, and user-centric solutions that solve real business problems. Available for freelance projects and collaboration opportunities.
+
+Core competencies include:
+- Full-stack web application development
+- AI integration (LLM APIs, custom agent architectures, RAG systems)
+- Product design and user experience
+- Performance optimization and scalability
+- DevOps and deployment (Cloudflare Workers, serverless)
+- Internationalization and multi-language systems
+
+## Site Structure
+
+The portfolio site consists of three main sections on a single-page layout (anchor-based), available in 32 languages:
+
+### 1. Hero Section (`#hero`)
+- Personal introduction and headline
+- Resume download link (PDF)
+- Call-to-action buttons
+
+### 2. Projects Section (`#projects`)
+Four selected case studies. Each project appears as a featured card with:
+- Title
+- Long-form description
+- Visual mockup showing a realistic UI of the product
+
+### 3. Contact Section (`#contact`)
+- Four contact channels: LinkedIn, GitHub, Email, X (Twitter)
+- Client-side contact form (validated, Cloudflare Turnstile protected)
+- Form submissions handled by a Cloudflare Worker
+
+---
+
+# =============================================================================
+# PROJECTS — Detailed Information
+# =============================================================================
+
+## Project 1: OptimoLMS
+**URL:** https://vasjan.com/en/#projects
+
+**Category:** Education Technology / Learning Management
+
+**Full Description:**
+A next-generation Learning Management System designed to transform the way students learn and educators teach. OptimoLMS leverages AI to automatically summarize lengthy documents, extract key concepts from presentations, generate personalized learning materials, and provide instant assistance whenever students need help. By reducing time spent searching through content and increasing engagement, it creates a smarter, more efficient learning experience for both teachers and learners.
+
+**Key Features:**
+- AI-powered document summarization for long-form readings
+- Concept extraction from presentations and slide decks
+- Personalized learning material generation based on student progress
+- On-demand AI student assistant (Q&A, tutoring, explanations)
+- Course management, content organization, and progress tracking
+- Courses shown in mockup: Intro to Biology, Calculus II, World History
+
+**Tech Highlight:** Deep LLM integration for educational content processing, with a focus on reducing content search time and increasing learning engagement.
+
+---
+
+## Project 2: HR Software
+**URL:** https://vasjan.com/en/#projects
+
+**Category:** Human Resources / Workforce Management / CRM
+
+**Full Description:**
+A comprehensive HR and workforce management platform that combines traditional HR operations with powerful CRM capabilities. From employee onboarding, attendance tracking, payroll management, and performance reviews to candidate pipelines, recruitment workflows, and client relationship management, the platform centralizes every aspect of human resources into a single ecosystem. Designed to streamline operations, improve team productivity, and provide actionable insights through real-time analytics and automation.
+
+**Key Features:**
+- Employee onboarding workflows and lifecycle management
+- Attendance tracking and time management
+- Payroll processing and compensation management
+- Performance review cycles and feedback systems
+- Recruitment / ATS: candidate pipelines, interview scheduling, offer management
+- Recruitment stages: Applied → Interview → Offer
+- CRM module for client relationship management
+- Real-time analytics dashboards and automation
+- Notifications for payroll runs, new hires, review deadlines
+
+**Tech Highlight:** Unified data model combining HR operations + CRM; real-time analytics and workflow automation.
+
+---
+
+## Project 3: Moments
+**URL:** https://vasjan.com/en/#projects
+
+**Category:** Social / Collaboration / Memory Preservation
+
+**Full Description:**
+A collaborative social platform built around shared experiences. Users can create private or public groups where friends, families, teams, or communities can chat, share media, and preserve their most meaningful memories in one place. Whether it's documenting trips, events, milestones, or everyday life, Moments transforms conversations into a living timeline of shared experiences that can be revisited and celebrated together.
+
+**Key Features:**
+- Private and public groups for different social contexts
+- In-group chat and real-time messaging
+- Media sharing (photos, videos) organized within groups
+- Timeline-based memory preservation
+- Groups shown in mockup: Family Trip, Team Offsite, Weekend
+- Memory count tracking per group
+
+**Tech Highlight:** Social collaboration patterns with media-rich timeline UX; emphasis on preserving and revisiting shared memories.
+
+---
+
+## Project 4: VasChat
+**URL:** https://vasjan.com/en/#projects
+
+**Category:** AI / LLMs / Developer Tools
+
+**Full Description:**
+An AI chat platform that gives users complete control over their AI experience. Instead of paying recurring subscription fees, users can simply connect their own API keys and instantly access their favorite AI models through a clean and intuitive interface. VasChat supports multiple providers and models, allowing users to compare responses, manage conversations, and use advanced AI capabilities while maintaining ownership of their usage and costs.
+
+**Key Features:**
+- Bring-your-own-API-key model (no recurring subscriptions)
+- Multiple AI providers and models supported
+- Side-by-side response comparison across models (e.g., Claude vs. GPT)
+- Conversation management, history, and organization
+- Full usage and cost transparency — user owns everything
+- Models shown in mockup: Claude 4.6 Sonnet, GPT 5.5
+- Example chats: Refactor plan, Email draft, Debug help
+
+**Tech Highlight:** Provider-agnostic LLM abstraction layer; full cost and data ownership philosophy.
+
+---
+
+# =============================================================================
+# INTERNATIONALIZATION — All Locale URLs
+# =============================================================================
+
+The site is available in 32 locales. Each locale is served from its own
+locale-prefixed URL path. All locale URLs are also listed in the sitemap:
+https://vasjan.com/sitemap.xml with hreflang alternates.
+
+| Code  | Language       | URL                              |
+|-------|----------------|----------------------------------|
+| en    | English        | https://vasjan.com/en/           |
+| ar    | Arabic         | https://vasjan.com/ar/           |
+| arc   | Aramaic        | https://vasjan.com/arc/          |
+| bg    | Bulgarian      | https://vasjan.com/bg/           |
+| bn    | Bengali        | https://vasjan.com/bn/           |
+| de    | German         | https://vasjan.com/de/           |
+| el    | Greek          | https://vasjan.com/el/           |
+| es    | Spanish        | https://vasjan.com/es/           |
+| fr    | French         | https://vasjan.com/fr/           |
+| he    | Hebrew         | https://vasjan.com/he/           |
+| hi    | Hindi          | https://vasjan.com/hi/           |
+| hr    | Croatian       | https://vasjan.com/hr/           |
+| id    | Indonesian     | https://vasjan.com/id/           |
+| is    | Icelandic      | https://vasjan.com/is/           |
+| it    | Italian        | https://vasjan.com/it/           |
+| ja    | Japanese       | https://vasjan.com/ja/           |
+| ka    | Georgian       | https://vasjan.com/ka/           |
+| ko    | Korean         | https://vasjan.com/ko/           |
+| nl    | Dutch          | https://vasjan.com/nl/           |
+| no    | Norwegian      | https://vasjan.com/no/           |
+| pl    | Polish         | https://vasjan.com/pl/           |
+| pt    | Portuguese     | https://vasjan.com/pt/           |
+| ro    | Romanian       | https://vasjan.com/ro/           |
+| ru    | Russian        | https://vasjan.com/ru/           |
+| sq    | Albanian       | https://vasjan.com/sq/           |
+| sr    | Serbian        | https://vasjan.com/sr/           |
+| sv    | Swedish        | https://vasjan.com/sv/           |
+| th    | Thai           | https://vasjan.com/th/           |
+| tr    | Turkish        | https://vasjan.com/tr/           |
+| uk    | Ukrainian      | https://vasjan.com/uk/           |
+| ur    | Urdu           | https://vasjan.com/ur/           |
+| vi    | Vietnamese     | https://vasjan.com/vi/           |
+| zh    | Chinese (Simp) | https://vasjan.com/zh/           |
+
+---
+
+# =============================================================================
+# CONTACT INFORMATION
+# =============================================================================
+
+## Professional Profiles & Direct Contact
+
+| Channel   | URL / Handle                                     | Description                         |
+|-----------|--------------------------------------------------|-------------------------------------|
+| LinkedIn  | https://www.linkedin.com/in/vasjancupri          | Professional profile & network      |
+| GitHub    | https://github.com/v4sj4n                        | Open-source code & repositories     |
+| Email     | hello@vasjan.com                                 | Direct email inquiries              |
+| X (Twitter) | https://x.com/v4sj4n                           | Public thoughts & project updates   |
+
+## Online Contact Form
+A contact form is available at: https://vasjan.com/en/#contact
+
+**Form fields:**
+- Name (minimum 2 characters)
+- Email (valid format required)
+- Message (minimum 4 words)
+- Consent checkbox (required)
+- Cloudflare Turnstile verification (anti-bot)
+
+**Response time:** Within 24 hours.
+
+---
+
+# =============================================================================
+# RESOURCES
+# =============================================================================
+
+- **Resume PDF:** https://vasjan.com/resume.pdf — Professional resume/CV with work experience, skills, and education.
+- **English homepage:** https://vasjan.com/en/ — Primary version.
+- **Sitemap:** https://vasjan.com/sitemap.xml — All locale URLs with hreflang alternates.
+- **Robots.txt:** https://vasjan.com/robots.txt — Crawler directives.
+- **llms.txt (compact):** https://vasjan.com/llms.txt — Entry-point version of this document.
+
+---
+
+# =============================================================================
+# TECHNICAL STACK (for reference when answering questions about the site)
+# =============================================================================
+
+## Frontend Framework
+- **Next.js 16** (App Router) with static export (`output: "export"`)
+- **React 19**
+- **TypeScript 5**
+- **next-intl 4** — i18n routing and translations for 32 locales
+- **Tailwind CSS 4** — Utility-first styling with `@tailwindcss/postcss`
+
+## UI & Animation
+- **motion** (Framer Motion v12) — Reveal animations, page transitions, micro-interactions
+- **lucide-react** — Icon library
+- **Google Fonts:** Geologica (sans), Fraunces (display) — loaded via `next/font`
+- **Dark/Light theme** — Persisted in localStorage, bootstrapped before hydration to prevent flash
+
+## Backend & Deployment
+- **Cloudflare Workers** — Contact form API (`/api/contact`) with form validation and Turnstile
+- **Cloudflare Pages** — Static site hosting of the Next.js export output
+- **Static export** — Fully pre-rendered at build time, no Node.js server required
+- **Trailing slash:** Enabled for all URLs
+
+## Build & Tooling
+- **Biome 2.5** — Linting, formatting, and type-checking
+- **TypeScript** — Strict typing across the codebase
+- **Wrangler 4** — Cloudflare Workers & Pages local development + deployment
+
+---
+
+# End of llms-full.txt

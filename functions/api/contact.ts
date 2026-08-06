@@ -1,7 +1,7 @@
 import {
+	type ContactEnv,
 	handleContactOptions,
 	handleContactPost,
-	type ContactEnv,
 } from "../../lib/contact-handler";
 
 export const onRequestOptions: PagesFunction<ContactEnv> = async ({
