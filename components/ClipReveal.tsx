@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "motion/react";
-import type { ReactNode } from "react";
+import { type ReactNode, useState } from "react";
 import { appleEase, clipRevealDuration } from "@/lib/motion";
 
 type ClipRevealProps = {
@@ -26,9 +26,12 @@ export function ClipReveal({
 	const prefersReducedMotion = useReducedMotion() ?? false;
 	const motionDelay = prefersReducedMotion ? 0 : delay;
 	const motionDuration = prefersReducedMotion ? 0 : duration;
+	const [isComplete, setIsComplete] = useState(prefersReducedMotion);
+
+	const shouldClip = clip && !isComplete;
 
 	return (
-		<div className={`${clip ? "overflow-hidden" : ""} ${className}`}>
+		<div className={`${shouldClip ? "overflow-hidden" : ""} ${className}`}>
 			<motion.div
 				initial={{
 					y: prefersReducedMotion ? 0 : "110%",
@@ -40,7 +43,10 @@ export function ClipReveal({
 					ease: appleEase,
 					delay: motionDelay,
 				}}
-				onAnimationComplete={onComplete}
+				onAnimationComplete={() => {
+					setIsComplete(true);
+					onComplete?.();
+				}}
 			>
 				{children}
 			</motion.div>

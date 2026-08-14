@@ -8,7 +8,7 @@ import {
 	useTransform,
 } from "motion/react";
 import { useTranslations } from "next-intl";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ClipReveal } from "@/components/ClipReveal";
 import { HeroFloatingUI } from "@/components/HeroFloatingUI";
 import { SectionEyebrow } from "@/components/SectionEyebrow";
@@ -29,9 +29,12 @@ function HeroTitleLine({
 	as?: "h1" | "p";
 }) {
 	const prefersReducedMotion = useReducedMotion() ?? false;
+	const [isComplete, setIsComplete] = useState(prefersReducedMotion);
 
 	return (
-		<div className={`overflow-hidden ${wrapperClassName ?? ""}`}>
+		<div
+			className={`${isComplete ? "" : "overflow-hidden"} ${wrapperClassName ?? ""}`}
+		>
 			<motion.div
 				initial={{ y: prefersReducedMotion ? 0 : "110%" }}
 				animate={{ y: 0 }}
@@ -40,6 +43,7 @@ function HeroTitleLine({
 					ease: appleEase,
 					delay: prefersReducedMotion ? 0 : delay,
 				}}
+				onAnimationComplete={() => setIsComplete(true)}
 			>
 				<Tag className={className}>{children}</Tag>
 			</motion.div>
@@ -119,6 +123,8 @@ export function HeroSection() {
 						<div className="flex flex-wrap items-center gap-4">
 							<motion.a
 								href="/resume.pdf"
+								target="_blank"
+								rel="noopener noreferrer"
 								whileHover={{ scale: 1.02 }}
 								whileTap={{ scale: 0.96 }}
 								className="group inline-flex items-center gap-2.5 rounded-full bg-foreground px-7 py-3.5 text-[13px] font-semibold tracking-wide text-background transition-colors duration-500 hover:bg-primary"
