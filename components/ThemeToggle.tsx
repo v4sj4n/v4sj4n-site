@@ -17,10 +17,18 @@ export function ThemeToggle() {
 	const { theme, toggleTheme, mounted } = useTheme();
 	const isLight = mounted && theme === "light";
 
+	const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+		const rect = e.currentTarget.getBoundingClientRect();
+		toggleTheme({
+			x: rect.left + rect.width / 2,
+			y: rect.top + rect.height / 2,
+		});
+	};
+
 	return (
 		<motion.button
 			type="button"
-			onClick={toggleTheme}
+			onClick={handleClick}
 			whileHover={{ scale: 1.05 }}
 			whileTap={{ scale: 0.96 }}
 			className="relative rounded-full p-2.5 text-muted-foreground transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"

@@ -19,17 +19,19 @@ function HeroTitleLine({
 	children,
 	delay,
 	className,
+	wrapperClassName,
 	as: Tag = "h1",
 }: {
 	children: React.ReactNode;
 	delay: number;
 	className?: string;
+	wrapperClassName?: string;
 	as?: "h1" | "p";
 }) {
 	const prefersReducedMotion = useReducedMotion() ?? false;
 
 	return (
-		<div className="overflow-hidden">
+		<div className={`overflow-hidden ${wrapperClassName ?? ""}`}>
 			<motion.div
 				initial={{ y: prefersReducedMotion ? 0 : "110%" }}
 				animate={{ y: 0 }}
@@ -82,21 +84,6 @@ export function HeroSection() {
 			id="home"
 			className="relative flex min-h-dvh flex-col justify-center overflow-hidden"
 		>
-			<div className="pointer-events-none absolute inset-0 hidden overflow-hidden lg:block">
-				<motion.div
-					initial={{ opacity: 0, scale: 0.85 }}
-					animate={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 2, ease: appleEase }}
-					className="absolute top-[8%] right-[0%] h-[55vw] w-[55vw] rounded-full bg-gradient-to-br from-primary/[0.07] via-accent/[0.04] to-transparent blur-[100px]"
-				/>
-				<motion.div
-					initial={{ opacity: 0, scale: 0.85 }}
-					animate={{ opacity: 1, scale: 1 }}
-					transition={{ duration: 2, ease: appleEase, delay: 0.25 }}
-					className="absolute bottom-[5%] left-[-10%] h-[42vw] w-[42vw] rounded-full bg-gradient-to-tr from-muted/60 to-transparent blur-[90px]"
-				/>
-			</div>
-
 			<motion.div
 				style={{ y: contentY, opacity: contentOpacity }}
 				className="relative mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-[5fr_4fr] lg:items-center lg:gap-8 md:px-8 md:py-24"
@@ -106,17 +93,17 @@ export function HeroSection() {
 						<SectionEyebrow>{t("badge")}</SectionEyebrow>
 					</ClipReveal>
 
-					<div className="mb-8">
+					<div className="mb-8 flex flex-col gap-1 sm:gap-2">
 						<HeroTitleLine
 							delay={0.28}
-							className="pb-[0.12em] text-[clamp(2.75rem,7vw,5.75rem)] font-semibold tracking-[-0.04em] leading-[1.1]"
+							className="pb-[0.08em] text-[clamp(3rem,7.5vw,6rem)] font-semibold tracking-[-0.04em] leading-[1.02]"
 						>
 							{t("title")}
 						</HeroTitleLine>
 						<HeroTitleLine
 							delay={0.42}
 							as="p"
-							className="pb-[0.12em] font-serif text-[clamp(2.75rem,7vw,5.75rem)] font-semibold tracking-[-0.04em] leading-[1.1] text-muted-foreground"
+							className="pb-[0.08em] font-serif text-[clamp(3rem,7.5vw,6rem)] font-semibold tracking-[-0.04em] leading-[1.02] text-muted-foreground"
 						>
 							{t("titleAccent")}
 						</HeroTitleLine>

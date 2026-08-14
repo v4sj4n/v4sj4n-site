@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fraunces, Geologica } from "next/font/google";
+import { AuraBackground } from "@/components/AuraBackground";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -50,7 +51,7 @@ export default function RootLayout({
 				<script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
 			</head>
 			<body className="flex min-h-full flex-col transition-colors duration-300">
-				{children}
+				<AuraBackground>{children}</AuraBackground>
 			</body>
 		</html>
 	);

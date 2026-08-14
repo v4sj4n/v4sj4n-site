@@ -44,7 +44,7 @@
 }
 
 .dark {
-	--background: oklch(17% 0.026 275);
+	--background: oklch(16% 0.026 275);
 	--foreground: oklch(94% 0.014 275);
 
 	--card: oklch(21% 0.03 275);
@@ -147,4 +147,167 @@ p {
 	display: block;
 	/* biome-ignore lint/complexity/noImportantStyles: Turnstile injects inline width on its iframe */
 	width: 100% !important;
+}
+
+/* Aurora Beams - Aura */
+.aura-bg {
+	position: relative;
+	min-height: 100vh;
+}
+
+.aura-layer-1 {
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(
+		55.8% 55.49% at 50% 100%,
+		oklch(28% 0.12 275) 0%,
+		oklch(22% 0.08 285) 45%,
+		oklch(16% 0.026 275 / 0) 100%
+	);
+	mix-blend-mode: screen;
+	opacity: 0.7;
+	transform: translateZ(0);
+	will-change: transform;
+	pointer-events: none;
+}
+
+:root:not(.dark) .aura-layer-1 {
+	background: radial-gradient(
+		55.8% 55.49% at 50% 100%,
+		oklch(93% 0.04 280) 0%,
+		oklch(96% 0.02 285) 45%,
+		oklch(98.2% 0.005 275 / 0) 100%
+	);
+	mix-blend-mode: multiply;
+	opacity: 0.6;
+}
+
+.aura-layer-2 {
+	position: absolute;
+	inset: 0;
+	background:
+		repeating-linear-gradient(
+			100deg,
+			oklch(20% 0.03 275) 0%,
+			oklch(20% 0.03 275) 3%,
+			oklch(24% 0.04 280 / 0.5) 5%,
+			oklch(24% 0.04 280 / 0.5) 7%,
+			transparent 10%,
+			transparent 12%,
+			oklch(24% 0.04 280 / 0.5) 14%,
+			oklch(20% 0.03 275) 16%
+		),
+		repeating-linear-gradient(
+			100deg,
+			oklch(32% 0.1 285) 0%,
+			oklch(32% 0.1 285) 1.5%,
+			oklch(28% 0.12 295 / 0.7) 2%,
+			oklch(25% 0.11 275) 3%,
+			oklch(25% 0.11 275) 4%,
+			oklch(28% 0.12 295 / 0.7) 4.5%,
+			oklch(32% 0.1 285) 5%
+		);
+	background-size: 300% 200%;
+	mix-blend-mode: screen;
+	filter: blur(75px);
+	opacity: 0.55;
+	transform: translateZ(0);
+	will-change: transform;
+	pointer-events: none;
+}
+
+@media (min-width: 768px) {
+	.aura-layer-2 {
+		filter: blur(108px);
+	}
+}
+
+:root:not(.dark) .aura-layer-2 {
+	background:
+		repeating-linear-gradient(
+			100deg,
+			oklch(96% 0.015 275) 0%,
+			oklch(96% 0.015 275) 3%,
+			oklch(94% 0.02 280 / 0.5) 5%,
+			oklch(94% 0.02 280 / 0.5) 7%,
+			transparent 10%,
+			transparent 12%,
+			oklch(94% 0.02 280 / 0.5) 14%,
+			oklch(96% 0.015 275) 16%
+		),
+		repeating-linear-gradient(
+			100deg,
+			oklch(94% 0.03 285) 0%,
+			oklch(94% 0.03 285) 1.5%,
+			oklch(92% 0.04 295 / 0.6) 2%,
+			oklch(90% 0.05 275) 3%,
+			oklch(90% 0.05 275) 4%,
+			oklch(92% 0.04 295 / 0.6) 4.5%,
+			oklch(94% 0.03 285) 5%
+		);
+	background-size: 300% 200%;
+	mix-blend-mode: multiply;
+	opacity: 0.45;
+}
+
+.aura-layer-3 {
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(
+		ellipse at 100% 100%,
+		#ffffff 20%,
+		oklch(14% 0.025 275) 80%
+	);
+	mix-blend-mode: multiply;
+	transform: translateZ(0);
+	will-change: transform;
+	pointer-events: none;
+}
+
+:root:not(.dark) .aura-layer-3 {
+	background: radial-gradient(
+		ellipse at 100% 100%,
+		#ffffff 30%,
+		oklch(96% 0.015 275) 85%
+	);
+	mix-blend-mode: multiply;
+	opacity: 0.4;
+}
+
+.aura-grain {
+	position: absolute;
+	inset: 0;
+	mix-blend-mode: overlay;
+	opacity: 0.85;
+	pointer-events: none;
+}
+
+:root:not(.dark) .aura-grain {
+	mix-blend-mode: multiply;
+	opacity: 0.35;
+}
+
+/* Radial View Transition Theme Toggle */
+html.theme-switching,
+html.theme-switching * {
+	/* biome-ignore lint/complexity/noImportantStyles: prevent CSS color transition clashes during radial clip-path animation */
+	transition: none !important;
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation: none;
+	mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+	z-index: 1;
+}
+
+::view-transition-new(root) {
+	z-index: 9999;
+}
+
+::view-transition-image-pair(root) {
+	isolation: isolate;
 }
