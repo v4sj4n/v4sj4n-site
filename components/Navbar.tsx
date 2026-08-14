@@ -2,6 +2,7 @@
 
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { useTranslations } from "next-intl";
+import { LanguageDropdown } from "@/components/LanguageDropdown";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { Link } from "@/i18n/navigation";
 import { appleEase } from "@/lib/motion";
@@ -80,9 +81,9 @@ export function Navbar() {
 					WebkitBackdropFilter: navBackdrop,
 					boxShadow: navShadow,
 				}}
-				className="mx-auto flex w-full min-h-14 items-center justify-between"
+				className="relative mx-auto flex min-h-14 w-full items-center justify-between"
 			>
-				<Link href="/" aria-label="Home" className="group">
+				<Link href="/" aria-label="Home" className="group shrink-0">
 					<span className="text-[15px] font-semibold tracking-normal text-foreground whitespace-nowrap">
 						v
 						<motion.span
@@ -101,19 +102,23 @@ export function Navbar() {
 					</span>
 				</Link>
 
-				<div className="flex items-center gap-1 sm:gap-2">
-					<ul className="hidden items-center gap-0.5 md:flex">
-						{navLinks.map(({ href, key }) => (
-							<li key={key}>
-								<a
-									href={href}
-									className="rounded-full px-4 py-2 text-[13px] font-medium tracking-wide text-muted-foreground transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
-								>
-									{t(key)}
-								</a>
-							</li>
-						))}
-					</ul>
+				{/* Middle: Nav links */}
+				<ul className="hidden items-center gap-0.5 md:flex md:absolute md:left-1/2 md:-translate-x-1/2">
+					{navLinks.map(({ href, key }) => (
+						<li key={key}>
+							<a
+								href={href}
+								className="rounded-full px-4 py-2 text-[13px] font-medium tracking-wide text-muted-foreground transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
+							>
+								{t(key)}
+							</a>
+						</li>
+					))}
+				</ul>
+
+				{/* Right: Actions */}
+				<div className="flex items-center gap-1 sm:gap-2 shrink-0">
+					<LanguageDropdown />
 					<ThemeToggle />
 				</div>
 			</motion.nav>
