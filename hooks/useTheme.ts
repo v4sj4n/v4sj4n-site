@@ -80,13 +80,14 @@ export function useTheme() {
 
 	useEffect(() => {
 		const handleKeyDown = (e: KeyboardEvent) => {
-			if (e.key.toLowerCase() !== "d" || e.metaKey || e.ctrlKey || e.altKey) {
+			const key = typeof e.key === "string" ? e.key.toLowerCase() : "";
+			if (key !== "d" || e.metaKey || e.ctrlKey || e.altKey) {
 				return;
 			}
 
-			const target = e.target as HTMLElement | null;
+			const target = e.target;
 			if (
-				target &&
+				target instanceof HTMLElement &&
 				(target.tagName === "INPUT" ||
 					target.tagName === "TEXTAREA" ||
 					target.tagName === "SELECT" ||

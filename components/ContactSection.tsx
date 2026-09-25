@@ -2,7 +2,7 @@
 
 import { ArrowUpRight, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
-import type { ComponentType, SVGProps } from "react";
+import { type ComponentType, type SVGProps, useState } from "react";
 import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import { SectionEyebrow } from "@/components/SectionEyebrow";
 import { ContactForm } from "./ContactForm";
@@ -65,9 +65,10 @@ const channels: {
 
 export function ContactSection() {
 	const t = useTranslations("contact");
+	const [formSent, setFormSent] = useState(false);
 
 	return (
-		<section id="contact" className="border-t border-border/50 py-32 md:py-40">
+		<section id="contact" className="py-32 md:py-40">
 			<div className="mx-auto max-w-6xl px-6 md:px-8">
 				<div className="mb-20 md:mb-24">
 					<Reveal>
@@ -82,9 +83,9 @@ export function ContactSection() {
 				</div>
 
 				<div className="grid grid-cols-1 gap-16 lg:grid-cols-[2fr_3fr] lg:gap-12">
-					<div>
+					<div className="flex flex-col gap-6">
 						<Reveal delay={0.12}>
-							<p className="mb-7 max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
+							<p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
 								{t("description")}
 							</p>
 						</Reveal>
@@ -130,17 +131,23 @@ export function ContactSection() {
 					</div>
 
 					<Reveal delay={0.16}>
-						<div className="overflow-hidden rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm">
-							<div className="border-b border-border/50 px-6 py-5 md:px-8 md:py-6">
+						<div
+							className="overflow-hidden rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm"
+							data-status={formSent ? "submitted" : "idle"}
+						>
+							<div className="px-6 pt-6 md:px-8 md:pt-8">
 								<h3 className="text-lg font-semibold tracking-[-0.02em] text-balance">
-									{t("form.heading")}
+									{formSent ? t("form.successTitle") : t("form.heading")}
 								</h3>
-								<p className="mt-1 max-w-[68ch] text-pretty text-sm text-muted-foreground">
-									{t("form.subheading")}
+								<p
+									role={formSent ? "status" : undefined}
+									className="mt-1 max-w-[68ch] text-pretty text-sm text-muted-foreground"
+								>
+									{formSent ? t("form.success") : t("form.subheading")}
 								</p>
 							</div>
 							<div className="px-6 md:px-8">
-								<ContactForm />
+								<ContactForm onSuccessChange={setFormSent} />
 							</div>
 						</div>
 					</Reveal>

@@ -8,7 +8,7 @@ export function Footer() {
 	const year = new Date().getFullYear();
 
 	return (
-		<footer className="border-t border-border/50">
+		<footer>
 			<Reveal variant="fadeIn">
 				<div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-10 text-[13px] text-muted-foreground md:px-8 sm:flex-row">
 					<p>{t("copyright", { year })}</p>

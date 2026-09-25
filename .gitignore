@@ -49,3 +49,7 @@ next-env.d.ts
 
 # local tooling
 .impeccable/config.local.json
+.gstack/
+
+# local asset backups (large binaries, not for commit)
+backups/

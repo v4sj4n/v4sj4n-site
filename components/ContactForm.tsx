@@ -1,10 +1,11 @@
 "use client";
 
-import { Send } from "lucide-react";
-import { motion } from "motion/react";
+import { useReducedMotion } from "motion/react";
+import * as motion from "motion/react-client";
 import Script from "next/script";
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { AxolotlViewer } from "@/components/AxolotlViewer";
 import { validateContactInput } from "@/lib/contact-validation";
 
 type TurnstileApi = {
@@ -14,25 +15,24 @@ type TurnstileApi = {
 			sitekey: string;
 			theme?: "light" | "dark" | "auto";
 			appearance?: "always" | "execute" | "interaction-only";
-			size?: "normal" | "flexible" | "compact";
+			size?: "normal" | "compact" | "flexible";
 			action?: string;
 			callback?: (token: string) => void;
-			"expired-callback"?: () => void;
 			"error-callback"?: () => void;
+			"expired-callback"?: () => void;
 		},
 	) => string;
-	reset: (widgetId?: string) => void;
+	reset: (widgetId: string) => void;
 	remove: (widgetId: string) => void;
-	ready: (callback: () => void) => void;
 };
-
-const fieldSurfaceClassName =
-	"w-full rounded-xl border border-black/[0.06] bg-card/95 outline outline-1 outline-black/[0.08] backdrop-blur-md transition-[border-color,box-shadow] duration-300 dark:border-white/[0.06] dark:bg-card/90 dark:outline-white/[0.08]";
-
-const inputClassName = `${fieldSurfaceClassName} px-4 py-3 text-sm placeholder:text-muted-foreground/60 hover:border-primary/20 hover:shadow-[0_2px_8px_rgba(0,0,0,0.04)] focus:border-primary/40 focus:shadow-[0_0_0_3px_oklch(from_var(--primary)_l_c_h/0.12),0_2px_8px_rgba(0,0,0,0.04)] dark:hover:shadow-[0_2px_8px_rgba(0,0,0,0.25)]`;
 
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
 const contactApiUrl = process.env.NEXT_PUBLIC_CONTACT_API_URL ?? "/api/contact";
+
+const fieldSurfaceClassName =
+	"w-full rounded-xl border border-black/[0.06] bg-muted/20 outline outline-1 outline-black/[0.08] backdrop-blur-sm dark:border-white/[0.06] dark:bg-card/40 dark:outline-white/[0.08]";
+
+const inputClassName = `${fieldSurfaceClassName} px-4 py-3 text-sm placeholder:text-muted-foreground/60 focus-visible:border-black/20 focus-visible:outline-2 focus-visible:outline-black/20 focus-visible:ring-0 dark:focus-visible:border-white/20 dark:focus-visible:outline-white/20 disabled:cursor-not-allowed disabled:opacity-50`;
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -42,6 +42,12 @@ type FormErrorKey =
 	| "invalidEmail"
 	| "messageTooShort"
 	| "error";
+
+type SubmittedMessage = {
+	name: string;
+	email: string;
+	message: string;
+};
 
 function mapValidationError(
 	error: ReturnType<typeof validateContactInput>,
@@ -82,8 +88,13 @@ function readSiteTheme(): "light" | "dark" {
 	return document.documentElement.classList.contains("dark") ? "dark" : "light";
 }
 
-export function ContactForm() {
+export function ContactForm({
+	onSuccessChange,
+}: {
+	onSuccessChange?: (sent: boolean) => void;
+}) {
 	const t = useTranslations("contact.form");
+	const prefersReducedMotion = useReducedMotion() ?? false;
 	const turnstileRef = useRef<HTMLDivElement>(null);
 	const turnstileWidgetId = useRef<string | null>(null);
 	const [token, setToken] = useState("");
@@ -92,6 +103,8 @@ export function ContactForm() {
 	const [message, setMessage] = useState("");
 	const [status, setStatus] = useState<FormStatus>("idle");
 	const [errorKey, setErrorKey] = useState<FormErrorKey | null>(null);
+	const [submittedMessage, setSubmittedMessage] =
+		useState<SubmittedMessage | null>(null);
 	const [turnstileTheme, setTurnstileTheme] = useState<"light" | "dark">(
 		"dark",
 	);
@@ -232,6 +245,7 @@ export function ContactForm() {
 			}
 
 			setStatus("success");
+			setSubmittedMessage({ name, email, message });
 			form.reset();
 			setName("");
 			setEmail("");
@@ -248,6 +262,59 @@ export function ContactForm() {
 	const isFormValid = validateContactInput({ name, email, message }) === null;
 	const canSubmit =
 		isFormValid && (!turnstileSiteKey || !!token) && !isSubmitting;
+
+	useEffect(() => {
+		onSuccessChange?.(status === "success" && submittedMessage !== null);
+	}, [status, submittedMessage, onSuccessChange]);
+
+	if (status === "success" && submittedMessage) {
+		return (
+			<motion.div
+				initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 10 }}
+				animate={{ opacity: 1, y: 0 }}
+				transition={{
+					duration: prefersReducedMotion ? 0 : 0.45,
+					ease: [0.32, 0.72, 0, 1],
+				}}
+				className="min-w-0 space-y-4 pt-5 pb-2 md:pt-7 md:pb-3"
+				data-status="submitted"
+				data-state="submitted"
+				role="status"
+			>
+				<figure className={`${fieldSurfaceClassName} px-4 py-3 text-sm`}>
+					<figcaption className="mb-1 text-[13px] font-medium">
+						{t("receivedMessageLabel")}
+					</figcaption>
+					<blockquote className="whitespace-pre-wrap break-words text-muted-foreground">
+						{submittedMessage.message}
+					</blockquote>
+					<figcaption className="mt-2 truncate text-xs text-muted-foreground/80">
+						{submittedMessage.name} — {submittedMessage.email}
+					</figcaption>
+				</figure>
+
+				<AxolotlViewer
+					label={t("viewerLabel")}
+					loadingLabel={t("viewerLoading")}
+					errorLabel={t("viewerError")}
+					celebration
+				/>
+
+				<div className="pt-2">
+					<button
+						type="button"
+						onClick={() => {
+							setStatus("idle");
+							setSubmittedMessage(null);
+						}}
+						className="inline-flex h-9 items-center justify-center rounded-lg border border-border/60 bg-background/50 px-4 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary cursor-pointer"
+					>
+						{t("sendAnother")}
+					</button>
+				</div>
+			</motion.div>
+		);
+	}
 
 	return (
 		<>
@@ -309,8 +376,9 @@ export function ContactForm() {
 					<textarea
 						id="message"
 						name="message"
-						rows={4}
 						required
+						rows={5}
+						minLength={10}
 						value={message}
 						onChange={(event) => setMessage(event.target.value)}
 						disabled={isSubmitting}
@@ -320,33 +388,27 @@ export function ContactForm() {
 				</div>
 
 				{turnstileSiteKey ? (
-					<div className="turnstile-field">
-						<div ref={turnstileRef} className="w-full" />
-					</div>
+					<div
+						ref={turnstileRef}
+						className="flex min-h-[65px] items-center justify-start overflow-hidden"
+					/>
 				) : null}
 
-				{status === "success" ? (
-					<p role="status" className="text-sm font-medium text-primary">
-						{t("success")}
-					</p>
-				) : null}
-
-				{status === "error" && errorKey ? (
+				{errorKey ? (
 					<p role="alert" className="text-sm font-medium text-destructive">
 						{t(errorKey)}
 					</p>
 				) : null}
 
-				<motion.button
-					type="submit"
-					disabled={!canSubmit}
-					whileHover={canSubmit ? { scale: 1.02 } : undefined}
-					whileTap={canSubmit ? { scale: 0.96 } : undefined}
-					className="inline-flex items-center justify-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-[13px] font-semibold tracking-wide text-background transition-colors duration-500 hover:bg-primary disabled:cursor-not-allowed disabled:opacity-50"
-				>
-					<span>{isSubmitting ? t("submitting") : t("submit")}</span>
-					<Send size={16} strokeWidth={2} className="shrink-0" aria-hidden />
-				</motion.button>
+				<div className="pt-2">
+					<button
+						type="submit"
+						disabled={!canSubmit}
+						className="inline-flex h-11 items-center justify-center rounded-lg bg-primary px-6 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50"
+					>
+						{isSubmitting ? t("submitting") : t("submit")}
+					</button>
+				</div>
 			</form>
 		</>
 	);

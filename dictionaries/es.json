@@ -133,7 +133,13 @@
 			"nameTooShort": "El nombre debe tener al menos 2 caracteres.",
 			"invalidEmail": "Introduce una dirección de correo válida.",
 			"messageTooShort": "El mensaje debe tener al menos 4 palabras.",
-			"turnstileError": "La verificación falló. Inténtalo de nuevo."
+			"turnstileError": "La verificación falló. Inténtalo de nuevo.",
+			"successTitle": "Message received!",
+			"receivedMessageLabel": "Your message",
+			"sendAnother": "Send another message",
+			"viewerLabel": "Axolotl mascot 3D model",
+			"viewerLoading": "Loading 3D model...",
+			"viewerError": "Could not load the 3D preview."
 		}
 	},
 	"footer": {
