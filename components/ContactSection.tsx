@@ -68,9 +68,9 @@ export function ContactSection() {
 	const [formSent, setFormSent] = useState(false);
 
 	return (
-		<section id="contact" className="py-32 md:py-40">
+		<section id="contact" className="py-20 md:py-28">
 			<div className="mx-auto max-w-6xl px-6 md:px-8">
-				<div className="mb-20 md:mb-24">
+				<div className="mb-10 md:mb-12">
 					<Reveal>
 						<SectionEyebrow>{t("label")}</SectionEyebrow>
 					</Reveal>
@@ -82,8 +82,8 @@ export function ContactSection() {
 					</Reveal>
 				</div>
 
-				<div className="grid grid-cols-1 gap-16 lg:grid-cols-[2fr_3fr] lg:gap-12">
-					<div className="flex flex-col gap-6">
+				<div className="grid grid-cols-1 gap-10 lg:grid-cols-[2fr_3fr] lg:gap-12">
+					<div className="flex flex-col gap-5">
 						<Reveal delay={0.12}>
 							<p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
 								{t("description")}
@@ -92,7 +92,7 @@ export function ContactSection() {
 
 						<Reveal delay={0.16}>
 							<div className="w-full rounded-2xl border border-border/60 bg-card/40 p-2.5 backdrop-blur-sm md:p-3">
-								<Stagger className="flex flex-col gap-5">
+								<Stagger className="flex flex-col gap-3">
 									{channels.map(({ key, href, icon: Icon }) => (
 										<StaggerItem key={key}>
 											<a

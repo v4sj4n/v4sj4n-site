@@ -299,19 +299,6 @@ export function ContactForm({
 					errorLabel={t("viewerError")}
 					celebration
 				/>
-
-				<div className="pt-2">
-					<button
-						type="button"
-						onClick={() => {
-							setStatus("idle");
-							setSubmittedMessage(null);
-						}}
-						className="inline-flex h-9 items-center justify-center rounded-lg border border-border/60 bg-background/50 px-4 text-xs font-medium text-muted-foreground transition-colors hover:bg-accent hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary cursor-pointer"
-					>
-						{t("sendAnother")}
-					</button>
-				</div>
 			</motion.div>
 		);
 	}
@@ -323,8 +310,8 @@ export function ContactForm({
 				strategy="afterInteractive"
 			/>
 
-			<form className="space-y-5 py-6 md:py-8" onSubmit={handleSubmit}>
-				<div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+			<form className="space-y-4 py-5 md:py-6" onSubmit={handleSubmit}>
+				<div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
 					<div>
 						<label
 							htmlFor="name"
@@ -377,7 +364,7 @@ export function ContactForm({
 						id="message"
 						name="message"
 						required
-						rows={5}
+						rows={4}
 						minLength={10}
 						value={message}
 						onChange={(event) => setMessage(event.target.value)}
@@ -387,11 +374,12 @@ export function ContactForm({
 					/>
 				</div>
 
+				{/* Mounted only when a site key is configured; unmounted with
+				    the form on success. interaction-only renders nothing
+				    visible until a challenge is required, so this collapses
+				    to zero height and takes no space when idle. */}
 				{turnstileSiteKey ? (
-					<div
-						ref={turnstileRef}
-						className="flex min-h-[65px] items-center justify-start overflow-hidden"
-					/>
+					<div ref={turnstileRef} className="overflow-hidden empty:hidden" />
 				) : null}
 
 				{errorKey ? (
@@ -400,7 +388,7 @@ export function ContactForm({
 					</p>
 				) : null}
 
-				<div className="pt-2">
+				<div className="pt-1">
 					<button
 						type="submit"
 						disabled={!canSubmit}
