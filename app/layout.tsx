@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Fraunces, Geologica } from "next/font/google";
+import { Geologica, Merriweather } from "next/font/google";
 import { AuraBackground } from "@/components/AuraBackground";
 import "./globals.css";
 
@@ -7,8 +7,12 @@ export const metadata: Metadata = {
 	icons: {
 		icon: "/favicon.png",
 		shortcut: "/favicon.png",
-		apple: "/favicon.png",
+		apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
 	},
+	themeColor: [
+		{ media: "(prefers-color-scheme: light)", color: "#faf9f1" },
+		{ media: "(prefers-color-scheme: dark)", color: "#081410" },
+	],
 };
 
 const geologica = Geologica({
@@ -16,10 +20,10 @@ const geologica = Geologica({
 	subsets: ["latin"],
 });
 
-const fraunces = Fraunces({
-	variable: "--font-fraunces",
+const merriweather = Merriweather({
+	variable: "--font-merriweather",
 	subsets: ["latin"],
-	weight: ["400"],
+	weight: ["400", "700", "900"],
 });
 
 const themeInitScript = `
@@ -42,7 +46,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`${geologica.variable} ${fraunces.variable} dark h-full antialiased`}
+			className={`${geologica.variable} ${merriweather.variable} dark h-full antialiased`}
 			suppressHydrationWarning
 		>
 			<head>

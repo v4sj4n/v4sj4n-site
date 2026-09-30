@@ -1,36 +1,37 @@
 @import "tailwindcss";
 
 /*
-  Palette logic: a single hue family (indigo, ~265–280°) carried across
-  every token via lightness/chroma shifts — not separate "blue" and
-  "purple" colors stitched together. Neutrals are hue-tinted instead of
-  true gray so light mode reads as cool paper/ink and dark mode reads as
-  dusk, not slate-on-black. A secondary violet (~295°) is reserved for
-  links/highlights so there's harmonic movement without going monotone.
+  Palette logic: a single pine family (~160–205°) carried across
+  every token via lightness/chroma shifts — deep pine/teal/lagoon,
+  not separate colors stitched together. Neutrals are warm-tinted
+  cream instead of true gray so light mode reads as paper/ink and
+  dark mode reads as pine charcoal, not slate-on-black. A lagoon
+  (~200°) is reserved for highlights so there's harmonic movement
+  without going monotone. No purple anywhere — kills the AI-gradient look.
 */
 
 :root {
-	--background: oklch(98.2% 0.005 275);
-	--foreground: oklch(21% 0.032 275);
+	--background: oklch(98% 0.01 100);
+	--foreground: oklch(24% 0.03 170);
 
-	--card: oklch(100% 0.003 275);
+	--card: oklch(99.5% 0.005 100);
 	--card-foreground: var(--foreground);
 
-	--muted: oklch(94.5% 0.012 275);
-	--muted-foreground: oklch(52% 0.028 275);
+	--muted: oklch(94% 0.015 110);
+	--muted-foreground: oklch(47% 0.04 170);
 
-	--border: oklch(89% 0.014 275);
-	--input: oklch(91% 0.012 275);
-	--ring: oklch(56% 0.19 275);
+	--border: oklch(88% 0.02 110);
+	--input: oklch(90.5% 0.018 110);
+	--ring: oklch(58% 0.13 175);
 
-	--primary: oklch(56% 0.19 275);
-	--primary-foreground: oklch(98% 0.01 275);
+	--primary: oklch(55% 0.13 175);
+	--primary-foreground: oklch(99% 0.01 100);
 
-	--secondary: oklch(93% 0.03 290);
-	--secondary-foreground: oklch(28% 0.06 290);
+	--secondary: oklch(92% 0.025 120);
+	--secondary-foreground: oklch(30% 0.05 170);
 
-	--accent: oklch(62% 0.17 295);
-	--accent-foreground: oklch(98% 0.01 295);
+	--accent: oklch(62% 0.11 200);
+	--accent-foreground: oklch(99% 0.01 100);
 
 	--destructive: oklch(58% 0.21 25);
 	--destructive-foreground: oklch(98% 0.01 25);
@@ -44,27 +45,27 @@
 }
 
 .dark {
-	--background: oklch(15.5% 0.026 280);
-	--foreground: oklch(94% 0.014 275);
+	--background: oklch(18% 0.02 170);
+	--foreground: oklch(93% 0.015 110);
 
-	--card: oklch(21% 0.03 275);
+	--card: oklch(23% 0.025 170);
 	--card-foreground: var(--foreground);
 
-	--muted: oklch(26% 0.028 275);
-	--muted-foreground: oklch(74% 0.028 275);
+	--muted: oklch(27% 0.025 170);
+	--muted-foreground: oklch(75% 0.03 130);
 
-	--border: oklch(30% 0.032 275);
-	--input: oklch(28% 0.03 275);
-	--ring: oklch(72% 0.16 275);
+	--border: oklch(32% 0.03 170);
+	--input: oklch(30% 0.028 170);
+	--ring: oklch(75% 0.11 175);
 
-	--primary: oklch(72% 0.16 275);
-	--primary-foreground: oklch(15% 0.03 275);
+	--primary: oklch(76% 0.11 175);
+	--primary-foreground: oklch(18% 0.02 170);
 
-	--secondary: oklch(30% 0.05 290);
-	--secondary-foreground: oklch(90% 0.03 290);
+	--secondary: oklch(30% 0.035 150);
+	--secondary-foreground: oklch(90% 0.02 120);
 
-	--accent: oklch(74% 0.15 295);
-	--accent-foreground: oklch(15% 0.03 295);
+	--accent: oklch(76% 0.1 200);
+	--accent-foreground: oklch(18% 0.02 170);
 
 	--destructive: oklch(65% 0.2 25);
 	--destructive-foreground: oklch(98% 0.01 25);
@@ -98,7 +99,7 @@
 	--color-success: var(--success);
 	--color-success-foreground: var(--success-foreground);
 	--font-sans: var(--font-geologica);
-	--font-serif: var(--font-fraunces);
+	--font-serif: var(--font-merriweather);
 	--font-mono:
 		ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
 }
@@ -109,6 +110,12 @@
 
 html {
 	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
 }
 
 body {
@@ -165,21 +172,22 @@ p {
 	width: 100% !important;
 }
 
-/* Aurora Beams - Aura */
+/* Aura — single warm layer */
+
 .aura-bg {
 	position: relative;
 	min-height: 100vh;
 }
 
-/* Layer 1: Purplish Primary Atmospheric Emitters */
+/* Single atmospheric wash in the pine family */
 .aura-layer-1 {
 	position: absolute;
 	inset: 0;
 	background: radial-gradient(
 		55.8% 55.49% at 50% 100%,
-		oklch(28% 0.12 275) 0%,
-		oklch(22% 0.08 285) 45%,
-		oklch(16% 0.026 275 / 0) 100%
+		oklch(42% 0.09 175) 0%,
+		oklch(28% 0.05 180) 45%,
+		oklch(18% 0.02 170 / 0) 100%
 	);
 	mix-blend-mode: screen;
 	opacity: 0.7;
@@ -191,120 +199,12 @@ p {
 :root:not(.dark) .aura-layer-1 {
 	background: radial-gradient(
 		55.8% 55.49% at 50% 100%,
-		oklch(93% 0.04 280) 0%,
-		oklch(96% 0.02 285) 45%,
-		oklch(98.2% 0.005 275 / 0) 100%
+		oklch(92% 0.025 130) 0%,
+		oklch(96% 0.012 120) 45%,
+		oklch(98% 0.01 100 / 0) 100%
 	);
 	mix-blend-mode: multiply;
 	opacity: 0.6;
-}
-
-/* Layer 2: Purplish Diffuse Beams */
-.aura-layer-2 {
-	position: absolute;
-	inset: 0;
-	background:
-		repeating-linear-gradient(
-			100deg,
-			oklch(20% 0.03 275) 0%,
-			oklch(20% 0.03 275) 3%,
-			oklch(24% 0.04 280 / 0.5) 5%,
-			oklch(24% 0.04 280 / 0.5) 7%,
-			transparent 10%,
-			transparent 12%,
-			oklch(24% 0.04 280 / 0.5) 14%,
-			oklch(20% 0.03 275) 16%
-		),
-		repeating-linear-gradient(
-			100deg,
-			oklch(32% 0.1 285) 0%,
-			oklch(32% 0.1 285) 1.5%,
-			oklch(28% 0.12 295 / 0.7) 2%,
-			oklch(25% 0.11 275) 3%,
-			oklch(25% 0.11 275) 4%,
-			oklch(28% 0.12 295 / 0.7) 4.5%,
-			oklch(32% 0.1 285) 5%
-		);
-	background-size: 300% 200%;
-	mix-blend-mode: screen;
-	filter: blur(75px);
-	opacity: 0.55;
-	transform: translateZ(0);
-	will-change: transform;
-	pointer-events: none;
-}
-
-@media (min-width: 768px) {
-	.aura-layer-2 {
-		filter: blur(108px);
-	}
-}
-
-:root:not(.dark) .aura-layer-2 {
-	background:
-		repeating-linear-gradient(
-			100deg,
-			oklch(96% 0.015 275) 0%,
-			oklch(96% 0.015 275) 3%,
-			oklch(94% 0.02 280 / 0.5) 5%,
-			oklch(94% 0.02 280 / 0.5) 7%,
-			transparent 10%,
-			transparent 12%,
-			oklch(94% 0.02 280 / 0.5) 14%,
-			oklch(96% 0.015 275) 16%
-		),
-		repeating-linear-gradient(
-			100deg,
-			oklch(94% 0.03 285) 0%,
-			oklch(94% 0.03 285) 1.5%,
-			oklch(92% 0.04 295 / 0.6) 2%,
-			oklch(90% 0.05 275) 3%,
-			oklch(90% 0.05 275) 4%,
-			oklch(92% 0.04 295 / 0.6) 4.5%,
-			oklch(94% 0.03 285) 5%
-		);
-	background-size: 300% 200%;
-	mix-blend-mode: multiply;
-	opacity: 0.45;
-}
-
-/* Layer 3: Purplish Edge Falloff */
-.aura-layer-3 {
-	position: absolute;
-	inset: 0;
-	background: radial-gradient(
-		ellipse at 100% 100%,
-		#ffffff 20%,
-		oklch(14% 0.025 275) 80%
-	);
-	mix-blend-mode: multiply;
-	transform: translateZ(0);
-	will-change: transform;
-	pointer-events: none;
-}
-
-:root:not(.dark) .aura-layer-3 {
-	background: radial-gradient(
-		ellipse at 100% 100%,
-		#ffffff 30%,
-		oklch(96% 0.015 275) 85%
-	);
-	mix-blend-mode: multiply;
-	opacity: 0.4;
-}
-
-/* Grain */
-.aura-grain {
-	position: absolute;
-	inset: 0;
-	mix-blend-mode: overlay;
-	opacity: 0.85;
-	pointer-events: none;
-}
-
-:root:not(.dark) .aura-grain {
-	mix-blend-mode: multiply;
-	opacity: 0.35;
 }
 
 /* Radial View Transition Theme Toggle */

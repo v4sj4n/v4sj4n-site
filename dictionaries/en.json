@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "Vasjan Çupri — Full-stack Developer",
+		"title": "Vasjan Çupri, Full-stack Developer",
 		"description": "Full-stack developer focused on building exceptional digital products. Leveraging modern web technologies and AI, I create scalable, performant, and user-centric solutions that solve real business problems."
 	},
 	"nav": {
@@ -12,12 +12,31 @@
 	},
 	"hero": {
 		"badge": "Available for work",
-		"title": "I craft digital",
-		"titleAccent": "experiences.",
-		"description": "Full-stack developer focused on building exceptional digital products. Leveraging modern web technologies and AI, I create scalable, performant, and user-centric solutions that solve real business problems.",
+		"title": "I build friendly",
+		"titleAccent": "software that works.",
+		"description": "I'm Vasjan, full-stack developer. I ship LMSs, HR tools, and AI chat apps with Next.js and Postgres, and I reply within 24 hours.",
 		"resume": "View Resume",
 		"work": "See my work",
 		"scroll": "Scroll",
+		"proof": {
+			"title": "What I ship",
+			"note": "Real projects, live today",
+			"reply": "Available for work, replies within 24 hours",
+			"items": [
+				{
+					"name": "OptimoLMS",
+					"detail": "AI summaries for long course docs"
+				},
+				{
+					"name": "HR Software",
+					"detail": "Onboarding to payroll in one place"
+				},
+				{
+					"name": "VasChat",
+					"detail": "Your keys, your models, no subscription"
+				}
+			]
+		},
 		"ui": {
 			"chart": {
 				"title": "Response time",
@@ -42,19 +61,19 @@
 		"items": {
 			"optimolms": {
 				"title": "OptimoLMS",
-				"description": "A next-generation Learning Management System designed to transform the way students learn and educators teach. OptimoLMS leverages AI to automatically summarize lengthy documents, extract key concepts from presentations, generate personalized learning materials, and provide instant assistance whenever students need help. By reducing time spent searching through content and increasing engagement, it creates a smarter, more efficient learning experience for both teachers and learners."
+				"description": "Turns long course docs and decks into short AI summaries, key concepts, and study help, so students stop hunting and start learning."
 			},
 			"hrSoftware": {
 				"title": "HR Software",
-				"description": "A comprehensive HR and workforce management platform that combines traditional HR operations with powerful CRM capabilities. From employee onboarding, attendance tracking, payroll management, and performance reviews to candidate pipelines, recruitment workflows, and client relationship management, the platform centralizes every aspect of human resources into a single ecosystem. Designed to streamline operations, improve team productivity, and provide actionable insights through real-time analytics and automation."
+				"description": "One place for onboarding, attendance, payroll, and hiring pipelines, with real-time analytics for day-to-day HR work."
 			},
 			"moments": {
 				"title": "Moments",
-				"description": "A collaborative social platform built around shared experiences. Users can create private or public groups where friends, families, teams, or communities can chat, share media, and preserve their most meaningful memories in one place. Whether it's documenting trips, events, milestones, or everyday life, Moments transforms conversations into a living timeline of shared experiences that can be revisited and celebrated together."
+				"description": "Private groups for friends, family, and teams to chat, share media, and keep memories in a living timeline."
 			},
 			"vaschat": {
 				"title": "VasChat",
-				"description": "An AI chat platform that gives users complete control over their AI experience. Instead of paying recurring subscription fees, users can simply connect their own API keys and instantly access their favorite AI models through a clean and intuitive interface. VasChat supports multiple providers and models, allowing users to compare responses, manage conversations, and use advanced AI capabilities while maintaining ownership of their usage and costs."
+				"description": "Bring your own API keys and chat with top AI models in one clean inbox, no subscription, you own usage and cost."
 			}
 		},
 		"mockups": {
@@ -133,14 +152,12 @@
 			"successTitle": "Message received!",
 			"receivedMessageLabel": "Your message",
 			"sendAnother": "Send another message",
-			"viewerLabel": "Axolotl mascot 3D model",
-			"viewerLoading": "Loading 3D model...",
-			"viewerError": "Could not load the 3D preview."
+			"wordCount": "{count} / 4 words minimum"
 		}
 	},
 	"footer": {
 		"copyright": "© {year} Vasjan Çupri",
-		"tagline": "Designed with care",
+		"tagline": "Warm software, honestly built",
 		"backToTop": "Back to top"
 	}
 }

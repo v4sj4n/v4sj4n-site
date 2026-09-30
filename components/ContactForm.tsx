@@ -1,11 +1,11 @@
 "use client";
 
+import { Check } from "lucide-react";
 import { useReducedMotion } from "motion/react";
 import * as motion from "motion/react-client";
 import Script from "next/script";
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { AxolotlViewer } from "@/components/AxolotlViewer";
 import { validateContactInput } from "@/lib/contact-validation";
 
 type TurnstileApi = {
@@ -108,6 +108,41 @@ export function ContactForm({
 	const [turnstileTheme, setTurnstileTheme] = useState<"light" | "dark">(
 		"dark",
 	);
+	const [draftLoaded, setDraftLoaded] = useState(false);
+
+	const wordCount = message.trim() ? message.trim().split(/\s+/).length : 0;
+
+	useEffect(() => {
+		try {
+			const raw = localStorage.getItem("contact-draft");
+			if (raw) {
+				const draft = JSON.parse(raw) as {
+					name?: string;
+					email?: string;
+					message?: string;
+				};
+				if (typeof draft.name === "string") setName(draft.name);
+				if (typeof draft.email === "string") setEmail(draft.email);
+				if (typeof draft.message === "string") setMessage(draft.message);
+			}
+		} catch {
+			// Corrupt draft — start fresh.
+		} finally {
+			setDraftLoaded(true);
+		}
+	}, []);
+
+	useEffect(() => {
+		if (!draftLoaded || status === "success") return;
+		try {
+			localStorage.setItem(
+				"contact-draft",
+				JSON.stringify({ name, email, message }),
+			);
+		} catch {
+			// Storage full or blocked — the form still works.
+		}
+	}, [name, email, message, draftLoaded, status]);
 
 	useEffect(() => {
 		setTurnstileTheme(readSiteTheme());
@@ -250,6 +285,11 @@ export function ContactForm({
 			setName("");
 			setEmail("");
 			setMessage("");
+			try {
+				localStorage.removeItem("contact-draft");
+			} catch {
+				// Ignore storage errors on success cleanup.
+			}
 			resetTurnstile();
 		} catch {
 			setErrorKey("error");
@@ -268,6 +308,11 @@ export function ContactForm({
 	}, [status, submittedMessage, onSuccessChange]);
 
 	if (status === "success" && submittedMessage) {
+		const sendAnother = () => {
+			setStatus("idle");
+			setErrorKey(null);
+			setSubmittedMessage(null);
+		};
 		return (
 			<motion.div
 				initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 10 }}
@@ -281,6 +326,21 @@ export function ContactForm({
 				data-state="submitted"
 				role="status"
 			>
+				<div className="flex items-center gap-3">
+					<span
+						className="flex size-10 shrink-0 items-center justify-center rounded-full bg-success/15 text-success"
+						aria-hidden
+					>
+						<Check size={18} strokeWidth={2.5} />
+					</span>
+					<div className="min-w-0">
+						<p className="text-[15px] font-semibold tracking-[-0.01em]">
+							{t("successTitle")}
+						</p>
+						<p className="text-sm text-muted-foreground">{t("success")}</p>
+					</div>
+				</div>
+
 				<figure className={`${fieldSurfaceClassName} px-4 py-3 text-sm`}>
 					<figcaption className="mb-1 text-[13px] font-medium">
 						{t("receivedMessageLabel")}
@@ -289,16 +349,19 @@ export function ContactForm({
 						{submittedMessage.message}
 					</blockquote>
 					<figcaption className="mt-2 truncate text-xs text-muted-foreground/80">
-						{submittedMessage.name} — {submittedMessage.email}
+						{submittedMessage.name}, {submittedMessage.email}
 					</figcaption>
 				</figure>
 
-				<AxolotlViewer
-					label={t("viewerLabel")}
-					loadingLabel={t("viewerLoading")}
-					errorLabel={t("viewerError")}
-					celebration
-				/>
+				<div className="pt-1">
+					<button
+						type="button"
+						onClick={sendAnother}
+						className="inline-flex h-11 items-center justify-center rounded-lg border border-border/60 bg-card px-6 text-sm font-medium transition-colors hover:bg-muted/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-[0.98]"
+					>
+						{t("sendAnother")}
+					</button>
+				</div>
 			</motion.div>
 		);
 	}
@@ -354,12 +417,18 @@ export function ContactForm({
 				</div>
 
 				<div>
-					<label
-						htmlFor="message"
-						className="mb-2 block text-[13px] font-medium"
-					>
-						{t("message")}
-					</label>
+					<div className="mb-2 flex items-baseline justify-between gap-3">
+						<label htmlFor="message" className="block text-[13px] font-medium">
+							{t("message")}
+						</label>
+						<span
+							id="message-count"
+							className="text-xs text-muted-foreground/80 tabular-nums"
+							aria-live="polite"
+						>
+							{t("wordCount", { count: wordCount })}
+						</span>
+					</div>
 					<textarea
 						id="message"
 						name="message"
@@ -371,6 +440,7 @@ export function ContactForm({
 						disabled={isSubmitting}
 						placeholder={t("messagePlaceholder")}
 						className={`${inputClassName} resize-none`}
+						aria-describedby="message-count"
 					/>
 				</div>
 

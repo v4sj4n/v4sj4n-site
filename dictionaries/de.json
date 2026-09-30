@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "Vasjan Çupri — Full-Stack-Entwickler",
+		"title": "Vasjan Çupri, Full-Stack-Entwickler",
 		"description": "Full-Stack-Entwickler mit Fokus auf der Entwicklung außergewöhnlicher digitaler Produkte. Unter Nutzung moderner Webtechnologien und KI erstelle ich skalierbare, performante und benutzerzentrierte Lösungen, die echte geschäftliche Probleme lösen."
 	},
 	"nav": {
@@ -33,6 +33,25 @@
 				"createBranch": "Branch erstellen",
 				"runCommand": "Befehl ausführen"
 			}
+		},
+		"proof": {
+			"title": "What I ship",
+			"note": "Real projects, live today",
+			"reply": "Available for work, replies within 24 hours",
+			"items": [
+				{
+					"name": "OptimoLMS",
+					"detail": "AI summaries for long course docs"
+				},
+				{
+					"name": "HR Software",
+					"detail": "Onboarding to payroll in one place"
+				},
+				{
+					"name": "VasChat",
+					"detail": "Your keys, your models, no subscription"
+				}
+			]
 		}
 	},
 	"projects": {
@@ -137,9 +156,7 @@
 			"successTitle": "Message received!",
 			"receivedMessageLabel": "Your message",
 			"sendAnother": "Send another message",
-			"viewerLabel": "Axolotl mascot 3D model",
-			"viewerLoading": "Loading 3D model...",
-			"viewerError": "Could not load the 3D preview."
+			"wordCount": "{count} / 4 words minimum"
 		}
 	},
 	"footer": {

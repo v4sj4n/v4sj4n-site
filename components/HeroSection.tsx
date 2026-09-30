@@ -11,7 +11,6 @@ import { useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { ClipReveal } from "@/components/ClipReveal";
 import { HeroFloatingUI } from "@/components/HeroFloatingUI";
-import { SectionEyebrow } from "@/components/SectionEyebrow";
 import { useProgressiveMotion } from "@/hooks/useProgressiveMotion";
 import { appleEase, floatLoop } from "@/lib/motion";
 
@@ -90,24 +89,20 @@ export function HeroSection() {
 		>
 			<motion.div
 				style={{ y: contentY, opacity: contentOpacity }}
-				className="relative mx-auto grid w-full max-w-6xl grid-cols-1 gap-12 px-6 py-20 lg:grid-cols-[5fr_4fr] lg:items-center lg:gap-8 md:px-8 md:py-24"
+				className="relative mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-6 py-12 lg:grid-cols-[5fr_4fr] lg:items-center lg:gap-16 md:px-8 md:py-16"
 			>
 				<div className="min-w-0">
-					<ClipReveal delay={0.1} className="mb-10">
-						<SectionEyebrow>{t("badge")}</SectionEyebrow>
-					</ClipReveal>
-
-					<div className="mb-8 flex flex-col gap-1 sm:gap-2">
+					<div className="mb-4 flex flex-col md:mb-5">
 						<HeroTitleLine
 							delay={0.28}
-							className="pb-[0.08em] text-[clamp(3rem,7.5vw,6rem)] font-semibold tracking-[-0.04em] leading-[1.02]"
+							className="pb-[0.02em] text-[clamp(2.25rem,5vw,3.75rem)] font-bold tracking-[-0.02em] leading-[1.02]"
 						>
 							{t("title")}
 						</HeroTitleLine>
 						<HeroTitleLine
 							delay={0.42}
 							as="p"
-							className="pb-[0.08em] font-serif text-[clamp(3rem,7.5vw,6rem)] font-semibold tracking-[-0.04em] leading-[1.02] text-muted-foreground"
+							className="pb-[0.02em] font-serif text-[clamp(2.25rem,5vw,3.75rem)] font-bold tracking-[-0.02em] leading-[1.02] text-muted-foreground"
 						>
 							{t("titleAccent")}
 						</HeroTitleLine>
@@ -146,7 +141,7 @@ export function HeroSection() {
 					</ClipReveal>
 				</div>
 
-				<div className="hidden min-w-0 w-full overflow-visible lg:block">
+				<div className="block min-w-0 w-full overflow-visible">
 					<HeroFloatingUI
 						shouldEnter={enter}
 						shouldAnimateAmbient={ambient}
@@ -157,7 +152,7 @@ export function HeroSection() {
 
 			<motion.div
 				style={{ opacity: scrollOpacity }}
-				className="absolute bottom-10 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2"
+				className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 [@media(max-height:600px)]:hidden"
 			>
 				<span className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground/70">
 					{t("scroll")}

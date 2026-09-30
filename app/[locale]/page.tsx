@@ -64,7 +64,7 @@ export default async function HomePage({ params }: Props) {
 	return (
 		<>
 			<Navbar />
-			<main>
+			<main id="main">
 				<HeroSection />
 				<ProjectsSection />
 				<ContactSection />

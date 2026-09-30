@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "Vasjan Çupri — Nhà phát triển Full-stack",
+		"title": "Vasjan Çupri, Nhà phát triển Full-stack",
 		"description": "Nhà phát triển full-stack tập trung vào việc xây dựng các sản phẩm kỹ thuật số vượt trội. Bằng cách tận dụng các công nghệ web hiện đại và AI, tôi tạo ra các giải pháp có thể mở rộng, hiệu suất cao và lấy người dùng làm trung tâm để giải quyết các vấn đề kinh doanh thực tế."
 	},
 	"nav": {
@@ -33,6 +33,25 @@
 				"createBranch": "Tạo nhánh",
 				"runCommand": "Chạy lệnh"
 			}
+		},
+		"proof": {
+			"title": "What I ship",
+			"note": "Real projects, live today",
+			"reply": "Available for work, replies within 24 hours",
+			"items": [
+				{
+					"name": "OptimoLMS",
+					"detail": "AI summaries for long course docs"
+				},
+				{
+					"name": "HR Software",
+					"detail": "Onboarding to payroll in one place"
+				},
+				{
+					"name": "VasChat",
+					"detail": "Your keys, your models, no subscription"
+				}
+			]
 		}
 	},
 	"projects": {
@@ -133,9 +152,7 @@
 			"successTitle": "Message received!",
 			"receivedMessageLabel": "Your message",
 			"sendAnother": "Send another message",
-			"viewerLabel": "Axolotl mascot 3D model",
-			"viewerLoading": "Loading 3D model...",
-			"viewerError": "Could not load the 3D preview."
+			"wordCount": "{count} / 4 words minimum"
 		}
 	},
 	"footer": {

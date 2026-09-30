@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "Васян Чупри — Full-stack разработчик",
+		"title": "Васян Чупри, Full-stack разработчик",
 		"description": "Full-stack разработчик, фокусиран върху изграждането на изключителни дигитални продукти. Използвайки модерни уеб технологии и изкуствен интелект, създавам мащабируеми, високопроизводителни и ориентирани към потребителя решения, които решават реални бизнес проблеми."
 	},
 	"nav": {
@@ -33,6 +33,25 @@
 				"createBranch": "Създай клон",
 				"runCommand": "Изпълни команда"
 			}
+		},
+		"proof": {
+			"title": "What I ship",
+			"note": "Real projects, live today",
+			"reply": "Available for work, replies within 24 hours",
+			"items": [
+				{
+					"name": "OptimoLMS",
+					"detail": "AI summaries for long course docs"
+				},
+				{
+					"name": "HR Software",
+					"detail": "Onboarding to payroll in one place"
+				},
+				{
+					"name": "VasChat",
+					"detail": "Your keys, your models, no subscription"
+				}
+			]
 		}
 	},
 	"projects": {
@@ -46,7 +65,7 @@
 			},
 			"hrSoftware": {
 				"title": "HR Software",
-				"description": "Изчерпателна платформа за управление на човешки ресурси и работна сила, която комбинира традиционните HR операции с мощни CRM възможности. От въвеждане на служители, проследяване на присъствието, управление на заплатите и прегледи на производителността до подбор на персонал, процеси по наемане и управление на отношенията с клиенти – платформата централизира всеки аспект на човешките ресурси в една обща екосистема."
+				"description": "Изчерпателна платформа за управление на човешки ресурси и работна сила, която комбинира традиционните HR операции с мощни CRM възможности. От въвеждане на служители, проследяване на присъствието, управление на заплатите и прегледи на производителността до подбор на персонал, процеси по наемане и управление на отношенията с клиенти, платформата централизира всеки аспект на човешките ресурси в една обща екосистема."
 			},
 			"moments": {
 				"title": "Moments",
@@ -141,9 +160,7 @@
 			"successTitle": "Message received!",
 			"receivedMessageLabel": "Your message",
 			"sendAnother": "Send another message",
-			"viewerLabel": "Axolotl mascot 3D model",
-			"viewerLoading": "Loading 3D model...",
-			"viewerError": "Could not load the 3D preview."
+			"wordCount": "{count} / 4 words minimum"
 		}
 	},
 	"footer": {

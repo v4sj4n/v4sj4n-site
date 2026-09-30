@@ -4,7 +4,6 @@ import { ArrowUpRight, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type ComponentType, type SVGProps, useState } from "react";
 import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
-import { SectionEyebrow } from "@/components/SectionEyebrow";
 import { ContactForm } from "./ContactForm";
 
 type ChannelIcon = ComponentType<SVGProps<SVGSVGElement>>;
@@ -71,9 +70,6 @@ export function ContactSection() {
 		<section id="contact" className="py-20 md:py-28">
 			<div className="mx-auto max-w-6xl px-6 md:px-8">
 				<div className="mb-10 md:mb-12">
-					<Reveal>
-						<SectionEyebrow>{t("label")}</SectionEyebrow>
-					</Reveal>
 					<Reveal delay={0.08}>
 						<h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.03em] md:text-5xl lg:text-6xl">
 							{t("title")}{" "}
@@ -101,7 +97,7 @@ export function ContactSection() {
 												rel={
 													key === "email" ? undefined : "noopener noreferrer"
 												}
-												aria-label={`${t(`channels.${key}.label`)} — ${t(`channels.${key}.description`)}`}
+												aria-label={`${t(`channels.${key}.label`)}: ${t(`channels.${key}.description`)}`}
 												className="group flex items-center gap-4 rounded-lg border border-border/50 bg-muted/25 px-3 py-3.5 transition-[transform,background-color,border-color] duration-300 hover:border-border hover:bg-muted/60 active:scale-[0.96] sm:px-4 sm:py-4"
 											>
 												<Icon

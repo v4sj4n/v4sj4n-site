@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "ভাসিয়ান চুপ্রি — ফুল-স্ট্যাক ডেভেলপার",
+		"title": "ভাসিয়ান চুপ্রি, ফুল-স্ট্যাক ডেভেলপার",
 		"description": "অসাধারণ ডিজিটাল প্রোডাক্ট তৈরিতে নিবেদিত একজন ফুল-স্ট্যাক ডেভেলপার। আধুনিক ওয়েব প্রযুক্তি এবং এআই ব্যবহার করে, আমি স্কেলেবল, পারফরম্যান্ট এবং ব্যবহারকারী-কেন্দ্রিক সমাধান তৈরি করি যা বাস্তব ব্যবসায়িক সমস্যার সমাধান করে।"
 	},
 	"nav": {
@@ -33,6 +33,25 @@
 				"createBranch": "ব্রাঞ্চ তৈরি করুন",
 				"runCommand": "কমান্ড রান করুন"
 			}
+		},
+		"proof": {
+			"title": "What I ship",
+			"note": "Real projects, live today",
+			"reply": "Available for work, replies within 24 hours",
+			"items": [
+				{
+					"name": "OptimoLMS",
+					"detail": "AI summaries for long course docs"
+				},
+				{
+					"name": "HR Software",
+					"detail": "Onboarding to payroll in one place"
+				},
+				{
+					"name": "VasChat",
+					"detail": "Your keys, your models, no subscription"
+				}
+			]
 		}
 	},
 	"projects": {
@@ -133,9 +152,7 @@
 			"successTitle": "Message received!",
 			"receivedMessageLabel": "Your message",
 			"sendAnother": "Send another message",
-			"viewerLabel": "Axolotl mascot 3D model",
-			"viewerLoading": "Loading 3D model...",
-			"viewerError": "Could not load the 3D preview."
+			"wordCount": "{count} / 4 words minimum"
 		}
 	},
 	"footer": {

@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "Vasjan Çupri — Full-stack Developer",
+		"title": "Vasjan Çupri, Full-stack Developer",
 		"description": "Full-stack developer skoncentrowany na tworzeniu wyjątkowych produktów cyfrowych. Wykorzystując nowoczesne technologie internetowe oraz AI, tworzę skalowalne, wydajne i zorientowane na użytkownika rozwiązania, które rozwiązują realne problemy biznesowe."
 	},
 	"nav": {
@@ -33,6 +33,25 @@
 				"createBranch": "Utwórz gałąź",
 				"runCommand": "Uruchom komendę"
 			}
+		},
+		"proof": {
+			"title": "What I ship",
+			"note": "Real projects, live today",
+			"reply": "Available for work, replies within 24 hours",
+			"items": [
+				{
+					"name": "OptimoLMS",
+					"detail": "AI summaries for long course docs"
+				},
+				{
+					"name": "HR Software",
+					"detail": "Onboarding to payroll in one place"
+				},
+				{
+					"name": "VasChat",
+					"detail": "Your keys, your models, no subscription"
+				}
+			]
 		}
 	},
 	"projects": {
@@ -46,7 +65,7 @@
 			},
 			"hrSoftware": {
 				"title": "HR Software",
-				"description": "Kompleksowa platforma do zarządzania zasobami ludzkimi i kadrami, łącząca tradycyjne operacje HR z potężnymi możliwościami systemów CRM. Od onboardingu pracowników, śledzenia obecności, zarządzania płacami i ocen wydajności, po rekrutację, procesy kadrowe i zarządzanie relacjami z klientami – platforma centralizuje każdy aspekt HR w jednym ekosystemie."
+				"description": "Kompleksowa platforma do zarządzania zasobami ludzkimi i kadrami, łącząca tradycyjne operacje HR z potężnymi możliwościami systemów CRM. Od onboardingu pracowników, śledzenia obecności, zarządzania płacami i ocen wydajności, po rekrutację, procesy kadrowe i zarządzanie relacjami z klientami, platforma centralizuje każdy aspekt HR w jednym ekosystemie."
 			},
 			"moments": {
 				"title": "Moments",
@@ -141,9 +160,7 @@
 			"successTitle": "Message received!",
 			"receivedMessageLabel": "Your message",
 			"sendAnother": "Send another message",
-			"viewerLabel": "Axolotl mascot 3D model",
-			"viewerLoading": "Loading 3D model...",
-			"viewerError": "Could not load the 3D preview."
+			"wordCount": "{count} / 4 words minimum"
 		}
 	},
 	"footer": {

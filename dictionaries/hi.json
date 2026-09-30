@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "वाश्यान चुप्री — फुल-स्टैक डेवलपर",
+		"title": "वाश्यान चुप्री, फुल-स्टैक डेवलपर",
 		"description": "असाधारण डिजिटल उत्पाद बनाने पर केंद्रित फुल-स्टैक डेवलपर। आधुनिक वेब तकनीकों और एआई का लाभ उठाकर, मैं स्केलेबल, कुशल और उपयोगकर्ता-केंद्रित समाधान तैयार करता हूँ जो वास्तविक व्यावसायिक समस्याओं को हल करते हैं।"
 	},
 	"nav": {
@@ -33,6 +33,25 @@
 				"createBranch": "ब्रांच बनाएं",
 				"runCommand": "कमांड चलाएँ"
 			}
+		},
+		"proof": {
+			"title": "What I ship",
+			"note": "Real projects, live today",
+			"reply": "Available for work, replies within 24 hours",
+			"items": [
+				{
+					"name": "OptimoLMS",
+					"detail": "AI summaries for long course docs"
+				},
+				{
+					"name": "HR Software",
+					"detail": "Onboarding to payroll in one place"
+				},
+				{
+					"name": "VasChat",
+					"detail": "Your keys, your models, no subscription"
+				}
+			]
 		}
 	},
 	"projects": {
@@ -133,9 +152,7 @@
 			"successTitle": "Message received!",
 			"receivedMessageLabel": "Your message",
 			"sendAnother": "Send another message",
-			"viewerLabel": "Axolotl mascot 3D model",
-			"viewerLoading": "Loading 3D model...",
-			"viewerError": "Could not load the 3D preview."
+			"wordCount": "{count} / 4 words minimum"
 		}
 	},
 	"footer": {

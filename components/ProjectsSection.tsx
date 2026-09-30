@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useTranslations } from "next-intl";
-import { type ComponentType, useState } from "react";
+import { type ComponentType, type KeyboardEvent, useState } from "react";
 import {
 	HrSoftwareMockup,
 	MomentsMockup,
@@ -10,7 +10,6 @@ import {
 	VasChatMockup,
 } from "@/components/ProjectMockups";
 import { Reveal } from "@/components/Reveal";
-import { SectionEyebrow } from "@/components/SectionEyebrow";
 import { appleSpringSnappy } from "@/lib/motion";
 
 const projectKeys = ["optimolms", "hrSoftware", "moments", "vaschat"] as const;
@@ -18,10 +17,10 @@ const projectKeys = ["optimolms", "hrSoftware", "moments", "vaschat"] as const;
 type ProjectKey = (typeof projectKeys)[number];
 
 const projectAccents: Record<ProjectKey, string> = {
-	optimolms: "oklch(56% 0.19 275)",
-	hrSoftware: "oklch(62% 0.15 155)",
-	moments: "oklch(62% 0.17 295)",
-	vaschat: "oklch(68% 0.16 55)",
+	optimolms: "oklch(55% 0.13 175)",
+	hrSoftware: "oklch(60% 0.11 190)",
+	moments: "oklch(52% 0.12 160)",
+	vaschat: "oklch(64% 0.1 205)",
 };
 
 const projectTech: Record<ProjectKey, readonly string[]> = {
@@ -31,7 +30,7 @@ const projectTech: Record<ProjectKey, readonly string[]> = {
 	vaschat: ["Next.js", "TypeScript", "OpenAI"],
 };
 
-const panelSurface = "bg-white/85 dark:bg-card";
+const panelSurface = "bg-card";
 
 const projectMockups: Record<
 	ProjectKey,
@@ -76,19 +75,25 @@ function ProjectTab({
 			id={`tab-${projectKey}`}
 			aria-selected={isActive}
 			aria-controls={`panel-${projectKey}`}
+			tabIndex={isActive ? 0 : -1}
 			onClick={onSelect}
-			className={`group relative flex max-w-[10.5rem] min-w-[6.75rem] shrink-0 items-center gap-1.5 rounded-lg border-x border-t px-2.5 py-1.5 text-[0.8125rem] transition-[background-color,color,box-shadow,transform] duration-200 active:scale-[0.98] sm:max-w-[11.5rem] sm:min-w-[7.5rem] sm:px-3 sm:py-2 ${
+			className={`group relative flex max-w-[10.5rem] min-w-[6.75rem] shrink-0 cursor-pointer items-center gap-1.5 rounded-lg border-x border-t px-2.5 py-1.5 text-[0.8125rem] transition-[background-color,color,box-shadow,transform] duration-200 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:max-w-[11.5rem] sm:min-w-[7.5rem] sm:px-3 sm:py-2 ${
 				isActive
 					? "z-20 -mb-px border-border/70 bg-muted/70 font-semibold text-foreground shadow-[0_-1px_0_0_var(--muted),0_2px_4px_-2px_rgba(0,0,0,0.14)] dark:shadow-[0_-1px_0_0_var(--muted),0_2px_5px_-2px_rgba(0,0,0,0.45)]"
 					: "z-10 border-transparent bg-black/[0.02] font-normal text-muted-foreground/75 hover:bg-black/[0.04] hover:text-foreground/80 dark:bg-white/[0.02] dark:text-muted-foreground/70 dark:hover:bg-white/[0.05] dark:hover:text-foreground/80"
 			}`}
 		>
 			<span
-				className="h-3 w-[2px] shrink-0 rounded-full opacity-90"
-				style={{ background: accent }}
+				className="flex size-6 shrink-0 items-center justify-center rounded-md text-[11px] font-bold"
+				style={{
+					background: `color-mix(in oklch, ${accent} 16%, transparent)`,
+					color: accent,
+				}}
 				aria-hidden
-			/>
-			<span className="min-w-0 flex-1 truncate text-left tracking-[-0.01em]">
+			>
+				{title.charAt(0).toUpperCase()}
+			</span>
+			<span className="min-w-0 flex-1 text-left leading-snug break-words tracking-[-0.01em]">
 				{title}
 			</span>
 			{isActive ? (
@@ -126,11 +131,12 @@ function ProjectPanel({ projectKey }: { projectKey: ProjectKey }) {
 			role="tabpanel"
 			id={`panel-${projectKey}`}
 			aria-labelledby={`tab-${projectKey}`}
+			tabIndex={0}
 			initial={{ opacity: 0, y: 10, filter: "blur(4px)" }}
 			animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
 			exit={{ opacity: 0, y: -6, filter: "blur(2px)" }}
 			transition={appleSpringSnappy}
-			className="space-y-3 sm:space-y-4 md:space-y-5"
+			className="space-y-6 sm:space-y-8 md:space-y-10"
 		>
 			<div className="hidden md:block">
 				<ProjectScreenshot projectKey={projectKey} title={title} />
@@ -163,13 +169,26 @@ export function ProjectsSection() {
 	const t = useTranslations("projects");
 	const [activeKey, setActiveKey] = useState<ProjectKey>("optimolms");
 
+	const handleTabListKeyDown = (e: KeyboardEvent) => {
+		const currentIndex = projectKeys.indexOf(activeKey);
+		let nextIndex: number | null = null;
+		if (e.key === "ArrowRight")
+			nextIndex = (currentIndex + 1) % projectKeys.length;
+		else if (e.key === "ArrowLeft")
+			nextIndex = (currentIndex - 1 + projectKeys.length) % projectKeys.length;
+		else if (e.key === "Home") nextIndex = 0;
+		else if (e.key === "End") nextIndex = projectKeys.length - 1;
+		if (nextIndex === null) return;
+		e.preventDefault();
+		const nextKey = projectKeys[nextIndex];
+		setActiveKey(nextKey);
+		document.getElementById(`tab-${nextKey}`)?.focus();
+	};
+
 	return (
 		<section id="projects" className="pb-32 pt-12 md:pb-40 md:pt-16">
 			<div className="mx-auto max-w-6xl px-6 md:px-8">
 				<div className="mb-12 md:mb-16">
-					<Reveal>
-						<SectionEyebrow>{t("label")}</SectionEyebrow>
-					</Reveal>
 					<Reveal delay={0.08}>
 						<h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.03em] md:text-5xl lg:text-6xl">
 							{t("title")}{" "}
@@ -185,6 +204,8 @@ export function ProjectsSection() {
 						<div
 							role="tablist"
 							aria-label={t("label")}
+							aria-orientation="horizontal"
+							onKeyDown={handleTabListKeyDown}
 							className="flex items-end gap-2.5 border-b border-border/35 px-3 py-2.5 sm:gap-3 sm:px-4 sm:py-3"
 						>
 							<WindowControls />

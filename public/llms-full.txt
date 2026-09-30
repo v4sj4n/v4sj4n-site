@@ -5,7 +5,7 @@
 # Sitemap: https://vasjan.com/sitemap.xml
 
 # =============================================================================
-# VASJAN ÇUPRI — Full-stack Developer Portfolio
+# VASJAN ÇUPRI: Full-stack Developer Portfolio
 # Site: https://vasjan.com/
 # =============================================================================
 
@@ -52,7 +52,7 @@ Four selected case studies. Each project appears as a featured card with:
 ---
 
 # =============================================================================
-# PROJECTS — Detailed Information
+# PROJECTS: Detailed Information
 # =============================================================================
 
 ## Project 1: OptimoLMS
@@ -131,7 +131,7 @@ An AI chat platform that gives users complete control over their AI experience. 
 - Multiple AI providers and models supported
 - Side-by-side response comparison across models (e.g., Claude vs. GPT)
 - Conversation management, history, and organization
-- Full usage and cost transparency — user owns everything
+- Full usage and cost transparency: user owns everything
 - Models shown in mockup: Claude 4.6 Sonnet, GPT 5.5
 - Example chats: Refactor plan, Email draft, Debug help
 
@@ -140,7 +140,7 @@ An AI chat platform that gives users complete control over their AI experience. 
 ---
 
 # =============================================================================
-# INTERNATIONALIZATION — All Locale URLs
+# INTERNATIONALIZATION: All Locale URLs
 # =============================================================================
 
 The site is available in 32 locales. Each locale is served from its own
@@ -216,11 +216,11 @@ A contact form is available at: https://vasjan.com/en/#contact
 # RESOURCES
 # =============================================================================
 
-- **Resume PDF:** https://vasjan.com/resume.pdf — Professional resume/CV with work experience, skills, and education.
-- **English homepage:** https://vasjan.com/en/ — Primary version.
-- **Sitemap:** https://vasjan.com/sitemap.xml — All locale URLs with hreflang alternates.
-- **Robots.txt:** https://vasjan.com/robots.txt — Crawler directives.
-- **llms.txt (compact):** https://vasjan.com/llms.txt — Entry-point version of this document.
+- **Resume PDF:** https://vasjan.com/resume.pdf. Professional resume/CV with work experience, skills, and education.
+- **English homepage:** https://vasjan.com/en/. Primary version.
+- **Sitemap:** https://vasjan.com/sitemap.xml. All locale URLs with hreflang alternates.
+- **Robots.txt:** https://vasjan.com/robots.txt. Crawler directives.
+- **llms.txt (compact):** https://vasjan.com/llms.txt. Entry-point version of this document.
 
 ---
 
@@ -232,25 +232,25 @@ A contact form is available at: https://vasjan.com/en/#contact
 - **Next.js 16** (App Router) with static export (`output: "export"`)
 - **React 19**
 - **TypeScript 5**
-- **next-intl 4** — i18n routing and translations for 32 locales
-- **Tailwind CSS 4** — Utility-first styling with `@tailwindcss/postcss`
+- **next-intl 4**: i18n routing and translations for 32 locales
+- **Tailwind CSS 4**: Utility-first styling with `@tailwindcss/postcss`
 
 ## UI & Animation
-- **motion** (Framer Motion v12) — Reveal animations, page transitions, micro-interactions
-- **lucide-react** — Icon library
-- **Google Fonts:** Geologica (sans), Fraunces (display) — loaded via `next/font`
-- **Dark/Light theme** — Persisted in localStorage, bootstrapped before hydration to prevent flash
+- **motion** (Framer Motion v12): Reveal animations, page transitions, micro-interactions
+- **lucide-react**: Icon library
+- **Google Fonts:** Geologica (sans), Fraunces (display): loaded via `next/font`
+- **Dark/Light theme**: Persisted in localStorage, bootstrapped before hydration to prevent flash
 
 ## Backend & Deployment
-- **Cloudflare Workers** — Contact form API (`/api/contact`) with form validation and Turnstile
-- **Cloudflare Pages** — Static site hosting of the Next.js export output
-- **Static export** — Fully pre-rendered at build time, no Node.js server required
+- **Cloudflare Workers**: Contact form API (`/api/contact`) with form validation and Turnstile
+- **Cloudflare Pages**: Static site hosting of the Next.js export output
+- **Static export**: Fully pre-rendered at build time, no Node.js server required
 - **Trailing slash:** Enabled for all URLs
 
 ## Build & Tooling
-- **Biome 2.5** — Linting, formatting, and type-checking
-- **TypeScript** — Strict typing across the codebase
-- **Wrangler 4** — Cloudflare Workers & Pages local development + deployment
+- **Biome 2.5**: Linting, formatting, and type-checking
+- **TypeScript**: Strict typing across the codebase
+- **Wrangler 4**: Cloudflare Workers & Pages local development + deployment
 
 ---
 

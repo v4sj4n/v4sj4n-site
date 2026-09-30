@@ -10,7 +10,7 @@
 
 ## About
 
-Vasjan Çupri — Full-stack developer focused on building exceptional digital products. Leveraging modern web technologies and AI to create scalable, performant, and user-centric solutions that solve real business problems. Available for freelance projects and collaboration opportunities.
+Vasjan Çupri, Full-stack developer focused on building exceptional digital products. Leveraging modern web technologies and AI to create scalable, performant, and user-centric solutions that solve real business problems. Available for freelance projects and collaboration opportunities.
 
 ## Primary URLs
 
@@ -19,10 +19,10 @@ Vasjan Çupri — Full-stack developer focused on building exceptional digital p
 
 ## Projects
 
-- **OptimoLMS** — AI-powered Learning Management System: https://vasjan.com/en/#projects
-- **HR Software** — Unified HR + CRM workforce platform: https://vasjan.com/en/#projects
-- **Moments** — Collaborative shared-experience social platform: https://vasjan.com/en/#projects
-- **VasChat** — Bring-your-own-API-key AI chat platform: https://vasjan.com/en/#projects
+- **OptimoLMS**: AI-powered Learning Management System: https://vasjan.com/en/#projects
+- **HR Software**: Unified HR + CRM workforce platform: https://vasjan.com/en/#projects
+- **Moments**: Collaborative shared-experience social platform: https://vasjan.com/en/#projects
+- **VasChat**: Bring-your-own-API-key AI chat platform: https://vasjan.com/en/#projects
 
 ## Contact
 

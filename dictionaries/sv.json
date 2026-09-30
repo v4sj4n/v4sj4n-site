@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "Vasjan Çupri — Full-stack-utvecklare",
+		"title": "Vasjan Çupri, Full-stack-utvecklare",
 		"description": "Full-stack-utvecklare fokuserad på att bygga exceptionella digitala produkter. Genom att använda modern webbteknik och AI skapar jag skalbara, högpresterande och användarcentrerade lösningar som löser verkliga affärsproblem."
 	},
 	"nav": {
@@ -33,6 +33,25 @@
 				"createBranch": "Skapa branch",
 				"runCommand": "Kör kommando"
 			}
+		},
+		"proof": {
+			"title": "What I ship",
+			"note": "Real projects, live today",
+			"reply": "Available for work, replies within 24 hours",
+			"items": [
+				{
+					"name": "OptimoLMS",
+					"detail": "AI summaries for long course docs"
+				},
+				{
+					"name": "HR Software",
+					"detail": "Onboarding to payroll in one place"
+				},
+				{
+					"name": "VasChat",
+					"detail": "Your keys, your models, no subscription"
+				}
+			]
 		}
 	},
 	"projects": {
@@ -46,7 +65,7 @@
 			},
 			"hrSoftware": {
 				"title": "HR Software",
-				"description": "En omfattande HR- och personalhanteringsplattform som kombinerar traditionella HR-processer med kraftfulla CRM-funktioner. Från onboarding, närvarospårning, lönehantering och medarbetarsamtal till kandidatpipelines, rekryteringsflöden och hantering av kundrelationer – plattformen centraliserar varje aspekt av HR i ett enda ekosystem."
+				"description": "En omfattande HR- och personalhanteringsplattform som kombinerar traditionella HR-processer med kraftfulla CRM-funktioner. Från onboarding, närvarospårning, lönehantering och medarbetarsamtal till kandidatpipelines, rekryteringsflöden och hantering av kundrelationer, plattformen centraliserar varje aspekt av HR i ett enda ekosystem."
 			},
 			"moments": {
 				"title": "Moments",
@@ -133,9 +152,7 @@
 			"successTitle": "Message received!",
 			"receivedMessageLabel": "Your message",
 			"sendAnother": "Send another message",
-			"viewerLabel": "Axolotl mascot 3D model",
-			"viewerLoading": "Loading 3D model...",
-			"viewerError": "Could not load the 3D preview."
+			"wordCount": "{count} / 4 words minimum"
 		}
 	},
 	"footer": {

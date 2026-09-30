@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "Васян Чупри — Full-stack разработчик",
+		"title": "Васян Чупри, Full-stack разработчик",
 		"description": "Full-stack разработчик, сфокусированный на создании исключительных цифровых продуктов. Используя современные веб-технологии и ИИ, я создаю масштабируемые, высокопроизводительные и ориентированные на пользователя решения, которые решают реальные бизнес-задачи."
 	},
 	"nav": {
@@ -33,6 +33,25 @@
 				"createBranch": "Создать ветку",
 				"runCommand": "Запустить команду"
 			}
+		},
+		"proof": {
+			"title": "What I ship",
+			"note": "Real projects, live today",
+			"reply": "Available for work, replies within 24 hours",
+			"items": [
+				{
+					"name": "OptimoLMS",
+					"detail": "AI summaries for long course docs"
+				},
+				{
+					"name": "HR Software",
+					"detail": "Onboarding to payroll in one place"
+				},
+				{
+					"name": "VasChat",
+					"detail": "Your keys, your models, no subscription"
+				}
+			]
 		}
 	},
 	"projects": {
@@ -137,9 +156,7 @@
 			"successTitle": "Message received!",
 			"receivedMessageLabel": "Your message",
 			"sendAnother": "Send another message",
-			"viewerLabel": "Axolotl mascot 3D model",
-			"viewerLoading": "Loading 3D model...",
-			"viewerError": "Could not load the 3D preview."
+			"wordCount": "{count} / 4 words minimum"
 		}
 	},
 	"footer": {

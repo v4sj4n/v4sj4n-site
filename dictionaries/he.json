@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "ואסיאן צ'ופרי — מפתח פול-סטאק",
+		"title": "ואסיאן צ'ופרי, מפתח פול-סטאק",
 		"description": "מפתח פול-סטאק המתמקד בבניית מוצרים דיגיטליים יוצאי דופן. תוך שימוש בטכנולוגיות ובשילוב בינה מלאכותית, אני מייצר פתרונות סקילביליים, ביצועיים וממוקדי-משתמש שפותחים בעיות עסקיות אמיתיות."
 	},
 	"nav": {
@@ -33,6 +33,25 @@
 				"createBranch": "יצירת בראנץ'",
 				"runCommand": "הרצת פקודה"
 			}
+		},
+		"proof": {
+			"title": "What I ship",
+			"note": "Real projects, live today",
+			"reply": "Available for work, replies within 24 hours",
+			"items": [
+				{
+					"name": "OptimoLMS",
+					"detail": "AI summaries for long course docs"
+				},
+				{
+					"name": "HR Software",
+					"detail": "Onboarding to payroll in one place"
+				},
+				{
+					"name": "VasChat",
+					"detail": "Your keys, your models, no subscription"
+				}
+			]
 		}
 	},
 	"projects": {
@@ -46,7 +65,7 @@
 			},
 			"hrSoftware": {
 				"title": "HR Software",
-				"description": "פלטפורמה מקיפה לניהול משאבי אנוש וכוח אדם, המשלבת פעולות HR מסורתיות עם יכולות CRM חזקות. החל מקליטת עובדים, מעקב נוכחות, ניהול שכר והערכות ביצועים, ועד לניהול פייפליין מועמדים, תהליכי גיוס וניהול קשרי לקוחות — המערכת מרכזת כל היבט של משאבי אנוש לאקוסיסטם אחד."
+				"description": "פלטפורמה מקיפה לניהול משאבי אנוש וכוח אדם, המשלבת פעולות HR מסורתיות עם יכולות CRM חזקות. החל מקליטת עובדים, מעקב נוכחות, ניהול שכר והערכות ביצועים, ועד לניהול פייפליין מועמדים, תהליכי גיוס וניהול קשרי לקוחות, המערכת מרכזת כל היבט של משאבי אנוש לאקוסיסטם אחד."
 			},
 			"moments": {
 				"title": "Moments",
@@ -129,9 +148,7 @@
 			"successTitle": "Message received!",
 			"receivedMessageLabel": "Your message",
 			"sendAnother": "Send another message",
-			"viewerLabel": "Axolotl mascot 3D model",
-			"viewerLoading": "Loading 3D model...",
-			"viewerError": "Could not load the 3D preview."
+			"wordCount": "{count} / 4 words minimum"
 		}
 	},
 	"footer": {

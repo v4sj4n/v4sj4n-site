@@ -1,6 +1,6 @@
 {
 	"metadata": {
-		"title": "Vasjan Çupri — Pengembang Full-stack",
+		"title": "Vasjan Çupri, Pengembang Full-stack",
 		"description": "Pengembang full-stack yang berfokus pada pembuatan produk digital yang luar biasa. Memanfaatkan teknologi web modern dan AI, saya menciptakan solusi yang skalabel, berkinerja tinggi, dan berpusat pada pengguna untuk memecahkan masalah bisnis yang nyata."
 	},
 	"nav": {
@@ -33,6 +33,25 @@
 				"createBranch": "Buat branch",
 				"runCommand": "Jalankan perintah"
 			}
+		},
+		"proof": {
+			"title": "What I ship",
+			"note": "Real projects, live today",
+			"reply": "Available for work, replies within 24 hours",
+			"items": [
+				{
+					"name": "OptimoLMS",
+					"detail": "AI summaries for long course docs"
+				},
+				{
+					"name": "HR Software",
+					"detail": "Onboarding to payroll in one place"
+				},
+				{
+					"name": "VasChat",
+					"detail": "Your keys, your models, no subscription"
+				}
+			]
 		}
 	},
 	"projects": {
@@ -133,9 +152,7 @@
 			"successTitle": "Message received!",
 			"receivedMessageLabel": "Your message",
 			"sendAnother": "Send another message",
-			"viewerLabel": "Axolotl mascot 3D model",
-			"viewerLoading": "Loading 3D model...",
-			"viewerError": "Could not load the 3D preview."
+			"wordCount": "{count} / 4 words minimum"
 		}
 	},
 	"footer": {
