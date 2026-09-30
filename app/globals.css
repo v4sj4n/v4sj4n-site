@@ -156,6 +156,19 @@ p {
 	outline-offset: 2px;
 }
 
+/* Interactive elements show pointer cursor (Tailwind v4 defaults buttons to default) */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+a[href],
+summary {
+	cursor: pointer;
+}
+
+button:disabled,
+[role="button"][aria-disabled="true"] {
+	cursor: default;
+}
+
 /* Selection styles */
 ::selection {
 	background: color-mix(in oklch, var(--primary) 22%, transparent);
@@ -226,14 +239,6 @@ html.theme-switching * {
 
 ::view-transition-new(root) {
 	z-index: 9999;
-}
-
-.dark::view-transition-old(root) {
-	z-index: 9999;
-}
-
-.dark::view-transition-new(root) {
-	z-index: 1;
 }
 
 ::view-transition-image-pair(root) {
