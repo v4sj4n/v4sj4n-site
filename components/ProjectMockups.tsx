@@ -8,17 +8,9 @@ type MockupProps = {
 	title: string;
 };
 
-function BrowserFrame({
-	accent,
-	children,
-}: MockupProps & { children: ReactNode }) {
+function BrowserFrame({ children }: MockupProps & { children: ReactNode }) {
 	return (
-		<div
-			className="relative aspect-[3/2] w-full overflow-hidden rounded-b-lg rounded-t-none bg-card/95 outline outline-1 outline-black/10 sm:aspect-[16/9] sm:rounded-b-xl sm:rounded-t-none lg:aspect-[21/9] dark:bg-card dark:outline-white/10"
-			style={{
-				background: `linear-gradient(140deg, color-mix(in oklch, ${accent} 9%, var(--mockup-mix-base)) 0%, color-mix(in oklch, ${accent} 4%, var(--mockup-mix-base)) 46%, color-mix(in oklch, ${accent} 8%, var(--mockup-mix-base)) 100%)`,
-			}}
-		>
+		<div className="feature-media relative aspect-[3/2] w-full overflow-hidden bg-card sm:aspect-[16/9] lg:aspect-[21/9] dark:bg-card">
 			<div className="absolute inset-0 overflow-hidden">{children}</div>
 		</div>
 	);
@@ -63,7 +55,7 @@ export function OptimoLmsMockup({ accent, title }: MockupProps) {
 								key={course}
 								className={`flex items-center gap-1.5 rounded-md px-1.5 py-1.5 sm:gap-2 sm:px-2.5 sm:py-2 ${
 									i === 0
-										? "bg-white/85 shadow-[0_1px_2px_rgba(0,0,0,0.08)] dark:bg-muted/50"
+										? "bg-white/85 dark:bg-muted/50"
 										: "opacity-70"
 								}`}
 							>
@@ -83,7 +75,7 @@ export function OptimoLmsMockup({ accent, title }: MockupProps) {
 					<div className="mb-1.5 flex items-center justify-between sm:mb-2.5">
 						<Skeleton accent={accent} className="h-3 w-20 sm:h-3.5 sm:w-28" />
 						<div
-							className="rounded-full px-1.5 py-0.5 text-[8px] font-medium sm:px-2.5 sm:py-1 sm:text-[10px]"
+							className="rounded-full px-1.5 py-1 text-[8px] font-medium sm:px-2.5 sm:py-1.5 sm:text-[10px]"
 							style={{
 								background: `color-mix(in oklch, ${accent} 20%, transparent)`,
 								color: accent,
@@ -93,7 +85,7 @@ export function OptimoLmsMockup({ accent, title }: MockupProps) {
 						</div>
 					</div>
 
-					<div className="mb-1.5 flex-1 space-y-1.5 rounded-lg border border-black/10 bg-white/65 p-2 shadow-[0_1px_2px_rgba(0,0,0,0.05)] dark:border-white/10 dark:bg-card/35 sm:mb-2.5 sm:space-y-2 sm:p-3">
+					<div className="mb-1.5 flex-1 space-y-1.5 rounded-lg border border-black/10 bg-white/65 p-2 dark:border-white/10 dark:bg-card/35 sm:mb-2.5 sm:space-y-2 sm:p-3">
 						<Skeleton className="h-2 w-full sm:h-2.5" />
 						<Skeleton className="h-2 w-[92%] sm:h-2.5" />
 						<Skeleton className="h-2 w-[78%] sm:h-2.5" />
@@ -145,13 +137,13 @@ export function HrSoftwareMockup({ accent, title }: MockupProps) {
 					{stats.map((stat) => (
 						<div
 							key={stat.label}
-							className="rounded-lg border border-black/10 bg-white/90 p-1.5 shadow-[0_1px_2px_rgba(0,0,0,0.05)] dark:border-white/5 dark:bg-card/80 sm:p-2.5"
+							className="rounded-lg border border-black/10 bg-white/90 p-1.5 dark:border-white/5 dark:bg-card/80 sm:p-2.5"
 						>
 							<p className="truncate text-[8px] text-muted-foreground sm:text-[10px]">
 								{stat.label}
 							</p>
 							<p
-								className="text-[11px] font-semibold tabular-nums sm:text-[13px]"
+								className="text-[11px] font-medium tabular-nums sm:text-[13px]"
 								style={{ color: accent }}
 							>
 								{stat.value}
@@ -195,7 +187,7 @@ export function HrSoftwareMockup({ accent, title }: MockupProps) {
 						</div>
 					</div>
 
-					<aside className="hidden w-[30%] shrink-0 rounded-lg border border-black/10 bg-white/90 p-2 shadow-[0_1px_2px_rgba(0,0,0,0.05)] dark:border-white/5 dark:bg-card/80 sm:block md:w-[32%] md:p-2.5">
+					<aside className="hidden w-[30%] shrink-0 rounded-lg border border-black/10 bg-white/90 p-2 dark:border-white/5 dark:bg-card/80 sm:block md:w-[32%] md:p-2.5">
 						<Skeleton
 							accent={accent}
 							className="mb-2 h-2.5 w-16 sm:mb-2.5 sm:h-3 sm:w-20"
@@ -237,12 +229,12 @@ export function MomentsMockup({ accent, title }: MockupProps) {
 							key={group}
 							className={`mb-1 flex items-center gap-1.5 rounded-md px-1.5 py-1.5 sm:mb-1.5 sm:gap-2 sm:px-2.5 sm:py-2 ${
 								i === 0
-									? "bg-white/90 shadow-[0_1px_2px_rgba(0,0,0,0.08)] dark:bg-muted/50"
+									? "bg-white/90 dark:bg-muted/50"
 									: "opacity-65"
 							}`}
 						>
 							<div
-								className="flex size-4 shrink-0 items-center justify-center rounded-full text-[8px] font-bold text-white sm:size-5 sm:text-[9px]"
+								className="flex size-4 shrink-0 items-center justify-center rounded-full text-[8px] font-medium text-white sm:size-5 sm:text-[9px]"
 								style={{ background: accent }}
 							>
 								{group[0]}
@@ -266,7 +258,7 @@ export function MomentsMockup({ accent, title }: MockupProps) {
 						{[0, 1, 2, 3, 4].map((i) => (
 							<div
 								key={i}
-								className={`overflow-hidden rounded-md border border-black/10 shadow-[0_1px_2px_rgba(0,0,0,0.05)] dark:border-white/5 dark:shadow-none ${
+								className={`overflow-hidden rounded-md border border-black/10 dark:border-white/5 ${
 									i === 0 ? "col-span-2 row-span-2" : ""
 								}`}
 								style={{
@@ -304,7 +296,7 @@ export function VasChatMockup({ accent, title }: MockupProps) {
 					<div className="mb-1.5 flex items-center justify-between sm:mb-2.5">
 						<Skeleton accent={accent} className="h-3 w-12 sm:h-3.5 sm:w-16" />
 						<span
-							className="rounded px-1 py-0.5 text-[8px] font-medium sm:px-1.5 sm:text-[9px]"
+							className="rounded px-1 py-1 text-[8px] font-medium sm:px-1.5 sm:py-1 sm:text-[9px]"
 							style={{
 								background: `color-mix(in oklch, ${accent} 18%, transparent)`,
 								color: accent,
@@ -318,7 +310,7 @@ export function VasChatMockup({ accent, title }: MockupProps) {
 							key={chat}
 							className={`mb-1 rounded-md px-1.5 py-1.5 sm:mb-1.5 sm:px-2.5 sm:py-2 ${
 								i === 0
-									? "bg-white/90 shadow-[0_1px_2px_rgba(0,0,0,0.08)] dark:bg-muted/50"
+									? "bg-white/90 dark:bg-muted/50"
 									: "opacity-65"
 							}`}
 						>
@@ -335,7 +327,7 @@ export function VasChatMockup({ accent, title }: MockupProps) {
 				<main className="flex min-w-0 flex-1 flex-col p-2 sm:p-3 md:p-3.5">
 					<div className="mb-1.5 flex items-center gap-1.5 sm:mb-2.5 sm:gap-2">
 						<div
-							className="truncate rounded-md border px-1.5 py-0.5 text-[8px] font-medium sm:px-2 sm:py-1 sm:text-[10px]"
+							className="truncate rounded-md border px-1.5 py-1 text-[8px] font-medium sm:px-2 sm:py-1.5 sm:text-[10px]"
 							style={{
 								borderColor: `color-mix(in oklch, ${accent} 35%, transparent)`,
 								color: accent,

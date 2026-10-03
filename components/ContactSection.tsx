@@ -1,12 +1,13 @@
 "use client";
 
-import { ArrowUpRight, Mail } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { type ComponentType, type SVGProps, useState } from "react";
 import { Reveal, Stagger, StaggerItem } from "@/components/Reveal";
 import { ContactForm } from "./ContactForm";
 
-type ChannelIcon = ComponentType<SVGProps<SVGSVGElement>>;
+type ChannelIcon =
+	| ComponentType<SVGProps<SVGSVGElement>>
+	| ComponentType<React.HTMLAttributes<HTMLSpanElement>>;
 
 function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
 	return (
@@ -35,6 +36,15 @@ function XIcon(props: SVGProps<SVGSVGElement>) {
 	);
 }
 
+function MailIcon(props: SVGProps<SVGSVGElement>) {
+	return (
+		// biome-ignore lint/a11y/noSvgWithoutTitle: decorative; parent link has aria-label
+		<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden {...props}>
+			<path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z" />
+		</svg>
+	);
+}
+
 const channels: {
 	key: "linkedin" | "github" | "email" | "twitter";
 	href: string;
@@ -53,7 +63,7 @@ const channels: {
 	{
 		key: "email",
 		href: "mailto:hello@v4sj4n.com",
-		icon: Mail,
+		icon: MailIcon,
 	},
 	{
 		key: "twitter",
@@ -67,87 +77,86 @@ export function ContactSection() {
 	const [formSent, setFormSent] = useState(false);
 
 	return (
-		<section id="contact" className="py-20 md:py-28">
-			<div className="mx-auto max-w-6xl px-6 md:px-8">
+		<section id="contact" className="py-[120px]">
+			<div className="contact-panel mx-auto max-w-6xl px-6 py-16 md:px-8 md:py-20">
 				<div className="mb-10 md:mb-12">
 					<Reveal delay={0.08}>
-						<h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.03em] md:text-5xl lg:text-6xl">
+						<p className="g-eyebrow">{t("label")}</p>
+						<h2 className="agy-head mt-4 text-4xl text-foreground md:text-6xl lg:text-7xl">
 							{t("title")}{" "}
 							<span className="text-muted-foreground">{t("titleAccent")}</span>
 						</h2>
 					</Reveal>
-				</div>
-
-				<div className="grid grid-cols-1 gap-10 lg:grid-cols-[2fr_3fr] lg:gap-12">
-					<div className="flex flex-col gap-5">
-						<Reveal delay={0.12}>
-							<p className="max-w-md text-base leading-relaxed text-muted-foreground md:text-lg">
-								{t("description")}
-							</p>
-						</Reveal>
-
-						<Reveal delay={0.16}>
-							<div className="w-full rounded-2xl border border-border/60 bg-card/40 p-2.5 backdrop-blur-sm md:p-3">
-								<Stagger className="flex flex-col gap-3">
-									{channels.map(({ key, href, icon: Icon }) => (
-										<StaggerItem key={key}>
-											<a
-												href={href}
-												target={key === "email" ? undefined : "_blank"}
-												rel={
-													key === "email" ? undefined : "noopener noreferrer"
-												}
-												aria-label={`${t(`channels.${key}.label`)}: ${t(`channels.${key}.description`)}`}
-												className="group flex items-center gap-4 rounded-lg border border-border/50 bg-muted/25 px-3 py-3.5 transition-[transform,background-color,border-color] duration-300 hover:border-border hover:bg-muted/60 active:scale-[0.96] sm:px-4 sm:py-4"
-											>
-												<Icon
-													strokeWidth={1.75}
-													className="size-[18px] shrink-0 text-muted-foreground transition-colors duration-300 group-hover:text-primary md:size-5"
-												/>
-												<span className="min-w-0 flex-1 text-left">
-													<span className="block text-[11px] font-medium leading-tight tracking-[-0.01em] md:text-xs">
-														{t(`channels.${key}.label`)}
-													</span>
-													<span className="mt-0.5 block text-pretty text-[10px] leading-snug text-muted-foreground md:text-[11px]">
-														{t(`channels.${key}.description`)}
-													</span>
-												</span>
-												<ArrowUpRight
-													size={14}
-													strokeWidth={1.75}
-													className="shrink-0 text-muted-foreground/40 transition-[transform,color] duration-300 group-hover:-translate-y-px group-hover:translate-x-px group-hover:text-primary"
-													aria-hidden
-												/>
-											</a>
-										</StaggerItem>
-									))}
-								</Stagger>
-							</div>
-						</Reveal>
-					</div>
-
-					<Reveal delay={0.16}>
-						<div
-							className="overflow-hidden rounded-2xl border border-border/60 bg-card/40 backdrop-blur-sm"
-							data-status={formSent ? "submitted" : "idle"}
-						>
-							<div className="px-6 pt-6 md:px-8 md:pt-8">
-								<h3 className="text-lg font-semibold tracking-[-0.02em] text-balance">
-									{formSent ? t("form.successTitle") : t("form.heading")}
-								</h3>
-								<p
-									role={formSent ? "status" : undefined}
-									className="mt-1 max-w-[68ch] text-pretty text-sm text-muted-foreground"
-								>
-									{formSent ? t("form.success") : t("form.subheading")}
-								</p>
-							</div>
-							<div className="px-6 md:px-8">
-								<ContactForm onSuccessChange={setFormSent} />
-							</div>
-						</div>
+					<Reveal delay={0.12}>
+						<p className="body-copy mt-4 max-w-3xl text-base leading-[1.5] md:text-[17px]">
+							{t("description")}
+						</p>
 					</Reveal>
 				</div>
+
+				<Reveal delay={0.16}>
+					<Stagger className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+						{channels.map(({ key, href, icon: Icon }) => (
+							<StaggerItem key={key}>
+								<a
+									href={href}
+									target={key === "email" ? undefined : "_blank"}
+									rel={key === "email" ? undefined : "noopener noreferrer"}
+									aria-label={`${t(`channels.${key}.label`)}: ${t(`channels.${key}.description`)}`}
+									className="contact-channel group flex h-full items-center gap-4 px-5 py-4 active:scale-[0.98] sm:flex-col sm:items-stretch sm:gap-3 sm:px-5 sm:py-5"
+								>
+									<span className="flex w-full items-center justify-between">
+										<Icon className="size-5 shrink-0 text-muted-foreground transition-colors duration-150 group-hover:text-foreground" />
+										<span
+											className="symbol shrink-0 text-muted-foreground transition-all duration-150 group-hover:translate-x-0.5 group-hover:text-foreground"
+											style={{ fontSize: 18 }}
+											aria-hidden
+										>
+											arrow_outward
+										</span>
+									</span>
+									<span className="text-left sm:mt-auto">
+										<span className="block text-sm font-medium leading-tight text-foreground">
+											{t(`channels.${key}.label`)}
+										</span>
+										<span className="mt-1 block text-pretty text-[13px] leading-snug text-muted-foreground">
+											{t(`channels.${key}.description`)}
+										</span>
+									</span>
+								</a>
+							</StaggerItem>
+						))}
+					</Stagger>
+				</Reveal>
+
+				<Reveal delay={0.2}>
+					<div
+						className="contact-form-card mt-8 overflow-hidden"
+						data-status={formSent ? "submitted" : "idle"}
+					>
+						<div className="px-6 pt-6 md:px-8 md:pt-8">
+							<h3
+								className="text-balance text-2xl font-medium text-foreground"
+								style={{
+									fontWeight: 500,
+									letterSpacing: "-0.02em",
+									lineHeight: 1.2,
+								}}
+							>
+								{formSent ? t("form.successTitle") : t("form.heading")}
+							</h3>
+							<p
+								role={formSent ? "status" : undefined}
+								className="mt-1 max-w-[68ch] text-pretty text-sm text-muted-foreground"
+							>
+								{formSent ? t("form.success") : t("form.subheading")}
+							</p>
+						</div>
+						<div className="px-6 md:px-8">
+							<ContactForm onSuccessChange={setFormSent} />
+						</div>
+					</div>
+				</Reveal>
 			</div>
 		</section>
 	);

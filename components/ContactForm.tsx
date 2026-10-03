@@ -1,12 +1,10 @@
 "use client";
 
-import { Check } from "lucide-react";
-import { useReducedMotion } from "motion/react";
-import * as motion from "motion/react-client";
 import Script from "next/script";
 import { useTranslations } from "next-intl";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { validateContactInput } from "@/lib/contact-validation";
+import { useTheme } from "@/hooks/useTheme";
 
 type TurnstileApi = {
 	render: (
@@ -29,10 +27,8 @@ type TurnstileApi = {
 const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? "";
 const contactApiUrl = process.env.NEXT_PUBLIC_CONTACT_API_URL ?? "/api/contact";
 
-const fieldSurfaceClassName =
-	"w-full rounded-xl border border-black/[0.06] bg-muted/20 outline outline-1 outline-black/[0.08] backdrop-blur-sm dark:border-white/[0.06] dark:bg-card/40 dark:outline-white/[0.08]";
-
-const inputClassName = `${fieldSurfaceClassName} px-4 py-3 text-sm placeholder:text-muted-foreground/60 focus-visible:border-black/20 focus-visible:outline-2 focus-visible:outline-black/20 focus-visible:ring-0 dark:focus-visible:border-white/20 dark:focus-visible:outline-white/20 disabled:cursor-not-allowed disabled:opacity-50`;
+const inputClassName =
+	"contact-input w-full px-4 py-3 disabled:cursor-not-allowed disabled:opacity-50";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -80,21 +76,13 @@ function mapServerError(error: string | undefined): FormErrorKey {
 	}
 }
 
-function readSiteTheme(): "light" | "dark" {
-	if (typeof document === "undefined") {
-		return "dark";
-	}
-
-	return document.documentElement.classList.contains("dark") ? "dark" : "light";
-}
-
 export function ContactForm({
 	onSuccessChange,
 }: {
 	onSuccessChange?: (sent: boolean) => void;
 }) {
 	const t = useTranslations("contact.form");
-	const prefersReducedMotion = useReducedMotion() ?? false;
+	const { theme } = useTheme();
 	const turnstileRef = useRef<HTMLDivElement>(null);
 	const turnstileWidgetId = useRef<string | null>(null);
 	const [token, setToken] = useState("");
@@ -105,9 +93,6 @@ export function ContactForm({
 	const [errorKey, setErrorKey] = useState<FormErrorKey | null>(null);
 	const [submittedMessage, setSubmittedMessage] =
 		useState<SubmittedMessage | null>(null);
-	const [turnstileTheme, setTurnstileTheme] = useState<"light" | "dark">(
-		"dark",
-	);
 	const [draftLoaded, setDraftLoaded] = useState(false);
 
 	const wordCount = message.trim() ? message.trim().split(/\s+/).length : 0;
@@ -145,21 +130,6 @@ export function ContactForm({
 	}, [name, email, message, draftLoaded, status]);
 
 	useEffect(() => {
-		setTurnstileTheme(readSiteTheme());
-
-		const observer = new MutationObserver(() => {
-			setTurnstileTheme(readSiteTheme());
-		});
-
-		observer.observe(document.documentElement, {
-			attributes: true,
-			attributeFilter: ["class"],
-		});
-
-		return () => observer.disconnect();
-	}, []);
-
-	useEffect(() => {
 		if (!turnstileSiteKey) {
 			return;
 		}
@@ -187,7 +157,7 @@ export function ContactForm({
 
 			turnstileWidgetId.current = turnstile.render(turnstileRef.current, {
 				sitekey: turnstileSiteKey,
-				theme: turnstileTheme,
+				theme: "auto",
 				appearance: "interaction-only",
 				size: "flexible",
 				action: "contact-form",
@@ -222,7 +192,7 @@ export function ContactForm({
 				turnstileWidgetId.current = null;
 			}
 		};
-	}, [turnstileTheme]);
+	}, [theme]);
 
 	const resetTurnstile = useCallback(() => {
 		setToken("");
@@ -314,13 +284,7 @@ export function ContactForm({
 			setSubmittedMessage(null);
 		};
 		return (
-			<motion.div
-				initial={{ opacity: 0, y: prefersReducedMotion ? 0 : 10 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{
-					duration: prefersReducedMotion ? 0 : 0.45,
-					ease: [0.32, 0.72, 0, 1],
-				}}
+			<div
 				className="min-w-0 space-y-4 pt-5 pb-2 md:pt-7 md:pb-3"
 				data-status="submitted"
 				data-state="submitted"
@@ -328,27 +292,29 @@ export function ContactForm({
 			>
 				<div className="flex items-center gap-3">
 					<span
-						className="flex size-10 shrink-0 items-center justify-center rounded-full bg-success/15 text-success"
+						className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#188038] text-white"
 						aria-hidden
 					>
-						<Check size={18} strokeWidth={2.5} />
+						<span className="symbol" style={{ fontSize: 20 }}>
+							check
+						</span>
 					</span>
 					<div className="min-w-0">
-						<p className="text-[15px] font-semibold tracking-[-0.01em]">
+						<p className="text-[15px] font-medium tracking-[-0.01em] text-foreground">
 							{t("successTitle")}
 						</p>
 						<p className="text-sm text-muted-foreground">{t("success")}</p>
 					</div>
 				</div>
 
-				<figure className={`${fieldSurfaceClassName} px-4 py-3 text-sm`}>
+				<figure className="rounded-2xl border border-border bg-card px-4 py-3 text-sm text-card-foreground">
 					<figcaption className="mb-1 text-[13px] font-medium">
 						{t("receivedMessageLabel")}
 					</figcaption>
 					<blockquote className="whitespace-pre-wrap break-words text-muted-foreground">
 						{submittedMessage.message}
 					</blockquote>
-					<figcaption className="mt-2 truncate text-xs text-muted-foreground/80">
+					<figcaption className="mt-2 truncate text-xs text-muted-foreground">
 						{submittedMessage.name}, {submittedMessage.email}
 					</figcaption>
 				</figure>
@@ -357,12 +323,12 @@ export function ContactForm({
 					<button
 						type="button"
 						onClick={sendAnother}
-						className="inline-flex h-11 items-center justify-center rounded-lg border border-border/60 bg-card px-6 text-sm font-medium transition-colors hover:bg-muted/60 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-[0.98]"
+						className="agy-btn agy-btn-secondary inline-flex text-sm"
 					>
 						{t("sendAnother")}
 					</button>
 				</div>
-			</motion.div>
+			</div>
 		);
 	}
 
@@ -378,7 +344,7 @@ export function ContactForm({
 					<div>
 						<label
 							htmlFor="name"
-							className="mb-2 block text-[13px] font-medium"
+							className="g-label mb-2 block text-foreground"
 						>
 							{t("name")}
 						</label>
@@ -398,7 +364,7 @@ export function ContactForm({
 					<div>
 						<label
 							htmlFor="email"
-							className="mb-2 block text-[13px] font-medium"
+							className="g-label mb-2 block text-foreground"
 						>
 							{t("email")}
 						</label>
@@ -418,12 +384,12 @@ export function ContactForm({
 
 				<div>
 					<div className="mb-2 flex items-baseline justify-between gap-3">
-						<label htmlFor="message" className="block text-[13px] font-medium">
+						<label htmlFor="message" className="g-label block text-foreground">
 							{t("message")}
 						</label>
 						<span
 							id="message-count"
-							className="text-xs text-muted-foreground/80 tabular-nums"
+							className="text-xs tabular-nums text-muted-foreground"
 							aria-live="polite"
 						>
 							{t("wordCount", { count: wordCount })}
@@ -439,7 +405,7 @@ export function ContactForm({
 						onChange={(event) => setMessage(event.target.value)}
 						disabled={isSubmitting}
 						placeholder={t("messagePlaceholder")}
-						className={`${inputClassName} resize-none`}
+						className={`${inputClassName} resize-none rounded-2xl`}
 						aria-describedby="message-count"
 					/>
 				</div>
@@ -449,20 +415,24 @@ export function ContactForm({
 				    visible until a challenge is required, so this collapses
 				    to zero height and takes no space when idle. */}
 				{turnstileSiteKey ? (
-					<div ref={turnstileRef} className="overflow-hidden empty:hidden" />
+					<div
+						ref={turnstileRef}
+						className="overflow-hidden empty:hidden"
+						style={{ colorScheme: "light dark" }}
+					/>
 				) : null}
 
 				{errorKey ? (
-					<p role="alert" className="text-sm font-medium text-destructive">
+					<p role="alert" className="g-error text-sm font-medium">
 						{t(errorKey)}
 					</p>
 				) : null}
 
-				<div className="pt-1">
+				<div className="flex justify-end pt-1">
 					<button
 						type="submit"
 						disabled={!canSubmit}
-						className="inline-flex h-11 items-center justify-center rounded-lg bg-primary px-6 text-sm font-medium text-primary-foreground shadow-sm transition-all hover:bg-primary/90 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50"
+						className="agy-btn agy-btn-primary w-full text-base sm:w-auto"
 					>
 						{isSubmitting ? t("submitting") : t("submit")}
 					</button>

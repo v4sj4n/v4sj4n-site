@@ -1,4 +1,11 @@
-export const appleEase = [0.32, 0.72, 0, 1] as const;
+/* Antigravity motion — quick-out, soft-land. Entrances ease-out-quart, hovers .15s ease-out. */
+export const appleEase = [0.165, 0.84, 0.44, 1] as const;
+
+export const agEaseOutQuart = "cubic-bezier(0.165, 0.84, 0.44, 1)" as const;
+export const agHoverTransition = {
+	duration: 0.15,
+	ease: "easeOut" as const,
+};
 
 export const appleSpring = {
 	type: "spring" as const,

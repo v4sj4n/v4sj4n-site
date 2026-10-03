@@ -17,10 +17,10 @@ const projectKeys = ["optimolms", "hrSoftware", "moments", "vaschat"] as const;
 type ProjectKey = (typeof projectKeys)[number];
 
 const projectAccents: Record<ProjectKey, string> = {
-	optimolms: "oklch(55% 0.13 175)",
-	hrSoftware: "oklch(60% 0.11 190)",
-	moments: "oklch(52% 0.12 160)",
-	vaschat: "oklch(64% 0.1 205)",
+	optimolms: "#1a73e8",
+	hrSoftware: "#1a73e8",
+	moments: "#1a73e8",
+	vaschat: "#1a73e8",
 };
 
 const projectTech: Record<ProjectKey, readonly string[]> = {
@@ -29,8 +29,6 @@ const projectTech: Record<ProjectKey, readonly string[]> = {
 	moments: ["PostgreSQL", "Supabase", "Next.js"],
 	vaschat: ["Next.js", "TypeScript", "OpenAI"],
 };
-
-const panelSurface = "bg-card";
 
 const projectMockups: Record<
 	ProjectKey,
@@ -66,7 +64,6 @@ function ProjectTab({
 }) {
 	const t = useTranslations("projects");
 	const title = t(`items.${projectKey}.title`);
-	const accent = projectAccents[projectKey];
 
 	return (
 		<button
@@ -77,18 +74,18 @@ function ProjectTab({
 			aria-controls={`panel-${projectKey}`}
 			tabIndex={isActive ? 0 : -1}
 			onClick={onSelect}
-			className={`group relative flex max-w-[10.5rem] min-w-[6.75rem] shrink-0 cursor-pointer items-center gap-1.5 rounded-lg border-x border-t px-2.5 py-1.5 text-[0.8125rem] transition-[background-color,color,box-shadow,transform] duration-200 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:max-w-[11.5rem] sm:min-w-[7.5rem] sm:px-3 sm:py-2 ${
+			className={`group relative flex max-w-[10.5rem] min-w-[6.75rem] shrink-0 cursor-pointer items-center gap-1.5 rounded-full px-2.5 py-1.5 text-[0.8125rem] transition-all duration-150 active:scale-[0.98] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1a73e8] sm:max-w-[11.5rem] sm:min-w-[7.5rem] sm:px-3 sm:py-2 ${
 				isActive
-					? "z-20 -mb-px border-border/70 bg-muted/70 font-semibold text-foreground shadow-[0_-1px_0_0_var(--muted),0_2px_4px_-2px_rgba(0,0,0,0.14)] dark:shadow-[0_-1px_0_0_var(--muted),0_2px_5px_-2px_rgba(0,0,0,0.45)]"
-					: "z-10 border-transparent bg-black/[0.02] font-normal text-muted-foreground/75 hover:bg-black/[0.04] hover:text-foreground/80 dark:bg-white/[0.02] dark:text-muted-foreground/70 dark:hover:bg-white/[0.05] dark:hover:text-foreground/80"
+					? "z-20 bg-[#1a73e8] font-medium text-white"
+					: "z-10 bg-transparent font-normal text-[#5f6368] hover:bg-[#f1f3f4] hover:text-[#202124] dark:text-[#9aa0a6] dark:hover:bg-white/10 dark:hover:text-white"
 			}`}
 		>
 			<span
-				className="flex size-6 shrink-0 items-center justify-center rounded-md text-[11px] font-bold"
-				style={{
-					background: `color-mix(in oklch, ${accent} 16%, transparent)`,
-					color: accent,
-				}}
+				className={`flex size-6 shrink-0 items-center justify-center rounded-full text-[11px] font-medium ${
+					isActive
+						? "bg-white/20 text-white"
+						: "bg-[#f1f3f4] text-[#202124] dark:bg-white/10 dark:text-white"
+				}`}
 				aria-hidden
 			>
 				{title.charAt(0).toUpperCase()}
@@ -96,12 +93,6 @@ function ProjectTab({
 			<span className="min-w-0 flex-1 text-left leading-snug break-words tracking-[-0.01em]">
 				{title}
 			</span>
-			{isActive ? (
-				<span
-					className="pointer-events-none absolute inset-x-0 -bottom-px h-px bg-muted/45"
-					aria-hidden
-				/>
-			) : null}
 		</button>
 	);
 }
@@ -112,9 +103,9 @@ function WindowControls() {
 			className="flex shrink-0 items-center gap-1.5 self-center pb-0.5 sm:gap-[5px]"
 			aria-hidden
 		>
-			<span className="size-2.5 rounded-full bg-[#FF5F57] sm:size-[11px]" />
-			<span className="size-2.5 rounded-full bg-[#FEBC2E] sm:size-[11px]" />
-			<span className="size-2.5 rounded-full bg-[#28C840] sm:size-[11px]" />
+			<span className="size-2.5 rounded-full bg-[#ea4335] sm:size-[11px]" />
+			<span className="size-2.5 rounded-full bg-[#fbbc04] sm:size-[11px]" />
+			<span className="size-2.5 rounded-full bg-[#34a853] sm:size-[11px]" />
 		</div>
 	);
 }
@@ -138,15 +129,13 @@ function ProjectPanel({ projectKey }: { projectKey: ProjectKey }) {
 			transition={appleSpringSnappy}
 			className="space-y-6 sm:space-y-8 md:space-y-10"
 		>
-			<div className="hidden md:block">
+			<div className="hidden px-4 pt-4 sm:px-6 sm:pt-6 md:block md:px-8 md:pt-8">
 				<ProjectScreenshot projectKey={projectKey} title={title} />
 			</div>
 
-			<div className="space-y-3 px-4 pb-5 sm:space-y-4 sm:px-6 sm:pb-6 md:px-8 md:pb-8">
-				<h3 className="text-xl font-semibold tracking-[-0.02em] sm:text-2xl md:text-3xl">
-					{title}
-				</h3>
-				<p className="text-pretty text-sm leading-relaxed text-muted-foreground sm:text-[0.9375rem] md:text-base">
+			<div className="space-y-3 px-4 py-5 sm:space-y-4 sm:px-6 sm:py-6 md:px-8 md:py-8">
+				<h3 className="agy-head text-xl sm:text-2xl md:text-3xl">{title}</h3>
+				<p className="body-copy text-pretty text-sm leading-relaxed sm:text-[0.9375rem] md:text-base">
 					{description}
 				</p>
 
@@ -154,7 +143,7 @@ function ProjectPanel({ projectKey }: { projectKey: ProjectKey }) {
 					{tech.map((item) => (
 						<span
 							key={item}
-							className="inline-flex items-center rounded-full border border-border/50 bg-muted/35 px-2.5 py-1 font-mono text-[10px] tracking-wide text-muted-foreground sm:text-[11px]"
+							className="code-chip inline-flex items-center px-2.5 py-1.5 font-mono text-[10px] tracking-wide text-muted-foreground sm:text-[11px]"
 						>
 							{item}
 						</span>
@@ -186,11 +175,12 @@ export function ProjectsSection() {
 	};
 
 	return (
-		<section id="projects" className="pb-32 pt-12 md:pb-40 md:pt-16">
+		<section id="projects" className="py-[120px]">
 			<div className="mx-auto max-w-6xl px-6 md:px-8">
 				<div className="mb-12 md:mb-16">
 					<Reveal delay={0.08}>
-						<h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.03em] md:text-5xl lg:text-6xl">
+						<p className="g-eyebrow">{t("label")}</p>
+						<h2 className="agy-head mt-4 max-w-2xl text-4xl md:text-5xl lg:text-6xl">
 							{t("title")}{" "}
 							<span className="text-muted-foreground">{t("titleAccent")}</span>
 						</h2>
@@ -198,15 +188,13 @@ export function ProjectsSection() {
 				</div>
 
 				<Reveal delay={0.12}>
-					<div
-						className={`group/panel overflow-hidden rounded-2xl border border-black/10 transition-[border-color,transform] duration-300 hover:border-black/15 dark:border-border/45 dark:hover:border-border/50 ${panelSurface}`}
-					>
+					<div className="feature-media group/panel overflow-hidden border border-border bg-card transition-all duration-150">
 						<div
 							role="tablist"
 							aria-label={t("label")}
 							aria-orientation="horizontal"
 							onKeyDown={handleTabListKeyDown}
-							className="flex items-end gap-2.5 border-b border-border/35 px-3 py-2.5 sm:gap-3 sm:px-4 sm:py-3"
+							className="flex items-end gap-2.5 px-3 py-2.5 sm:gap-3 sm:px-4 sm:py-3"
 						>
 							<WindowControls />
 							<div className="flex min-w-0 flex-1 items-end gap-0.5 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] sm:gap-1 [&::-webkit-scrollbar]:hidden">

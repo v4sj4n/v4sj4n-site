@@ -1,16 +1,18 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useTheme } from "@/hooks/useTheme";
-import { appleSpringSnappy } from "@/lib/motion";
+import { appleEase } from "@/lib/motion";
 
 const iconVariants = {
 	initial: { opacity: 0, scale: 0.25, filter: "blur(4px)" },
 	animate: { opacity: 1, scale: 1, filter: "blur(0px)" },
 	exit: { opacity: 0, scale: 0.25, filter: "blur(4px)" },
 };
+
+// Synced crossfade — both icons animate together, Google micro-timing.
+const iconTransition = { duration: 0.15, ease: appleEase } as const;
 
 export function ThemeToggle() {
 	const t = useTranslations("nav");
@@ -29,13 +31,12 @@ export function ThemeToggle() {
 		<motion.button
 			type="button"
 			onClick={handleClick}
-			whileHover={{ scale: 1.05 }}
 			whileTap={{ scale: 0.96 }}
-			className="relative rounded-full p-2.5 text-muted-foreground transition-colors duration-300 hover:bg-muted/80 hover:text-foreground"
+			className="nav-button flex size-10 items-center justify-center text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1a73e8]"
 			aria-label={isLight ? t("themeDark") : t("themeLight")}
 		>
-			<span className="relative block size-[18px]">
-				<AnimatePresence mode="wait" initial={false}>
+			<span className="relative block size-[20px]">
+				<AnimatePresence mode="sync" initial={false}>
 					{isLight ? (
 						<motion.span
 							key="moon"
@@ -43,10 +44,12 @@ export function ThemeToggle() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							transition={appleSpringSnappy}
+							transition={iconTransition}
 							className="absolute inset-0 flex items-center justify-center"
 						>
-							<Moon size={18} />
+							<span className="symbol" style={{ fontSize: 20 }} aria-hidden>
+								dark_mode
+							</span>
 						</motion.span>
 					) : (
 						<motion.span
@@ -55,10 +58,12 @@ export function ThemeToggle() {
 							initial="initial"
 							animate="animate"
 							exit="exit"
-							transition={appleSpringSnappy}
+							transition={iconTransition}
 							className="absolute inset-0 flex items-center justify-center"
 						>
-							<Sun size={18} />
+							<span className="symbol" style={{ fontSize: 20 }} aria-hidden>
+								light_mode
+							</span>
 						</motion.span>
 					)}
 				</AnimatePresence>

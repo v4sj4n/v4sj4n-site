@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowDown, ArrowUpRight } from "lucide-react";
 import {
 	motion,
 	useReducedMotion,
@@ -13,6 +12,8 @@ import { ClipReveal } from "@/components/ClipReveal";
 import { HeroFloatingUI } from "@/components/HeroFloatingUI";
 import { useProgressiveMotion } from "@/hooks/useProgressiveMotion";
 import { appleEase, floatLoop } from "@/lib/motion";
+
+const bouncers = ["terminal", "deployed_code", "sdk", "neurology"] as const;
 
 function HeroTitleLine({
 	children,
@@ -89,54 +90,62 @@ export function HeroSection() {
 		>
 			<motion.div
 				style={{ y: contentY, opacity: contentOpacity }}
-				className="relative mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-6 py-12 lg:grid-cols-[5fr_4fr] lg:items-center lg:gap-16 md:px-8 md:py-16"
+				className="relative z-[5] mx-auto grid w-full max-w-6xl grid-cols-1 gap-10 px-6 py-12 lg:grid-cols-[5fr_4fr] lg:items-center lg:gap-16 md:px-8 md:py-16"
 			>
 				<div className="min-w-0">
-					<div className="mb-4 flex flex-col md:mb-5">
+					<div className="mt-4 mb-4 flex flex-col md:mb-5">
 						<HeroTitleLine
 							delay={0.28}
-							className="pb-[0.02em] text-[clamp(2.25rem,5vw,3.75rem)] font-bold tracking-[-0.02em] leading-[1.02]"
+							className="agy-head hero-title-line pb-[0.02em] text-[clamp(1.75rem,4.9vw,3.75rem)] leading-[1.05] text-foreground"
 						>
 							{t("title")}
 						</HeroTitleLine>
 						<HeroTitleLine
 							delay={0.42}
 							as="p"
-							className="pb-[0.02em] font-serif text-[clamp(2.25rem,5vw,3.75rem)] font-bold tracking-[-0.02em] leading-[1.02] text-muted-foreground"
+							className="agy-head hero-title-line pb-[0.02em] text-[clamp(1.75rem,4.9vw,3.75rem)] leading-[1.05] text-muted-foreground"
 						>
 							{t("titleAccent")}
 						</HeroTitleLine>
 					</div>
 
 					<ClipReveal delay={0.62}>
-						<p className="max-w-xl text-base leading-relaxed text-muted-foreground md:max-w-2xl md:text-lg">
+						<p className="body-copy max-w-xl text-[17px] leading-[1.5] md:max-w-2xl md:text-[17.5px]">
 							{t("description")}
 						</p>
 					</ClipReveal>
 
 					<ClipReveal delay={0.82} className="mt-10">
-						<div className="flex flex-wrap items-center gap-4">
+						<div className="flex flex-wrap items-center gap-3">
 							<motion.a
 								href="/resume.pdf"
 								target="_blank"
 								rel="noopener noreferrer"
-								whileHover={{ scale: 1.02 }}
-								whileTap={{ scale: 0.96 }}
-								className="group inline-flex items-center gap-2.5 rounded-full bg-foreground px-7 py-3.5 text-[13px] font-semibold tracking-wide text-background transition-colors duration-500 hover:bg-primary"
+								whileHover={prefersReducedMotion ? undefined : { scale: 1.02 }}
+								whileTap={prefersReducedMotion ? undefined : { scale: 0.96 }}
+								className="agy-btn agy-btn-primary text-[16px]"
 							>
 								{t("resume")}
-								<ArrowUpRight
-									size={14}
-									className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-								/>
+								<span className="symbol" style={{ fontSize: 20 }} aria-hidden>
+									arrow_outward
+								</span>
 							</motion.a>
 							<a
 								href="#projects"
-								className="inline-flex items-center gap-2 rounded-full px-5 py-3.5 text-[13px] font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground"
+								className="agy-btn agy-btn-secondary text-[16px]"
 							>
 								{t("work")}
-								<ArrowDown size={14} />
 							</a>
+						</div>
+					</ClipReveal>
+
+					<ClipReveal delay={0.94} className="mt-10">
+						<div className="bouncer-row !justify-start" aria-hidden="true">
+							{bouncers.map((icon) => (
+								<span key={icon} className="bouncer">
+									<span className="symbol">{icon}</span>
+								</span>
+							))}
 						</div>
 					</ClipReveal>
 				</div>
@@ -152,9 +161,9 @@ export function HeroSection() {
 
 			<motion.div
 				style={{ opacity: scrollOpacity }}
-				className="absolute bottom-6 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 [@media(max-height:600px)]:hidden"
+				className="absolute bottom-6 left-1/2 z-[5] flex -translate-x-1/2 flex-col items-center gap-2 [@media(max-height:600px)]:hidden"
 			>
-				<span className="text-[10px] font-mono uppercase tracking-[0.2em] text-muted-foreground/70">
+				<span className="font-mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70">
 					{t("scroll")}
 				</span>
 				<motion.div
@@ -164,7 +173,7 @@ export function HeroSection() {
 							? { y: [0, -6, 0], transition: floatLoop(6, 0).transition }
 							: { y: 0 }
 					}
-					className="h-6 w-px bg-gradient-to-b from-border to-transparent"
+					className="h-6 w-px bg-border/60"
 				/>
 			</motion.div>
 		</section>

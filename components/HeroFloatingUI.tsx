@@ -1,19 +1,9 @@
 "use client";
 
-import {
-	Command,
-	FileCode2,
-	GitBranch,
-	Search,
-	TrendingUp,
-} from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { ClipReveal } from "@/components/ClipReveal";
 import { appleEase, floatLoop, visibleState } from "@/lib/motion";
-
-const cardShadow =
-	"shadow-[0_1px_1px_rgba(0,0,0,0.024),0_2px_5px_rgba(0,0,0,0.032),0_6px_19px_rgba(0,0,0,0.048)] dark:shadow-[0_1px_1px_rgba(0,0,0,0.15),0_4px_12px_rgba(0,0,0,0.2),0_16px_40px_rgba(0,0,0,0.35)]";
 
 function UiCard({
 	children,
@@ -24,7 +14,8 @@ function UiCard({
 }) {
 	return (
 		<div
-			className={`overflow-hidden rounded-xl border border-black/[0.06] bg-white/90 text-card-foreground backdrop-blur-md dark:border-white/[0.08] dark:bg-card/95 ${cardShadow} ${className}`}
+			className={`overflow-hidden rounded-3xl border bg-card text-card-foreground backdrop-blur-md ${className}`}
+			style={{ borderColor: "var(--theme-outline-variant)" }}
 		>
 			{children}
 		</div>
@@ -34,12 +25,20 @@ function UiCard({
 function CodeEditorCard() {
 	return (
 		<UiCard className="h-full w-full min-w-0">
-			<div className="flex items-center gap-2 border-b border-black/[0.05] bg-black/[0.02] px-3 py-2 dark:border-white/[0.05] dark:bg-white/[0.02]">
-				<FileCode2 size={11} className="text-muted-foreground" />
+			<div
+				className="flex items-center gap-2 border-b px-3 py-2"
+				style={{
+					borderColor: "var(--theme-outline-variant)",
+					background: "var(--theme-surface-surface-container)",
+				}}
+			>
+				<span className="symbol" style={{ fontSize: 14 }} aria-hidden>
+					code_blocks
+				</span>
 				<span className="font-mono text-[10px] text-muted-foreground">
 					api/users.ts
 				</span>
-				<div className="ml-auto flex gap-1">
+				<div className="ml-auto flex gap-1" aria-hidden>
 					<span className="size-2 rounded-full bg-black/10 dark:bg-white/15" />
 					<span className="size-2 rounded-full bg-black/10 dark:bg-white/15" />
 				</div>
@@ -48,23 +47,23 @@ function CodeEditorCard() {
 				<div>
 					<span className="text-foreground">fetchUser</span>
 					<span className="text-muted-foreground">(</span>
-					<span className="text-accent">id</span>
+					<span className="text-foreground">id</span>
 					<span className="text-muted-foreground">: </span>
-					<span className="text-primary">string</span>
+					<span className="text-foreground">string</span>
 					<span className="text-muted-foreground">) {"{"}</span>
 				</div>
 				<div className="pl-3">
-					<span className="text-primary">const</span>{" "}
+					<span className="text-foreground">const</span>{" "}
 					<span className="text-foreground">res</span>
 					<span className="text-muted-foreground"> = </span>
-					<span className="text-primary">await</span>{" "}
+					<span className="text-foreground">await</span>{" "}
 					<span className="text-foreground">fetch</span>
 					<span className="text-muted-foreground">(</span>
-					<span className="text-success">{`\`/api/users/\${id}\``}</span>
+					<span className="code-chip px-1">{`/api/users/\${id}`}</span>
 					<span className="text-muted-foreground">)</span>
 				</div>
 				<div className="pl-3">
-					<span className="text-primary">return</span> res.json()
+					<span className="text-foreground">return</span> res.json()
 				</div>
 				<div>
 					<span className="text-muted-foreground">{"}"}</span>
@@ -88,12 +87,17 @@ function ChartCard({
 
 	return (
 		<UiCard className="w-full min-w-0">
-			<div className="flex items-center justify-between border-b border-black/[0.05] px-4 py-3 dark:border-white/[0.05]">
+			<div
+				className="flex items-center justify-between border-b px-4 py-3"
+				style={{ borderColor: "var(--theme-outline-variant)" }}
+			>
 				<div className="flex items-center gap-2">
-					<TrendingUp size={13} className="text-primary" />
+					<span className="symbol" style={{ fontSize: 16 }} aria-hidden>
+						trending_up
+					</span>
 					<span className="text-[12px] font-medium">{t("title")}</span>
 				</div>
-				<span className="font-mono text-[11px] tabular-nums text-success">
+				<span className="font-mono text-[11px] tabular-nums text-foreground">
 					{t("metric")}
 				</span>
 			</div>
@@ -104,19 +108,6 @@ function ChartCard({
 					className="h-[96px] w-full sm:h-[108px]"
 					aria-hidden
 				>
-					<defs>
-						<linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
-							<stop offset="0%" stopColor="var(--primary)" stopOpacity="0.18" />
-							<stop offset="100%" stopColor="var(--primary)" stopOpacity="0" />
-						</linearGradient>
-						<filter id="lineGlow" x="-20%" y="-20%" width="140%" height="140%">
-							<feGaussianBlur stdDeviation="1.5" result="blur" />
-							<feMerge>
-								<feMergeNode in="blur" />
-								<feMergeNode in="SourceGraphic" />
-							</feMerge>
-						</filter>
-					</defs>
 					{[15, 30, 45].map((y) => (
 						<line
 							key={y}
@@ -130,25 +121,11 @@ function ChartCard({
 						/>
 					))}
 					<motion.path
-						d={`${pathD} L ${chartWidth} 58 L 8 58 Z`}
-						fill="url(#chartFill)"
-						initial={{ opacity: 1 }}
-						animate={
-							shouldEnter
-								? {
-										opacity: [0.35, 1],
-										transition: { duration: 1.2, ease: appleEase, delay: 0.2 },
-									}
-								: { opacity: 1 }
-						}
-					/>
-					<motion.path
 						d={pathD}
 						fill="none"
-						stroke="var(--primary)"
+						stroke="currentColor"
 						strokeWidth="1.5"
 						strokeLinecap="round"
-						filter="url(#lineGlow)"
 						initial={{ pathLength: 1, opacity: 1 }}
 						animate={
 							shouldEnter
@@ -164,7 +141,7 @@ function ChartCard({
 						cx={chartWidth}
 						cy="12"
 						r="3"
-						fill="var(--primary)"
+						fill="currentColor"
 						initial={{ scale: 1, opacity: 1 }}
 						animate={
 							shouldAnimateAmbient
@@ -192,24 +169,34 @@ function CommandMenuCard({ shouldEnter }: { shouldEnter: boolean }) {
 	const t = useTranslations("hero.ui.command");
 
 	const items = [
-		{ icon: Search, label: t("searchProjects"), shortcut: "⌘K", active: true },
-		{ icon: GitBranch, label: t("createBranch"), shortcut: "⌘B" },
-		{ icon: Command, label: t("runCommand"), shortcut: "⌘⇧P" },
+		{
+			icon: "search",
+			label: t("searchProjects"),
+			shortcut: "⌘K",
+			active: true,
+		},
+		{ icon: "fork_right", label: t("createBranch"), shortcut: "⌘B" },
+		{ icon: "terminal", label: t("runCommand"), shortcut: "⌘⇧P" },
 	];
 
 	return (
 		<UiCard className="h-full w-full min-w-0">
-			<div className="flex items-center gap-2.5 border-b border-black/[0.05] px-3.5 py-2.5 dark:border-white/[0.05]">
-				<Search size={13} className="text-muted-foreground" />
+			<div
+				className="flex items-center gap-2.5 border-b px-3.5 py-2.5"
+				style={{ borderColor: "var(--theme-outline-variant)" }}
+			>
+				<span className="symbol" style={{ fontSize: 16 }} aria-hidden>
+					search
+				</span>
 				<span className="text-[12px] text-muted-foreground">
 					{t("placeholder")}
 				</span>
-				<kbd className="ml-auto rounded-md border border-black/[0.08] bg-muted/80 px-1.5 py-0.5 font-mono text-[9px] text-muted-foreground dark:border-white/[0.08]">
+				<kbd className="code-chip ml-auto px-1.5 py-0.5 font-mono text-[9px] text-muted-foreground">
 					⌘K
 				</kbd>
 			</div>
 			<div className="p-1.5">
-				{items.map(({ icon: Icon, label, shortcut, active }, index) => (
+				{items.map(({ icon, label, shortcut, active }, index) => (
 					<motion.div
 						key={label}
 						initial={visibleState}
@@ -226,13 +213,15 @@ function CommandMenuCard({ shouldEnter }: { shouldEnter: boolean }) {
 									}
 								: visibleState
 						}
-						className={`flex items-center gap-2.5 rounded-lg px-2.5 py-2 ${
+						className={`flex items-center gap-2.5 rounded-full px-2.5 py-2 ${
 							active
-								? "bg-primary/[0.08] text-foreground"
+								? "bg-muted font-medium text-foreground"
 								: "text-muted-foreground"
 						}`}
 					>
-						<Icon size={13} className={active ? "text-primary" : ""} />
+						<span className="symbol" style={{ fontSize: 16 }} aria-hidden>
+							{icon}
+						</span>
 						<span className="flex-1 text-[11px] font-medium">{label}</span>
 						<kbd className="font-mono text-[9px] opacity-60">{shortcut}</kbd>
 					</motion.div>
@@ -307,10 +296,6 @@ export function HeroFloatingUI({
 			className="relative mx-auto w-full max-w-[720px] lg:mx-0 lg:max-w-none"
 			aria-hidden
 		>
-			<div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-				<div className="h-[320px] w-[320px] rounded-full bg-gradient-to-br from-primary/[0.12] via-accent/[0.06] to-transparent blur-[80px]" />
-			</div>
-
 			<div className="relative w-full" style={{ perspective: "1000px" }}>
 				<div className="relative flex flex-col gap-4 sm:gap-5">
 					<FloatingCard
