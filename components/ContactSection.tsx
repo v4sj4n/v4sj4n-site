@@ -98,16 +98,16 @@ export function ContactSection() {
 					</div>
 
 					<Reveal delay={0.16}>
-						<Stagger className="flex flex-row items-center gap-3">
+						<Stagger className="flex flex-row items-stretch gap-3">
 							{channels.map(({ key, href, icon: Icon }) => (
-								<StaggerItem key={key}>
+								<StaggerItem key={key} className="flex-1">
 									<a
 										href={href}
 										target={key === "email" ? undefined : "_blank"}
 										rel={key === "email" ? undefined : "noopener noreferrer"}
 										aria-label={t(`channels.${key}.label`)}
 										title={t(`channels.${key}.label`)}
-										className="contact-channel group flex size-12 items-center justify-center active:scale-[0.98]"
+										className="contact-channel group flex h-12 w-full items-center justify-center active:scale-[0.98]"
 									>
 										<Icon className="size-5 shrink-0 text-muted-foreground transition-colors duration-150 group-hover:text-foreground" />
 									</a>
