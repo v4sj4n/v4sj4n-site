@@ -880,6 +880,10 @@ code,
 	background: rgba(255, 255, 255, 0.12);
 	border-color: rgba(255, 255, 255, 0.2);
 }
+/* Icon-only channels — Glue pill (9999px), keeps the flexed equal-width row */
+.contact-channel-icon {
+	border-radius: 9999px;
+}
 .contact-form-card {
 	background: #fff;
 	border: 1px solid #e8eaed;

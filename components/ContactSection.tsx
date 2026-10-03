@@ -107,7 +107,7 @@ export function ContactSection() {
 										rel={key === "email" ? undefined : "noopener noreferrer"}
 										aria-label={t(`channels.${key}.label`)}
 										title={t(`channels.${key}.label`)}
-										className="contact-channel group flex h-12 w-full items-center justify-center active:scale-[0.98]"
+										className="contact-channel contact-channel-icon group flex h-12 w-full items-center justify-center active:scale-[0.98]"
 									>
 										<Icon className="size-5 shrink-0 text-muted-foreground transition-colors duration-150 group-hover:text-foreground" />
 									</a>
