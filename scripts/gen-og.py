@@ -1,4 +1,4 @@
-"""Regenerate per-locale OG images (1200x630) in the pine palette.
+"""Regenerate per-locale OG images (1200x630) in the Google Glue light palette.
 
 Usage: python3 scripts/gen-og.py
 Reads dictionaries/metadata-by-locale.json, writes public/output/<locale>/opengraph-image.png
@@ -45,15 +45,16 @@ def oklch_to_srgb(L, C, Hdeg):
     return tuple(round(gamma(v) * 255) for v in (r, g, bl))
 
 
-BG = oklch_to_srgb(0.18, 0.02, 170)
-GLOW = oklch_to_srgb(0.42, 0.09, 175)
-CREAM = oklch_to_srgb(0.93, 0.015, 110)
-PINE_LIGHT = oklch_to_srgb(0.76, 0.11, 175)
-DESC = oklch_to_srgb(0.75, 0.03, 130)
-ACCENT = oklch_to_srgb(0.62, 0.11, 200)
+# Google Glue light tokens (match app/globals.css :root)
+BG = (255, 255, 255)
+CREAM = (32, 33, 36)  # --g-ink #202124
+PINE_LIGHT = (26, 115, 232)  # --g-primary #1a73e8
+DESC = (60, 64, 67)  # --g-body #3c4043
+ACCENT = (26, 115, 232)  # --g-primary #1a73e8
+ICON_BG = (20, 26, 40)
+ICON_V = (189, 199, 248)
 
-print("theme light (bg cream): #%02x%02x%02x" % oklch_to_srgb(0.98, 0.01, 100))
-print("theme dark  (bg pine) : #%02x%02x%02x" % BG)
+print("theme: white-first Glue, primary #1a73e8")
 
 W, H = 1200, 630
 
@@ -69,9 +70,11 @@ GEO = f"{SUP}/Georgia.ttf"
 HELV = f"{SYS}/Helvetica.ttc"
 ARIAL = f"{SUP}/Arial.ttf"
 ARIAL_U = f"{SUP}/Arial Unicode.ttf"
+RETHINK = ROOT / "scripts" / "fonts" / "rethink-sans-500.ttf"
+RETHINK_B = ROOT / "scripts" / "fonts" / "rethink-sans-700.ttf"
 
 FONTS = {
-    "default": {"name": (GEO_B, 0), "body": (HELV, 0)},
+    "default": {"name": (str(RETHINK), 0), "body": (str(RETHINK), 0)},
     "ar": {"name": (f"{SYS}/GeezaPro.ttc", 1), "body": (f"{SYS}/GeezaPro.ttc", 0), "rtl": True, "arabic": True},
     "arc": {"name": (f"{SYS}/GeezaPro.ttc", 1), "body": (f"{SYS}/GeezaPro.ttc", 0), "rtl": True, "arabic": True},
     "he": {"name": (f"{SYS}/ArialHB.ttc", 1), "body": (f"{SYS}/ArialHB.ttc", 0), "rtl": True},
@@ -120,29 +123,18 @@ def wrap(draw, text, font, max_w):
 def render_one(locale, title, description):
     cfg = FONTS.get(locale, FONTS["default"])
     rtl = locale in RTL_LOCALES
-    name_f = F(cfg["name"][0], 74, cfg["name"][1])
-    role_f = F(cfg["body"][0], 38, cfg["body"][1])
-    desc_f = F(cfg["body"][0], 29, cfg["body"][1])
+    name_f = F(cfg["name"][0], 68, cfg["name"][1])
+    role_f = F(cfg["body"][0], 36, cfg["body"][1])
+    desc_f = F(cfg["body"][0], 27, cfg["body"][1])
 
-    if " — " in title:
-        name, role = title.split(" — ", 1)
+    for sep in (" — ", ", "):
+        if sep in title:
+            name, role = title.split(sep, 1)
+            break
     else:
         name, role = title, ""
 
     img = Image.new("RGB", (W, H), BG)
-
-    # radial pine glow rising from bottom-center
-    glow_layer = Image.new("RGB", (W, H), (0, 0, 0))
-    mask = Image.new("L", (W, H), 0)
-    md = ImageDraw.Draw(mask)
-    cx, cy, rad = W // 2, 760, 720
-    for r in range(rad, 0, -4):
-        alpha = int(150 * (1 - r / rad) ** 1.6)
-        md.ellipse([cx - r, cy - r, cx + r, cy + r], fill=alpha)
-    glow = Image.new("RGB", (W, H), GLOW)
-    img = Image.composite(
-        Image.composite(glow, img, mask).convert("RGB"), img, mask
-    )
 
     d = ImageDraw.Draw(img)
     x0 = W - 120 if rtl else 120
@@ -156,7 +148,7 @@ def render_one(locale, title, description):
     y = 190
     if locale in ("ko", "zh") and "Ç" in name:
         # CJK fonts lack U+00C7: draw the name in runs, borrowing Ç from Georgia
-        geo = F(GEO_B, 74, 0)
+        geo = F(str(RETHINK), 74, 0)
         pre, post = name.strip().split("Ç", 1)
         parts = [(pre, name_f), ("Ç", geo), (post, name_f)]
         widths = [d.textlength(t, font=f) for t, f in parts]
@@ -211,14 +203,11 @@ def main():
     if missing:
         print("no output dir for:", ", ".join(missing))
 
-    # apple touch icon 180x180
-    icon = Image.new("RGB", (180, 180), BG)
-    halo = Image.new("L", (180, 180), 0)
-    ImageDraw.Draw(halo).ellipse([-60, -60, 240, 240], fill=110)
-    icon = Image.composite(Image.new("RGB", (180, 180), GLOW), icon, halo)
+    # apple touch icon 180x180 — matches app/icon1.png
+    icon = Image.new("RGB", (180, 180), ICON_BG)
     md = ImageDraw.Draw(icon)
-    f = F(GEO_B, 104, 0)
-    md.text((90, 88), "V", font=f, fill=CREAM, anchor="mm")
+    f = F(str(RETHINK), 104, 0)
+    md.text((90, 88), "V", font=f, fill=ICON_V, anchor="mm")
     icon.save(ROOT / "public" / "apple-touch-icon.png")
     print("wrote public/apple-touch-icon.png")
 
