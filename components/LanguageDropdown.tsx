@@ -18,6 +18,7 @@ export function LanguageDropdown({ currentLocale }: Props) {
 	const [query, setQuery] = useState("");
 	const [searchOpen, setSearchOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
+	const listRef = useRef<HTMLDivElement>(null);
 	const selectedItemRef = useRef<HTMLButtonElement>(null);
 	const pathname = usePathname();
 	const router = useRouter();
@@ -35,6 +36,7 @@ export function LanguageDropdown({ currentLocale }: Props) {
 
 	// Close on click outside or Escape
 	useEffect(() => {
+		if (!isOpen) return;
 		function handleClickOutside(event: MouseEvent) {
 			if (
 				dropdownRef.current &&
@@ -52,23 +54,29 @@ export function LanguageDropdown({ currentLocale }: Props) {
 				setQuery("");
 			}
 		}
-		if (isOpen) {
-			document.addEventListener("mousedown", handleClickOutside);
-			document.addEventListener("keydown", handleKeyDown);
-			// Scroll selected language into view smoothly on open
-			if (!query.trim()) {
-				setTimeout(() => {
-					selectedItemRef.current?.scrollIntoView({
-						block: "nearest",
-						behavior: "smooth",
-					});
-				}, 50);
-			}
-		}
+		document.addEventListener("mousedown", handleClickOutside);
+		document.addEventListener("keydown", handleKeyDown);
 		return () => {
 			document.removeEventListener("mousedown", handleClickOutside);
 			document.removeEventListener("keydown", handleKeyDown);
 		};
+	}, [isOpen]);
+
+	// Scroll the selected language into view once on open. Instant,
+	// container-only scroll: smooth scrollIntoView re-fires under StrictMode
+	// and can tug the whole page, which reads as the popover blinking.
+	useEffect(() => {
+		if (!isOpen || query.trim()) return;
+		const list = listRef.current;
+		const selected = selectedItemRef.current;
+		if (!list || !selected) return;
+		const listRect = list.getBoundingClientRect();
+		const selectedRect = selected.getBoundingClientRect();
+		if (selectedRect.top < listRect.top) {
+			list.scrollTop += selectedRect.top - listRect.top;
+		} else if (selectedRect.bottom > listRect.bottom) {
+			list.scrollTop += selectedRect.bottom - listRect.bottom;
+		}
 	}, [isOpen, query]);
 
 	const handleSelect = (code: string) => {
@@ -126,7 +134,7 @@ export function LanguageDropdown({ currentLocale }: Props) {
 						animate={{ opacity: 1, scale: 1, y: 0 }}
 						exit={{ opacity: 0, scale: 0.95, y: -4 }}
 						transition={appleSpringSnappy}
-						className="absolute right-0 top-full z-50 mt-2 w-60 overflow-hidden rounded-2xl border border-[#e8eaed] bg-white p-1.5 shadow-[0_1px_3px_rgba(60,64,67,.3)] backdrop-blur-xl transition-all dark:border-white/10 dark:bg-[#2f3034]"
+						className="absolute right-0 top-full z-50 mt-2 w-60 overflow-hidden rounded-2xl border border-[#e8eaed] bg-white p-1.5 shadow-[0_1px_3px_rgba(60,64,67,.3)] backdrop-blur-xl dark:border-white/10 dark:bg-[#2f3034]"
 						role="listbox"
 						aria-label="Select language"
 					>
@@ -194,7 +202,10 @@ export function LanguageDropdown({ currentLocale }: Props) {
 							)}
 						</AnimatePresence>
 
-						<div className="scrollbar-thin max-h-60 space-y-0.5 overflow-y-auto p-1.5">
+						<div
+							ref={listRef}
+							className="scrollbar-thin max-h-60 space-y-0.5 overflow-y-auto p-1.5"
+						>
 							{visibleLocales.length === 0 ? (
 								<p className="px-3 py-6 text-center text-sm text-[#5f6368] dark:text-[#9aa0a6]">
 									No languages found

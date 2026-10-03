@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Rethink_Sans, Space_Mono } from "next/font/google";
 import { AuraBackground } from "@/components/AuraBackground";
 import "./globals.css";
 
@@ -16,6 +17,21 @@ export const viewport: Viewport = {
 		{ media: "(prefers-color-scheme: dark)", color: "#202124" },
 	],
 };
+
+// OFL-licensed type: Rethink Sans (headings/body) + Space Mono (code).
+// next/font self-hosts the files at build time — no runtime Google requests.
+const rethinkSans = Rethink_Sans({
+	subsets: ["latin", "latin-ext"],
+	display: "swap",
+	variable: "--font-rethink-sans",
+});
+
+const spaceMono = Space_Mono({
+	weight: ["400", "700"],
+	subsets: ["latin", "latin-ext"],
+	display: "swap",
+	variable: "--font-space-mono",
+});
 
 const themeInitScript = `
 (function () {
@@ -37,7 +53,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en" className="h-full antialiased" suppressHydrationWarning>
+		<html
+			lang="en"
+			className={`h-full antialiased ${rethinkSans.variable} ${spaceMono.variable}`}
+			suppressHydrationWarning
+		>
 			<head>
 				<meta name="apple-mobile-web-app-title" content="Vasjan" />
 				<link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -45,14 +65,6 @@ export default function RootLayout({
 					rel="preconnect"
 					href="https://fonts.gstatic.com"
 					crossOrigin="anonymous"
-				/>
-				<link
-					href="https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap"
-					rel="stylesheet"
-				/>
-				<link
-					href="https://fonts.googleapis.com/css2?family=Google+Sans+Code:ital@0;1&display=swap"
-					rel="stylesheet"
 				/>
 				<link
 					// biome-ignore lint/suspicious/useGoogleFontDisplay: Google Symbols requires display=block per Antigravity brand skill

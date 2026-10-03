@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Class-based dark mode: the site toggles .dark on <html>, so Tailwind's
+   dark: variant must follow the class — not the OS prefers-color-scheme
+   media query (v4 default), which would paint dark styles while light. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /*
   Google Glue brand system — Friendly precision (consumer).
   White-first, blue-is-the-button, tonal cards + hairlines.
@@ -218,9 +223,9 @@
 	--agy-line: #e8eaed;
 	--agy-radius-pill: 9999px;
 	--agy-radius-xl: 36px;
-	--agy-font: "Google Sans Flex", "Google Sans", "Google Sans Text", sans-serif;
-	--agy-body-font: "Google Sans Text", "Google Sans Flex", Arial, sans-serif;
-	--agy-code: "Google Sans Code", monospace;
+	--agy-font: var(--font-rethink-sans), system-ui, sans-serif;
+	--agy-body-font: var(--font-rethink-sans), system-ui, sans-serif;
+	--agy-code: var(--font-space-mono), ui-monospace, monospace;
 	--agy-icons: "Google Symbols";
 }
 
@@ -282,9 +287,9 @@
 	--color-destructive-foreground: var(--destructive-foreground);
 	--color-success: var(--success);
 	--color-success-foreground: var(--success-foreground);
-	--font-sans: "Google Sans Flex", "Google Sans", sans-serif;
-	--font-serif: "Google Sans Flex", "Google Sans", sans-serif;
-	--font-mono: "Google Sans Code", monospace;
+	--font-sans: var(--font-rethink-sans), system-ui, sans-serif;
+	--font-serif: var(--font-rethink-sans), system-ui, sans-serif;
+	--font-mono: var(--font-space-mono), ui-monospace, monospace;
 }
 
 @media (max-width: 1600px) {
@@ -354,7 +359,23 @@ body {
 	-webkit-font-smoothing: antialiased;
 }
 
-/* Typography — Google Sans 500 headings + Google Sans Text body (Weight-500 Rule) */
+/* Layout — single source of truth for section alignment.
+   Every section container (nav, hero, projects, contact, footer) uses this
+   so their left/right edges share one vertical line. Do not hand-roll
+   mx-auto max-w-6xl px-6 md:px-8 elsewhere. */
+.section-container {
+	margin-inline: auto;
+	width: 100%;
+	max-width: 72rem;
+	padding-inline: 1.5rem;
+}
+@media (min-width: 768px) {
+	.section-container {
+		padding-inline: 2rem;
+	}
+}
+
+/* Typography — Rethink Sans 500 headings + Rethink Sans body (Weight-500 Rule) */
 h1,
 h2,
 h3,
@@ -440,7 +461,11 @@ p {
 	color: #174ea6;
 }
 
-/* Icons — Google Symbols, ROND 50 */
+/* Icons — Google Symbols, ROND 50.
+   Ligature names (e.g. "arrow_outward") render as one glyph once the font
+   loads, but measure as ~13 fallback chars before that (even invisible with
+   display=block), which stretches buttons. Clamp to a 1em box so width is
+   identical before/after the swap — no layout shift on hard refresh. */
 .symbol {
 	font-family: var(--agy-icons);
 	font-weight: 300;
@@ -452,8 +477,19 @@ p {
 		"ROND" 50,
 		"opsz" 48;
 	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 1em;
+	height: 1em;
+	max-width: 1em;
+	overflow: hidden;
+	white-space: nowrap;
+	flex-shrink: 0;
 	line-height: 1;
 	vertical-align: middle;
+	letter-spacing: 0;
+	text-transform: none;
+	direction: ltr;
 }
 .symbol-fill {
 	font-variation-settings:
@@ -530,6 +566,12 @@ p {
 .dark .agy-btn-secondary {
 	background: transparent;
 	border-color: rgba(232, 234, 237, 0.4);
+	color: #fff;
+}
+.dark .button-secondary:hover,
+.dark .agy-btn-secondary:hover {
+	background: var(--theme-button-secondary-hover);
+	border-color: rgba(232, 234, 237, 0.6);
 	color: #fff;
 }
 .button-secondary-inverse {

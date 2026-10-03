@@ -157,7 +157,9 @@ export function ContactForm({
 
 			turnstileWidgetId.current = turnstile.render(turnstileRef.current, {
 				sitekey: turnstileSiteKey,
-				theme: "auto",
+				// Explicit site theme — "auto" follows the OS setting, not the
+				// site's dark/light toggle, so the widget clashes with the bg.
+				theme,
 				appearance: "interaction-only",
 				size: "flexible",
 				action: "contact-form",

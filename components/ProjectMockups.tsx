@@ -54,9 +54,7 @@ export function OptimoLmsMockup({ accent, title }: MockupProps) {
 							<div
 								key={course}
 								className={`flex items-center gap-1.5 rounded-md px-1.5 py-1.5 sm:gap-2 sm:px-2.5 sm:py-2 ${
-									i === 0
-										? "bg-white/85 dark:bg-muted/50"
-										: "opacity-70"
+									i === 0 ? "bg-white/85 dark:bg-muted/50" : "opacity-70"
 								}`}
 							>
 								<Skeleton
@@ -228,9 +226,7 @@ export function MomentsMockup({ accent, title }: MockupProps) {
 						<div
 							key={group}
 							className={`mb-1 flex items-center gap-1.5 rounded-md px-1.5 py-1.5 sm:mb-1.5 sm:gap-2 sm:px-2.5 sm:py-2 ${
-								i === 0
-									? "bg-white/90 dark:bg-muted/50"
-									: "opacity-65"
+								i === 0 ? "bg-white/90 dark:bg-muted/50" : "opacity-65"
 							}`}
 						>
 							<div
@@ -309,9 +305,7 @@ export function VasChatMockup({ accent, title }: MockupProps) {
 						<div
 							key={chat}
 							className={`mb-1 rounded-md px-1.5 py-1.5 sm:mb-1.5 sm:px-2.5 sm:py-2 ${
-								i === 0
-									? "bg-white/90 dark:bg-muted/50"
-									: "opacity-65"
+								i === 0 ? "bg-white/90 dark:bg-muted/50" : "opacity-65"
 							}`}
 						>
 							<p className="truncate text-[9px] font-medium sm:text-[11px]">

@@ -110,7 +110,7 @@ export function Navbar() {
 			>
 				<nav
 					aria-label="Primary"
-					className="mx-auto flex min-h-16 w-full max-w-6xl items-center justify-between px-6 md:px-8"
+					className="section-container flex min-h-16 items-center justify-between"
 					style={{ minHeight: "var(--nav-height)" }}
 				>
 					<Link

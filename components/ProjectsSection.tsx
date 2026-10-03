@@ -175,8 +175,8 @@ export function ProjectsSection() {
 	};
 
 	return (
-		<section id="projects" className="py-[120px]">
-			<div className="mx-auto max-w-6xl px-6 md:px-8">
+		<section id="projects" className="py-16 md:py-24">
+			<div className="section-container">
 				<div className="mb-12 md:mb-16">
 					<Reveal delay={0.08}>
 						<p className="g-eyebrow">{t("label")}</p>

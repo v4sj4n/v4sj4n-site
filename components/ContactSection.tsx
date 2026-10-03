@@ -77,86 +77,90 @@ export function ContactSection() {
 	const [formSent, setFormSent] = useState(false);
 
 	return (
-		<section id="contact" className="py-[120px]">
-			<div className="contact-panel mx-auto max-w-6xl px-6 py-16 md:px-8 md:py-20">
-				<div className="mb-10 md:mb-12">
-					<Reveal delay={0.08}>
-						<p className="g-eyebrow">{t("label")}</p>
-						<h2 className="agy-head mt-4 text-4xl text-foreground md:text-6xl lg:text-7xl">
-							{t("title")}{" "}
-							<span className="text-muted-foreground">{t("titleAccent")}</span>
-						</h2>
+		<section id="contact" className="py-16 md:py-24">
+			<div className="section-container">
+				<div className="contact-panel px-6 py-8 md:px-8 md:py-12">
+					<div className="mb-10 md:mb-12">
+						<Reveal delay={0.08}>
+							<p className="g-eyebrow">{t("label")}</p>
+							<h2 className="agy-head mt-4 text-4xl text-foreground md:text-6xl lg:text-7xl">
+								{t("title")}{" "}
+								<span className="text-muted-foreground">
+									{t("titleAccent")}
+								</span>
+							</h2>
+						</Reveal>
+						<Reveal delay={0.12}>
+							<p className="body-copy mt-4 max-w-3xl text-base leading-[1.5] md:text-[17px]">
+								{t("description")}
+							</p>
+						</Reveal>
+					</div>
+
+					<Reveal delay={0.16}>
+						<Stagger className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+							{channels.map(({ key, href, icon: Icon }) => (
+								<StaggerItem key={key}>
+									<a
+										href={href}
+										target={key === "email" ? undefined : "_blank"}
+										rel={key === "email" ? undefined : "noopener noreferrer"}
+										aria-label={`${t(`channels.${key}.label`)}: ${t(`channels.${key}.description`)}`}
+										className="contact-channel group flex h-full items-center gap-4 px-5 py-4 active:scale-[0.98] sm:flex-col sm:items-stretch sm:gap-3 sm:px-5 sm:py-5"
+									>
+										<span className="flex w-full items-center justify-between">
+											<Icon className="size-5 shrink-0 text-muted-foreground transition-colors duration-150 group-hover:text-foreground" />
+											<span
+												className="symbol shrink-0 text-muted-foreground transition-all duration-150 group-hover:translate-x-0.5 group-hover:text-foreground"
+												style={{ fontSize: 18 }}
+												aria-hidden
+											>
+												arrow_outward
+											</span>
+										</span>
+										<span className="text-left sm:mt-auto">
+											<span className="block text-sm font-medium leading-tight text-foreground">
+												{t(`channels.${key}.label`)}
+											</span>
+											<span className="mt-1 block text-pretty text-[13px] leading-snug text-muted-foreground">
+												{t(`channels.${key}.description`)}
+											</span>
+										</span>
+									</a>
+								</StaggerItem>
+							))}
+						</Stagger>
 					</Reveal>
-					<Reveal delay={0.12}>
-						<p className="body-copy mt-4 max-w-3xl text-base leading-[1.5] md:text-[17px]">
-							{t("description")}
-						</p>
+
+					<Reveal delay={0.2}>
+						<div
+							className="contact-form-card mt-8 overflow-hidden"
+							data-status={formSent ? "submitted" : "idle"}
+						>
+							<div className="px-6 pt-6 md:px-8 md:pt-8">
+								<h3
+									className="text-balance text-2xl font-medium text-foreground"
+									style={{
+										fontWeight: 500,
+										letterSpacing: "-0.02em",
+										lineHeight: 1.2,
+									}}
+								>
+									{formSent ? t("form.successTitle") : t("form.heading")}
+								</h3>
+								<p
+									role={formSent ? "status" : undefined}
+									className="mt-1 max-w-[68ch] text-pretty text-sm text-muted-foreground"
+								>
+									{formSent ? t("form.success") : t("form.subheading")}
+								</p>
+							</div>
+							<div className="px-6 md:px-8">
+								<ContactForm onSuccessChange={setFormSent} />
+							</div>
+						</div>
 					</Reveal>
 				</div>
-
-				<Reveal delay={0.16}>
-					<Stagger className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
-						{channels.map(({ key, href, icon: Icon }) => (
-							<StaggerItem key={key}>
-								<a
-									href={href}
-									target={key === "email" ? undefined : "_blank"}
-									rel={key === "email" ? undefined : "noopener noreferrer"}
-									aria-label={`${t(`channels.${key}.label`)}: ${t(`channels.${key}.description`)}`}
-									className="contact-channel group flex h-full items-center gap-4 px-5 py-4 active:scale-[0.98] sm:flex-col sm:items-stretch sm:gap-3 sm:px-5 sm:py-5"
-								>
-									<span className="flex w-full items-center justify-between">
-										<Icon className="size-5 shrink-0 text-muted-foreground transition-colors duration-150 group-hover:text-foreground" />
-										<span
-											className="symbol shrink-0 text-muted-foreground transition-all duration-150 group-hover:translate-x-0.5 group-hover:text-foreground"
-											style={{ fontSize: 18 }}
-											aria-hidden
-										>
-											arrow_outward
-										</span>
-									</span>
-									<span className="text-left sm:mt-auto">
-										<span className="block text-sm font-medium leading-tight text-foreground">
-											{t(`channels.${key}.label`)}
-										</span>
-										<span className="mt-1 block text-pretty text-[13px] leading-snug text-muted-foreground">
-											{t(`channels.${key}.description`)}
-										</span>
-									</span>
-								</a>
-							</StaggerItem>
-						))}
-					</Stagger>
-				</Reveal>
-
-				<Reveal delay={0.2}>
-					<div
-						className="contact-form-card mt-8 overflow-hidden"
-						data-status={formSent ? "submitted" : "idle"}
-					>
-						<div className="px-6 pt-6 md:px-8 md:pt-8">
-							<h3
-								className="text-balance text-2xl font-medium text-foreground"
-								style={{
-									fontWeight: 500,
-									letterSpacing: "-0.02em",
-									lineHeight: 1.2,
-								}}
-							>
-								{formSent ? t("form.successTitle") : t("form.heading")}
-							</h3>
-							<p
-								role={formSent ? "status" : undefined}
-								className="mt-1 max-w-[68ch] text-pretty text-sm text-muted-foreground"
-							>
-								{formSent ? t("form.success") : t("form.subheading")}
-							</p>
-						</div>
-						<div className="px-6 md:px-8">
-							<ContactForm onSuccessChange={setFormSent} />
-						</div>
-					</div>
-				</Reveal>
 			</div>
 		</section>
 	);
