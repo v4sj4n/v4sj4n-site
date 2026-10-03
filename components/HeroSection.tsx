@@ -90,7 +90,7 @@ export function HeroSection() {
 		>
 			<motion.div
 				style={{ y: contentY, opacity: contentOpacity }}
-				className="section-container relative z-[5] grid grid-cols-1 gap-10 py-12 lg:grid-cols-[5fr_4fr] lg:items-center lg:gap-16 md:py-16"
+				className="section-container relative z-[5] grid grid-cols-1 gap-10 pt-24 pb-12 lg:grid-cols-[5fr_4fr] lg:items-center lg:gap-16 md:py-16"
 			>
 				<div className="min-w-0">
 					<div className="mt-4 mb-4 flex flex-col md:mb-5">

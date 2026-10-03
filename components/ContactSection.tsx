@@ -98,34 +98,18 @@ export function ContactSection() {
 					</div>
 
 					<Reveal delay={0.16}>
-						<Stagger className="grid grid-cols-1 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
+						<Stagger className="flex flex-row items-center gap-3">
 							{channels.map(({ key, href, icon: Icon }) => (
 								<StaggerItem key={key}>
 									<a
 										href={href}
 										target={key === "email" ? undefined : "_blank"}
 										rel={key === "email" ? undefined : "noopener noreferrer"}
-										aria-label={`${t(`channels.${key}.label`)}: ${t(`channels.${key}.description`)}`}
-										className="contact-channel group flex h-full items-center gap-4 px-5 py-4 active:scale-[0.98] sm:flex-col sm:items-stretch sm:gap-3 sm:px-5 sm:py-5"
+										aria-label={t(`channels.${key}.label`)}
+										title={t(`channels.${key}.label`)}
+										className="contact-channel group flex size-12 items-center justify-center active:scale-[0.98]"
 									>
-										<span className="flex w-full items-center justify-between">
-											<Icon className="size-5 shrink-0 text-muted-foreground transition-colors duration-150 group-hover:text-foreground" />
-											<span
-												className="symbol shrink-0 text-muted-foreground transition-all duration-150 group-hover:translate-x-0.5 group-hover:text-foreground"
-												style={{ fontSize: 18 }}
-												aria-hidden
-											>
-												arrow_outward
-											</span>
-										</span>
-										<span className="text-left sm:mt-auto">
-											<span className="block text-sm font-medium leading-tight text-foreground">
-												{t(`channels.${key}.label`)}
-											</span>
-											<span className="mt-1 block text-pretty text-[13px] leading-snug text-muted-foreground">
-												{t(`channels.${key}.description`)}
-											</span>
-										</span>
+										<Icon className="size-5 shrink-0 text-muted-foreground transition-colors duration-150 group-hover:text-foreground" />
 									</a>
 								</StaggerItem>
 							))}
