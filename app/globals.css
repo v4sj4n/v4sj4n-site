@@ -1,5 +1,19 @@
 @import "tailwindcss";
 
+/* Self-hosted icon font — Material Symbols Rounded (OFL-licensed, Google
+   Symbols design language), subset to the ligatures used on this site.
+   Served from the same origin so icons never depend on a runtime Google
+   Fonts request (which, when blocked or slow, rendered ligature names as
+   clipped text fragments on some devices). */
+@font-face {
+	font-family: "Site Symbols";
+	font-style: normal;
+	font-weight: 100 700;
+	font-display: block;
+	src: url("/fonts/material-symbols/material-symbols-rounded-subset.woff2")
+		format("woff2");
+}
+
 /* Class-based dark mode: the site toggles .dark on <html>, so Tailwind's
    dark: variant must follow the class — not the OS prefers-color-scheme
    media query (v4 default), which would paint dark styles while light. */
@@ -226,7 +240,9 @@
 	--agy-font: var(--font-rethink-sans), system-ui, sans-serif;
 	--agy-body-font: var(--font-rethink-sans), system-ui, sans-serif;
 	--agy-code: var(--font-space-mono), ui-monospace, monospace;
-	--agy-icons: "Google Symbols";
+	/* Self-hosted subset (see @font-face "Site Symbols" above) — same
+	   Google Symbols design language, no runtime Google request. */
+	--agy-icons: "Site Symbols";
 }
 
 .dark {
@@ -461,11 +477,13 @@ p {
 	color: #174ea6;
 }
 
-/* Icons — Google Symbols, ROND 50.
-   Ligature names (e.g. "arrow_outward") render as one glyph once the font
-   loads, but measure as ~13 fallback chars before that (even invisible with
-   display=block), which stretches buttons. Clamp to a 1em box so width is
-   identical before/after the swap — no layout shift on hard refresh. */
+/* Icons — Google Symbols design language (self-hosted Material Symbols
+   Rounded subset, ROND look), ligature names (e.g. "arrow_outward") render
+   as one glyph once the font loads, but measure as ~13 fallback chars
+   before that (even invisible with display=block), which stretches buttons.
+   Clamp to a 1em box so width is identical before/after the swap — no
+   layout shift on hard refresh. Self-hosted from the same origin, so the
+   swap resolves with the site instead of a runtime Google request. */
 .symbol {
 	font-family: var(--agy-icons);
 	font-weight: 300;

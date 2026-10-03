@@ -60,17 +60,6 @@ export default function RootLayout({
 		>
 			<head>
 				<meta name="apple-mobile-web-app-title" content="Vasjan" />
-				<link rel="preconnect" href="https://fonts.googleapis.com" />
-				<link
-					rel="preconnect"
-					href="https://fonts.gstatic.com"
-					crossOrigin="anonymous"
-				/>
-				<link
-					// biome-ignore lint/suspicious/useGoogleFontDisplay: Google Symbols requires display=block per Antigravity brand skill
-					href="https://fonts.googleapis.com/css2?family=Google+Symbols:opsz,wght,FILL,GRAD,ROND@20..48,100..700,0..1,-50..200,0..100&display=block"
-					rel="stylesheet"
-				/>
 				{/* biome-ignore lint/security/noDangerouslySetInnerHtml: static theme bootstrap to prevent flash */}
 				<script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
 			</head>
