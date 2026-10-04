@@ -116,12 +116,9 @@ export function ContactSection() {
 						</Stagger>
 					</Reveal>
 
-					<Reveal delay={0.2} className="hidden md:block">
-						<div
-							className="contact-form-card mt-8 overflow-hidden"
-							data-status={formSent ? "submitted" : "idle"}
-						>
-							<div className="px-6 pt-6 md:px-8 md:pt-8">
+					<Reveal delay={0.2}>
+						<div className="mt-8 md:mt-10">
+							<div>
 								<h3
 									className="text-balance text-2xl font-medium text-foreground"
 									style={{
@@ -139,9 +136,7 @@ export function ContactSection() {
 									{formSent ? t("form.success") : t("form.subheading")}
 								</p>
 							</div>
-							<div className="px-6 md:px-8">
-								<ContactForm onSuccessChange={setFormSent} />
-							</div>
+							<ContactForm onSuccessChange={setFormSent} />
 						</div>
 					</Reveal>
 				</div>

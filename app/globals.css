@@ -902,15 +902,6 @@ code,
 .contact-channel-icon {
 	border-radius: 9999px;
 }
-.contact-form-card {
-	background: #fff;
-	border: 1px solid #e8eaed;
-	border-radius: 24px;
-}
-.dark .contact-form-card {
-	background: rgba(255, 255, 255, 0.06);
-	border-color: rgba(255, 255, 255, 0.1);
-}
 .contact-input {
 	background: #fff;
 	border: 1px solid #5f6368;
