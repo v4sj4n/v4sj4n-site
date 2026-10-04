@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Rethink_Sans, Space_Mono } from "next/font/google";
+import { Alexandria, Space_Mono } from "next/font/google";
 import { AuraBackground } from "@/components/AuraBackground";
 import "./globals.css";
 
@@ -18,12 +18,12 @@ export const viewport: Viewport = {
 	],
 };
 
-// OFL-licensed type: Rethink Sans (headings/body) + Space Mono (code).
+// OFL-licensed type: Alexandria (headings/body) + Space Mono (code).
 // next/font self-hosts the files at build time — no runtime Google requests.
-const rethinkSans = Rethink_Sans({
-	subsets: ["latin", "latin-ext"],
+const alexandria = Alexandria({
+	subsets: ["arabic", "latin", "latin-ext", "vietnamese"],
 	display: "swap",
-	variable: "--font-rethink-sans",
+	variable: "--font-alexandria",
 });
 
 const spaceMono = Space_Mono({
@@ -55,7 +55,7 @@ export default function RootLayout({
 	return (
 		<html
 			lang="en"
-			className={`h-full antialiased ${rethinkSans.variable} ${spaceMono.variable}`}
+			className={`h-full antialiased ${alexandria.variable} ${spaceMono.variable}`}
 			suppressHydrationWarning
 		>
 			<head>

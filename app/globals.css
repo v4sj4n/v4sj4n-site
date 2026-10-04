@@ -237,8 +237,8 @@
 	--agy-line: #e8eaed;
 	--agy-radius-pill: 9999px;
 	--agy-radius-xl: 36px;
-	--agy-font: var(--font-rethink-sans), system-ui, sans-serif;
-	--agy-body-font: var(--font-rethink-sans), system-ui, sans-serif;
+	--agy-font: var(--font-alexandria), system-ui, sans-serif;
+	--agy-body-font: var(--font-alexandria), system-ui, sans-serif;
 	--agy-code: var(--font-space-mono), ui-monospace, monospace;
 	/* Self-hosted subset (see @font-face "Site Symbols" above) — same
 	   Google Symbols design language, no runtime Google request. */
@@ -303,8 +303,8 @@
 	--color-destructive-foreground: var(--destructive-foreground);
 	--color-success: var(--success);
 	--color-success-foreground: var(--success-foreground);
-	--font-sans: var(--font-rethink-sans), system-ui, sans-serif;
-	--font-serif: var(--font-rethink-sans), system-ui, sans-serif;
+	--font-sans: var(--font-alexandria), system-ui, sans-serif;
+	--font-serif: var(--font-alexandria), system-ui, sans-serif;
 	--font-mono: var(--font-space-mono), ui-monospace, monospace;
 }
 
@@ -391,7 +391,7 @@ body {
 	}
 }
 
-/* Typography — Rethink Sans 500 headings + Rethink Sans body (Weight-500 Rule) */
+/* Typography — Alexandria 500 headings + Alexandria body (Weight-500 Rule) */
 h1,
 h2,
 h3,
