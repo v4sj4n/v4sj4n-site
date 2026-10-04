@@ -116,7 +116,7 @@ export function ContactSection() {
 						</Stagger>
 					</Reveal>
 
-					<Reveal delay={0.2}>
+					<Reveal delay={0.2} className="hidden md:block">
 						<div
 							className="contact-form-card mt-8 overflow-hidden"
 							data-status={formSent ? "submitted" : "idle"}

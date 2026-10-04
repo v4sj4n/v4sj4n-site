@@ -419,7 +419,7 @@ export function ContactForm({
 				{turnstileSiteKey ? (
 					<div
 						ref={turnstileRef}
-						className="overflow-hidden empty:hidden"
+						className="turnstile-field w-full overflow-hidden empty:hidden"
 						style={{ colorScheme: "light dark" }}
 					/>
 				) : null}
