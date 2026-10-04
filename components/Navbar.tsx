@@ -38,13 +38,13 @@ export function Navbar() {
 					if (!entry.isIntersecting) continue;
 					const id = entry.target.id;
 					if (id === "home") continue;
-					setActive((prev) => {
-						if (prev === id) return prev;
-						if (window.location.hash !== `#${id}`) {
-							history.replaceState(null, "", `#${id}`);
-						}
-						return id;
-					});
+					// State updater stays pure: the URL sync is a side effect
+					// and must run outside of it, otherwise React warns about
+					// updating the Router while rendering Navbar.
+					setActive((prev) => (prev === id ? prev : id));
+					if (window.location.hash !== `#${id}`) {
+						history.replaceState(null, "", `#${id}`);
+					}
 				}
 			},
 			{ rootMargin: "-40% 0px -55% 0px", threshold: 0 },
@@ -63,17 +63,15 @@ export function Navbar() {
 			if (!projects) return;
 			const projectsTop = projects.getBoundingClientRect().top + window.scrollY;
 			if (window.scrollY < projectsTop - window.innerHeight * 0.5) {
-				setActive((prev) => {
-					if (prev === "home") return prev;
-					if (window.location.hash !== "") {
-						history.replaceState(
-							null,
-							"",
-							window.location.pathname + window.location.search,
-						);
-					}
-					return "home";
-				});
+				// Same purity rule as above: URL sync outside the updater.
+				setActive((prev) => (prev === "home" ? prev : "home"));
+				if (window.location.hash !== "") {
+					history.replaceState(
+						null,
+						"",
+						window.location.pathname + window.location.search,
+					);
+				}
 			}
 		};
 		clearHashInHeroZone();
